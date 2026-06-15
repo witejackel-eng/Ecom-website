@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X, ShoppingCart, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/context/CartContext";
@@ -10,6 +11,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { cartCount } = useCart();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -17,12 +19,19 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "Products", href: "/products" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
+  ];
+
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-[#E5E5E5]"
-          : "bg-white border-b border-[#E5E5E5]"
+          ? "bg-white/80 backdrop-blur-md border-b border-[#E5E5E5]"
+          : "bg-white border-b border-transparent"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -36,16 +45,13 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            {[
-              { name: "Home", href: "/" },
-              { name: "Products", href: "/products" },
-              { name: "About", href: "/about" },
-              { name: "Contact", href: "/contact" },
-            ].map((item) => (
+            {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-bold text-[#1A1A1A] hover:text-[#F28C38] transition-colors uppercase tracking-widest"
+                className={`text-sm font-bold transition-colors uppercase tracking-widest ${
+                  pathname === item.href ? "text-[#F28C38]" : "text-[#1A1A1A] hover:text-[#F28C38]"
+                }`}
               >
                 {item.name}
               </Link>
@@ -54,8 +60,8 @@ export default function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-6 text-[#1A1A1A]">
-            <Search className="h-5 w-5 cursor-pointer hover:text-[#F28C38]" />
-            <Link href="/cart" className="relative p-2 hover:text-[#F28C38]">
+            <Search className="h-5 w-5 cursor-pointer hover:text-[#F28C38] transition-colors" />
+            <Link href="/cart" className={`relative p-2 transition-colors ${pathname === '/cart' ? 'text-[#F28C38]' : 'hover:text-[#F28C38]'}`}>
               <ShoppingCart className="h-5 w-5" />
               {cartCount > 0 && (
                 <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#F28C38] text-[10px] font-bold text-white">
@@ -84,16 +90,13 @@ export default function Navbar() {
             className="md:hidden bg-white border-b border-[#E5E5E5] overflow-hidden"
           >
             <div className="flex flex-col gap-4 p-6">
-              {[
-                { name: "Home", href: "/" },
-                { name: "Products", href: "/products" },
-                { name: "About", href: "/about" },
-                { name: "Contact", href: "/contact" },
-              ].map((item) => (
+              {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-lg font-bold text-[#1A1A1A] hover:text-[#F28C38] uppercase"
+                  className={`text-lg font-bold uppercase ${
+                    pathname === item.href ? "text-[#F28C38]" : "text-[#1A1A1A] hover:text-[#F28C38]"
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
