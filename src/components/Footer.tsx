@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Facebook, Linkedin } from "lucide-react";
 
 export default function Footer() {
   const footerSections = [
@@ -8,7 +9,7 @@ export default function Footer() {
         { name: "Dome Cameras", href: "/products?category=Dome%20Cameras" },
         { name: "Bullet Cameras", href: "/products?category=Bullet%20Cameras" },
         { name: "NVR Systems", href: "/products?category=Network%20Video%20Recorders" },
-        { name: "All Products", href: "/products" },
+        { name: "Biometric Machines", href: "/products?category=Biometric%20Machines" },
       ],
     },
     {
@@ -22,7 +23,7 @@ export default function Footer() {
     {
       title: "Company",
       links: [
-        { name: "About Konnekt Edge", href: "/about" },
+        { name: "About DeviceDestination", href: "/about" },
         { name: "Privacy Policy", href: "/privacy" },
         { name: "Terms of Service", href: "/terms" },
       ],
@@ -33,13 +34,22 @@ export default function Footer() {
     <footer className="bg-[#080808] border-t border-[#2A2A2A] text-[#888]">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 space-y-4">
             <Link href="/" className="font-heading text-2xl text-[#F5F0E8] mb-6 block">
-              Konnekt Edge
+              DeviceDestination
             </Link>
             <p className="text-sm leading-relaxed">
-              Premium surveillance solutions designed for enterprise security.
+              Insight Business Solutions (trading as DeviceDestination). Premium surveillance and biometric security solutions.
             </p>
+            <div className="text-xs space-y-1">
+              <p>Plot No. 94, 3rd Floor, Block - B, Pocket - 10, Sector - 13, Dwarka, New Delhi - 110075</p>
+              <p>Ph: <a href="tel:+918368561919" className="hover:text-[#F28C38]">+91 83685 61919</a> / <a href="tel:+919873870992" className="hover:text-[#F28C38]">+91 98738 70992</a></p>
+              <p>Email: <a href="mailto:manish@insight-solutions.in" className="hover:text-[#F28C38]">manish@insight-solutions.in</a></p>
+            </div>
+            <div className="flex gap-4 pt-2">
+              <a href="https://www.facebook.com/ibsinfra" target="_blank" rel="noreferrer" className="hover:text-[#F28C38]"><Facebook className="h-5 w-5" /></a>
+              <a href="https://www.linkedin.com/in/insight-business-4b71bb37b/" target="_blank" rel="noreferrer" className="hover:text-[#F28C38]"><Linkedin className="h-5 w-5" /></a>
+            </div>
           </div>
 
           {footerSections.map((section) => (
@@ -61,7 +71,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 border-t border-[#2A2A2A] pt-8 text-center text-xs">
-          &copy; {new Date().getFullYear()} Konnekt Edge. All rights reserved.
+          <p>&copy; {new Date().getFullYear()} DeviceDestination. All Rights Reserved.</p>
+          <p className="mt-2">Locations Served: Delhi, Noida, Gurgaon, Faridabad, Dwarka</p>
         </div>
       </div>
     </footer>
