@@ -27,7 +27,7 @@ export default function FilterSidebar() {
         {/* Category Filter */}
         <div className="mb-8">
           <h3 className="text-xs uppercase tracking-widest text-[#F5F0E8] font-bold mb-4 font-heading">Category</h3>
-          {["Dome Cameras", "Bullet Cameras", "NVR Systems"].map((cat) => (
+          {["Dome Cameras", "Bullet Cameras", "NVR Systems", "Biometric Machines"].map((cat) => (
             <div key={cat} className="flex items-center mb-3">
               <Checkbox.Root className="w-5 h-5 border border-[#C9A84C] rounded flex items-center justify-center data-[state=checked]:bg-[#F28C38] data-[state=checked]:border-[#F28C38]">
                 <Checkbox.Indicator>
@@ -37,7 +37,7 @@ export default function FilterSidebar() {
               <label className="ml-3 text-sm">{cat}</label>
             </div>
           ))}
-        </div>
+          </div>
 
         {/* Price Range */}
         <div className="mb-8">
