@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Facebook from "lucide-react/dist/esm/icons/facebook";
-import Linkedin from "lucide-react/dist/esm/icons/linkedin";
+import { Facebook, Linkedin } from "lucide-react";
 
 export default function Footer() {
   const footerSections = [
