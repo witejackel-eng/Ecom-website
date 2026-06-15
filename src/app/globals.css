@@ -1,16 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  /* Premium Light Blue Technology Color System */
-  --background: #F8FBFF;
-  --foreground: #0F172A;
-  --primary: #0EA5E9;    /* Sky 500 */
-  --primary-hover: #0284C7; /* Sky 600 */
-  --secondary: #38BDF8;  /* Sky 400 */
-  --accent: #7DD3FC;     /* Sky 300 */
-  --surface: #FFFFFF;
-  --surface-hover: #F1F5F9;
-  --border: #E2E8F0;
+  --background: #FFFFFF;
+  --surface: #FAFAFA;
+  --surface-hover: #F1F1F1;
+  --foreground: #1A1A1A;
+  --muted: #666666;
+  --border: #E5E5E5;
+  --primary: #F28C38;
+  --primary-hover: #C96E1A;
 }
 
 @theme inline {
@@ -18,8 +16,6 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
   --color-surface: var(--surface);
   --color-surface-hover: var(--surface-hover);
   --color-border: var(--border);
@@ -40,6 +36,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.2;
+  color: #1A1A1A;
 }
 
 .font-heading {
@@ -63,9 +60,9 @@ html {
   background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
+  background: #E5E5E5;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary);
+  background: var(--primary);
 }
