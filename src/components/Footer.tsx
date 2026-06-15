@@ -1,111 +1,67 @@
 import Link from "next/link";
 
 export default function Footer() {
+  const footerSections = [
+    {
+      title: "Products",
+      links: [
+        { name: "Dome Cameras", href: "/products?category=Dome%20Cameras" },
+        { name: "Bullet Cameras", href: "/products?category=Bullet%20Cameras" },
+        { name: "NVR Systems", href: "/products?category=Network%20Video%20Recorders" },
+        { name: "All Products", href: "/products" },
+      ],
+    },
+    {
+      title: "Support",
+      links: [
+        { name: "Contact Us", href: "/contact" },
+        { name: "Warranty Information", href: "/warranty" },
+        { name: "Product Downloads", href: "/downloads" },
+      ],
+    },
+    {
+      title: "Company",
+      links: [
+        { name: "About Konnekt Edge", href: "/about" },
+        { name: "Privacy Policy", href: "/privacy" },
+        { name: "Terms of Service", href: "/terms" },
+      ],
+    },
+  ];
+
   return (
-    <footer className="bg-slate-900 text-gray-300">
+    <footer className="bg-[#080808] border-t border-[#2A2A2A] text-[#888]">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
-          {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-slate-900 font-heading text-xl font-bold">
-                K
-              </div>
-              <span className="font-heading text-2xl text-white tracking-tight">
-                Konnekt Edge
-              </span>
-            </div>
-            <p className="text-sm leading-relaxed text-gray-400">
-              Reliable surveillance solutions and professional security systems. 
-              Trusted equipment for monitoring and protection, selected for business requirements.
+            <Link href="/" className="font-heading text-2xl text-[#F5F0E8] mb-6 block">
+              Konnekt Edge
+            </Link>
+            <p className="text-sm leading-relaxed">
+              Premium surveillance solutions designed for enterprise security.
             </p>
           </div>
 
-          {/* Products */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
-              Products
-            </h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link href="/products?category=Dome Cameras" className="hover:text-white transition-colors">
-                  Dome Cameras
-                </Link>
-              </li>
-              <li>
-                <Link href="/products?category=Bullet Cameras" className="hover:text-white transition-colors">
-                  Bullet Cameras
-                </Link>
-              </li>
-              <li>
-                <Link href="/products?category=Network Video Recorders" className="hover:text-white transition-colors">
-                  NVR Systems
-                </Link>
-              </li>
-              <li>
-                <Link href="/products" className="hover:text-white transition-colors">
-                  All Products
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
-              Support
-            </h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/warranty" className="hover:text-white transition-colors">
-                  Warranty Information
-                </Link>
-              </li>
-              <li>
-                <Link href="/downloads" className="hover:text-white transition-colors">
-                  Product Downloads
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
-              Company
-            </h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link href="/about" className="hover:text-white transition-colors">
-                  About Konnekt Edge
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="hover:text-white transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="hover:text-white transition-colors">
-                  Terms of Service
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {footerSections.map((section) => (
+            <div key={section.title}>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-[#C9A84C] mb-4 font-heading">
+                {section.title}
+              </h3>
+              <ul className="space-y-3 text-sm">
+                {section.links.map((link) => (
+                  <li key={link.name}>
+                    <Link href={link.href} className="hover:text-[#F28C38] transition-colors">
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-16 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-500">
-            &copy; {new Date().getFullYear()} Konnekt Edge. All rights reserved.
-          </p>
-          <div className="flex gap-6 text-xs text-gray-500">
-            <span>Designed for professional security applications.</span>
-          </div>
+        <div className="mt-16 border-t border-[#2A2A2A] pt-8 text-center text-xs">
+          &copy; {new Date().getFullYear()} Konnekt Edge. All rights reserved.
         </div>
       </div>
     </footer>
