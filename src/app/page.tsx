@@ -117,7 +117,7 @@ export default function Home() {
             <FadeIn direction="right">
               <div>
                 <h2 className="font-heading text-4xl sm:text-5xl text-foreground mb-6">
-                  Why Konnekt Edge
+                  Why DeviceDestination
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                   We provide professional security systems built for reliability. Our equipment is selected 
