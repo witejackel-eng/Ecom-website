@@ -25,36 +25,34 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <FadeIn direction="up">
       <motion.div
-        whileHover={{ y: -5 }}
-        className="group relative bg-white border border-[#E5E5E5] rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-lg hover:border-[#F28C38]"
+        whileHover={{ y: -8 }}
+        className="group relative bg-white border border-[#E5E5E5] rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-orange-100 transition-all duration-500 ease-out"
       >
         <Link href={`/products/${product.id}`} className="block">
           <div className="relative aspect-[4/3] overflow-hidden bg-[#FAFAFA]">
             <ProductPlaceholder />
             {/* Category Badge */}
-            <div className="absolute top-3 left-3">
-              <span className="inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-[#F28C38] backdrop-blur-sm border border-[#F28C38]">
+            <div className="absolute top-4 left-4">
+              <span className="inline-flex items-center rounded-full bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#F28C38] backdrop-blur-sm border border-[#F28C38]">
                 {product.category}
               </span>
             </div>
           </div>
 
-          <div className="p-5 space-y-3">
-            <div className="flex justify-between items-start">
-              <h3 className="font-heading text-lg text-[#1A1A1A] leading-tight group-hover:text-[#F28C38] transition-colors duration-300">
-                {product.name}
-              </h3>
-            </div>
+          <div className="p-6 space-y-2">
+            <h3 className="font-heading text-xl text-[#1A1A1A] leading-tight group-hover:text-[#F28C38] transition-colors duration-300">
+              {product.name}
+            </h3>
             
             <p className="text-xs font-medium text-[#666666] uppercase tracking-wider">
               Model: {product.model}
             </p>
             
-            {/* Rating - Hardcoded */}
+            {/* Rating */}
             <div className="flex text-[#F28C38] text-sm">★★★★☆</div>
 
             <div className="flex items-baseline gap-3 pt-2">
-              <span className="text-xl font-semibold text-[#F28C38]">
+              <span className="text-xl font-bold text-[#1A1A1A]">
                 ₹{product.price.toLocaleString('en-IN')}
               </span>
               <span className="text-sm text-[#888] line-through">
@@ -65,15 +63,15 @@ export default function ProductCard({ product }: ProductCardProps) {
         </Link>
         
         {/* Add to Cart Button */}
-        <motion.div 
-          initial={{ y: "100%" }}
-          whileInView={{ y: 0 }}
-          className="absolute bottom-0 left-0 w-full p-4 bg-white border-t border-[#E5E5E5] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <button className="w-full py-2 bg-[#F28C38] text-white font-bold rounded-lg hover:bg-[#C96E1A] transition-colors">
+        <div className="px-6 pb-6">
+          <motion.button 
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full py-3 bg-[#F28C38] text-white font-bold rounded-lg hover:bg-[#C96E1A] transition-colors shadow-md shadow-[#F28C38]/20"
+          >
             Add to Cart
-          </button>
-        </motion.div>
+          </motion.button>
+        </div>
       </motion.div>
     </FadeIn>
   );
