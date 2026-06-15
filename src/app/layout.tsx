@@ -19,9 +19,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Konnekt Edge | Professional Security & Surveillance Solutions",
-  description: "Reliable surveillance solutions and professional security systems. Trusted equipment for monitoring and protection, selected for business requirements.",
-  keywords: ["CCTV", "Security Cameras", "Surveillance", "NVR", "Konnekt Edge", "Professional Monitoring"],
+  title: "DeviceDestination – Professional Security & Biometric Solutions",
+  description: "DeviceDestination offers CP Plus surveillance cameras, NVR systems, and ESSL biometric attendance machines. Serving Delhi, Noida, Gurgaon, Faridabad and Dwarka.",
+  keywords: ["CCTV", "Security Cameras", "Surveillance", "NVR", "DeviceDestination", "Professional Monitoring", "Biometric Attendance"],
   icons: {
     icon: "/favicon.svg",
   },
