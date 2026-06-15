@@ -3,6 +3,7 @@ import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CartDrawer from "@/components/CartDrawer";
 import { CartProvider } from "@/context/CartContext";
 
 const outfit = Outfit({
@@ -39,6 +40,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-sans bg-background text-foreground">
         <CartProvider>
           <Navbar />
+          <CartDrawer />
           {children}
           <Footer />
         </CartProvider>
