@@ -8,7 +8,7 @@ export default function SupportPage() {
         <FadeIn direction="up">
           <div className="text-center mb-16">
             <h1 className="font-heading text-4xl sm:text-5xl text-foreground mb-4">Support Center</h1>
-            <p className="text-lg text-gray-600">Resources and assistance for your Konnekt Edge products.</p>
+            <p className="text-lg text-gray-600">Resources and assistance for your DeviceDestination products.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
