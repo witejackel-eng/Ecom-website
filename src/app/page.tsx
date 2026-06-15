@@ -9,18 +9,18 @@ export default function Home() {
   const featuredProducts = products.slice(0, 4);
 
   return (
-    <main className="flex-1 bg-background">
+    <main className="flex-1 bg-white">
       <Hero />
 
       {/* Featured Categories */}
-      <section className="py-24 bg-[#0A0A0A]">
+      <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="text-center mb-16">
-              <h2 className="font-heading text-4xl sm:text-5xl text-[#F5F0E8] mb-4">
+              <h2 className="font-heading text-4xl sm:text-5xl text-[#1A1A1A] mb-4">
                 Security Solutions
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+              <p className="text-[#666666] max-w-2xl mx-auto text-lg">
                 Comprehensive coverage for every environment.
               </p>
             </div>
@@ -35,14 +35,14 @@ export default function Home() {
               <StaggerItem key={cat.name}>
                 <Link
                   href={`/products?category=${encodeURIComponent(cat.name)}`}
-                  className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface-hover border border-[#2A2A2A] block"
+                  className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-[#FAFAFA] border border-[#E5E5E5] block hover:shadow-lg transition-all duration-300"
                 >
                   <ProductPlaceholder className="absolute inset-0" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 p-8">
-                    <h3 className="font-heading text-2xl text-white mb-2">{cat.name}</h3>
-                    <p className="text-gray-300 text-sm mb-4">{cat.desc}</p>
-                    <span className="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:gap-3 transition-all duration-300">
+                    <h3 className="font-heading text-2xl text-[#1A1A1A] mb-2">{cat.name}</h3>
+                    <p className="text-[#666666] text-sm mb-4">{cat.desc}</p>
+                    <span className="inline-flex items-center gap-2 text-sm font-medium text-[#F28C38] group-hover:gap-3 transition-all duration-300">
                       Explore <ArrowRight className="h-4 w-4" />
                     </span>
                   </div>
@@ -54,19 +54,19 @@ export default function Home() {
       </section>
 
       {/* Featured Products */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-[#FAFAFA]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="flex items-end justify-between mb-12">
               <div>
-                <h2 className="font-heading text-4xl sm:text-5xl text-foreground mb-4">
+                <h2 className="font-heading text-4xl sm:text-5xl text-[#1A1A1A] mb-4">
                   Featured Products
                 </h2>
-                <p className="text-gray-600 text-lg">
+                <p className="text-[#666666] text-lg">
                   Trusted equipment selected for professional requirements.
                 </p>
               </div>
-              <Link href="/products" className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-hover transition-colors group">
+              <Link href="/products" className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-[#F28C38] hover:text-[#C96E1A] transition-colors group">
                 View all products <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
@@ -74,16 +74,16 @@ export default function Home() {
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuredProducts.map((product) => (
               <StaggerItem key={product.id}>
-                <div className="bg-surface rounded-xl p-4 border border-border shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
+                <div className="bg-white rounded-xl p-4 border border-[#E5E5E5] shadow-sm hover:shadow-lg hover:border-[#F28C38]/30 transition-all duration-300">
                   <Link href={`/products/${product.id}`}>
-                    <div className="relative aspect-square rounded-lg bg-surface-hover mb-4 overflow-hidden">
+                    <div className="relative aspect-square rounded-lg bg-[#FAFAFA] mb-4 overflow-hidden">
                       <ProductPlaceholder className="absolute inset-0" />
                     </div>
-                    <h3 className="font-heading text-lg text-foreground mb-1 group-hover:text-primary transition-colors">{product.name}</h3>
-                    <p className="text-xs text-gray-500 uppercase tracking-wide mb-3">Model: {product.model}</p>
+                    <h3 className="font-heading text-lg text-[#1A1A1A] mb-1 group-hover:text-[#F28C38] transition-colors">{product.name}</h3>
+                    <p className="text-xs text-[#666666] uppercase tracking-wide mb-3">Model: {product.model}</p>
                     <div className="flex items-baseline gap-2">
-                      <span className="text-lg font-semibold text-primary">₹{product.price.toLocaleString('en-IN')}</span>
-                      <span className="text-sm text-gray-400 line-through">₹{product.mrp.toLocaleString('en-IN')}</span>
+                      <span className="text-lg font-semibold text-[#F28C38]">₹{product.price.toLocaleString('en-IN')}</span>
+                      <span className="text-sm text-[#888] line-through">₹{product.mrp.toLocaleString('en-IN')}</span>
                     </div>
                   </Link>
                 </div>
@@ -91,7 +91,7 @@ export default function Home() {
             ))}
           </StaggerContainer>
           <div className="mt-12 text-center sm:hidden">
-            <Link href="/products" className="inline-flex items-center gap-2 text-sm font-medium text-primary">
+            <Link href="/products" className="inline-flex items-center gap-2 text-sm font-medium text-[#F28C38]">
               View all products <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -99,15 +99,15 @@ export default function Home() {
       </section>
 
       {/* Why DeviceDestination */}
-      <section className="py-24 bg-[#0F0F0F] border-y border-[#2A2A2A]">
+      <section className="py-24 bg-white border-y border-[#E5E5E5]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
               <div>
-                <h2 className="font-heading text-4xl sm:text-5xl text-[#F5F0E8] mb-6">
+                <h2 className="font-heading text-4xl sm:text-5xl text-[#1A1A1A] mb-6">
                   Why DeviceDestination
                 </h2>
-                <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+                <p className="text-lg text-[#666666] mb-8 leading-relaxed">
                   We provide professional security, surveillance, and biometric systems built for reliability. 
                   Our equipment is selected based on rigorous testing and proven performance in real-world business environments.
                 </p>
@@ -122,8 +122,8 @@ export default function Home() {
                         <item.icon className="h-6 w-6" />
                       </div>
                       <div>
-                        <h3 className="font-heading text-xl text-[#F5F0E8] mb-1">{item.title}</h3>
-                        <p className="text-gray-400">{item.desc}</p>
+                        <h3 className="font-heading text-xl text-[#1A1A1A] mb-1">{item.title}</h3>
+                        <p className="text-[#666666]">{item.desc}</p>
                       </div>
                     </StaggerItem>
                   ))}
@@ -131,13 +131,14 @@ export default function Home() {
               </div>
             </FadeIn>
             <FadeIn direction="left">
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-[#2A2A2A]">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-[#E5E5E5]">
                 <ProductPlaceholder />
               </div>
             </FadeIn>
           </div>
         </div>
       </section>
+
 
       {/* Brands */}
       <section className="py-16 bg-background">
