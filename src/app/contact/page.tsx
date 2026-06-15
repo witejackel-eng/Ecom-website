@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Phone, Mail, Clock, Facebook, Linkedin } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function ContactPage() {
@@ -43,8 +43,8 @@ export default function ContactPage() {
             </div>
             
             <div className="flex gap-4 pt-4">
-              <a href="https://www.facebook.com/ibsinfra" target="_blank" rel="noreferrer" className="p-3 bg-[#1A1A1A] rounded-full border border-[#2A2A2A] hover:border-[#F28C38]"><Facebook className="h-6 w-6 text-[#F5F0E8]" /></a>
-              <a href="https://www.linkedin.com/in/insight-business-4b71bb37b/" target="_blank" rel="noreferrer" className="p-3 bg-[#1A1A1A] rounded-full border border-[#2A2A2A] hover:border-[#F28C38]"><Linkedin className="h-6 w-6 text-[#F5F0E8]" /></a>
+              <a href="https://www.facebook.com/ibsinfra" target="_blank" rel="noreferrer" className="p-3 bg-[#1A1A1A] rounded-full border border-[#2A2A2A] hover:border-[#F28C38] text-sm">Facebook</a>
+              <a href="https://www.linkedin.com/in/insight-business-4b71bb37b/" target="_blank" rel="noreferrer" className="p-3 bg-[#1A1A1A] rounded-full border border-[#2A2A2A] hover:border-[#F28C38] text-sm">LinkedIn</a>
             </div>
           </div>
 
