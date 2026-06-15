@@ -38,7 +38,7 @@ export default function CheckoutPage() {
             <Check className="w-8 h-8 text-green-500" />
           </div>
           <h2 className="font-heading text-3xl text-[#F5F0E8] mb-4">Order Placed Successfully!</h2>
-          <p className="text-[#888] mb-6">Your order number is #{Math.floor(100000 + Math.random() * 900000)}. Our team will contact you within 24 hours.</p>
+          <p className="text-[#888] mb-6">Your order number is #{Math.floor(100000 + Math.random() * 900000)}. Our team at DeviceDestination will contact you within 24 hours. For urgent queries call +91 83685 61919</p>
           <a href="/products" className="block w-full py-3 bg-[#F28C38] text-[#0A0A0A] font-bold rounded-lg">Continue Shopping</a>
         </motion.div>
       </div>

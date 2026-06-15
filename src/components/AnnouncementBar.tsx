@@ -10,7 +10,7 @@ export default function AnnouncementBar() {
         animate={{ x: ["100%", "-100%"] }}
         transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
       >
-        Free shipping on orders above ₹5,000 · Trusted by 500+ businesses across India · Premium Security Solutions
+        Free shipping on orders above ₹5,000 · Serving Delhi, Noida, Gurgaon & Faridabad · Call: +91 83685 61919
       </motion.div>
     </div>
   );
