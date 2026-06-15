@@ -27,11 +27,12 @@ export default function Home() {
               </p>
             </div>
           </FadeIn>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               { name: "Dome Cameras", desc: "Discreet indoor monitoring", color: "0EA5E9" },
               { name: "Bullet Cameras", desc: "Long-range outdoor surveillance", color: "0284C7" },
               { name: "NVR Systems", desc: "Centralized recording and management", color: "0369A1" },
+              { name: "Biometric Machines", desc: "Advanced attendance & access", color: "F28C38" },
             ].map((cat) => (
               <StaggerItem key={cat.name}>
                 <Link

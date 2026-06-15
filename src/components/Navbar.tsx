@@ -35,10 +35,10 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            {["Products", "Dome Cameras", "Bullet Cameras", "NVR Systems"].map((item) => (
+            {["Products", "Dome Cameras", "Bullet Cameras", "NVR Systems", "Biometric"].map((item) => (
               <Link
                 key={item}
-                href={item === "Products" ? "/products" : `/products?category=${encodeURIComponent(item)}`}
+                href={item === "Products" ? "/products" : item === "Biometric" ? "/products?category=Biometric%20Machines" : `/products?category=${encodeURIComponent(item)}`}
                 className="text-sm font-bold text-[#F5F0E8] hover:text-[#F28C38] transition-colors uppercase tracking-widest border-b-2 border-transparent hover:border-[#F28C38] pb-1"
               >
                 {item}
