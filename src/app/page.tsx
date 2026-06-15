@@ -38,10 +38,9 @@ export default function Home() {
                   className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-[#FAFAFA] border border-[#E5E5E5] block hover:shadow-lg transition-all duration-300"
                 >
                   <ProductPlaceholder className="absolute inset-0" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-8">
-                    <h3 className="font-heading text-2xl text-[#1A1A1A] mb-2">{cat.name}</h3>
-                    <p className="text-[#666666] text-sm mb-4">{cat.desc}</p>
+                  <div className="absolute bottom-0 left-0 p-8 w-full">
+                    <h3 className="text-xl text-[#1A1A1A] mb-2">{cat.name}</h3>
+                    <p className="description text-sm mb-4">{cat.desc}</p>
                     <span className="inline-flex items-center gap-2 text-sm font-medium text-[#F28C38] group-hover:gap-3 transition-all duration-300">
                       Explore <ArrowRight className="h-4 w-4" />
                     </span>
@@ -57,16 +56,16 @@ export default function Home() {
       <section className="py-24 bg-[#FAFAFA]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
-            <div className="flex items-end justify-between mb-12">
+            <div className="flex items-end justify-between mb-16">
               <div>
-                <h2 className="font-heading text-4xl sm:text-5xl text-[#1A1A1A] mb-4">
+                <h2 className="mb-4">
                   Featured Products
                 </h2>
-                <p className="text-[#666666] text-lg">
+                <p className="description">
                   Trusted equipment selected for professional requirements.
                 </p>
               </div>
-              <Link href="/products" className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-[#F28C38] hover:text-[#C96E1A] transition-colors group">
+              <Link href="/products" className="hidden sm:inline-flex items-center gap-2 text-sm font-bold text-[#F28C38] hover:text-[#C96E1A] transition-colors group">
                 View all products <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
@@ -79,8 +78,8 @@ export default function Home() {
                     <div className="relative aspect-square rounded-lg bg-[#FAFAFA] mb-4 overflow-hidden">
                       <ProductPlaceholder className="absolute inset-0" />
                     </div>
-                    <h3 className="font-heading text-lg text-[#1A1A1A] mb-1 group-hover:text-[#F28C38] transition-colors">{product.name}</h3>
-                    <p className="text-xs text-[#666666] uppercase tracking-wide mb-3">Model: {product.model}</p>
+                    <h3 className="text-lg text-[#1A1A1A] mb-1 group-hover:text-[#F28C38] transition-colors">{product.name}</h3>
+                    <p className="description text-xs uppercase tracking-wide mb-3">Model: {product.model}</p>
                     <div className="flex items-baseline gap-2">
                       <span className="text-lg font-semibold text-[#F28C38]">₹{product.price.toLocaleString('en-IN')}</span>
                       <span className="text-sm text-[#888] line-through">₹{product.mrp.toLocaleString('en-IN')}</span>
@@ -90,11 +89,6 @@ export default function Home() {
               </StaggerItem>
             ))}
           </StaggerContainer>
-          <div className="mt-12 text-center sm:hidden">
-            <Link href="/products" className="inline-flex items-center gap-2 text-sm font-medium text-[#F28C38]">
-              View all products <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -104,10 +98,10 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
               <div>
-                <h2 className="font-heading text-4xl sm:text-5xl text-[#1A1A1A] mb-6">
+                <h2 className="mb-6">
                   Why DeviceDestination
                 </h2>
-                <p className="text-lg text-[#666666] mb-8 leading-relaxed">
+                <p className="description mb-8 leading-relaxed">
                   We provide professional security, surveillance, and biometric systems built for reliability. 
                   Our equipment is selected based on rigorous testing and proven performance in real-world business environments.
                 </p>
@@ -122,8 +116,8 @@ export default function Home() {
                         <item.icon className="h-6 w-6" />
                       </div>
                       <div>
-                        <h3 className="font-heading text-xl text-[#1A1A1A] mb-1">{item.title}</h3>
-                        <p className="text-[#666666]">{item.desc}</p>
+                        <h3 className="text-xl text-[#1A1A1A] mb-1">{item.title}</h3>
+                        <p className="description text-sm">{item.desc}</p>
                       </div>
                     </StaggerItem>
                   ))}
