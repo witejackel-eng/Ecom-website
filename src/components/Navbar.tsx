@@ -21,8 +21,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? "bg-[#0A0A0A] border-b border-[#C9A84C]"
-          : "bg-transparent border-b border-transparent"
+          ? "bg-white/90 backdrop-blur-md border-b border-[#E5E5E5]"
+          : "bg-white border-b border-[#E5E5E5]"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -31,7 +31,7 @@ export default function Navbar() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#F28C38] text-white font-heading text-lg font-bold">
               DD
             </div>
-            <span className="font-heading text-2xl text-[#F5F0E8]">DeviceDestination</span>
+            <span className="font-heading text-2xl text-[#1A1A1A]">DeviceDestination</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -45,7 +45,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-bold text-[#F5F0E8] hover:text-[#F28C38] transition-colors uppercase tracking-widest"
+                className="text-sm font-bold text-[#1A1A1A] hover:text-[#F28C38] transition-colors uppercase tracking-widest"
               >
                 {item.name}
               </Link>
@@ -53,12 +53,12 @@ export default function Navbar() {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-6 text-[#F5F0E8]">
+          <div className="flex items-center gap-6 text-[#1A1A1A]">
             <Search className="h-5 w-5 cursor-pointer hover:text-[#F28C38]" />
             <Link href="/cart" className="relative p-2 hover:text-[#F28C38]">
               <ShoppingCart className="h-5 w-5" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#F28C38] text-[10px] font-bold text-[#0A0A0A]">
+                <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#F28C38] text-[10px] font-bold text-white">
                   {cartCount}
                 </span>
               )}
@@ -81,7 +81,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#0A0A0A] border-b border-[#2A2A2A] overflow-hidden"
+            className="md:hidden bg-white border-b border-[#E5E5E5] overflow-hidden"
           >
             <div className="flex flex-col gap-4 p-6">
               {[
@@ -93,7 +93,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-lg font-bold text-[#F5F0E8] hover:text-[#F28C38] uppercase"
+                  className="text-lg font-bold text-[#1A1A1A] hover:text-[#F28C38] uppercase"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
