@@ -33,6 +33,7 @@ export default function Navbar() {
             <span className="font-heading text-2xl text-[#F5F0E8]">Konnekt Edge</span>
           </Link>
 
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {["Products", "Dome Cameras", "Bullet Cameras", "NVR Systems"].map((item) => (
               <Link
@@ -45,22 +46,12 @@ export default function Navbar() {
             ))}
           </nav>
 
+          {/* Actions */}
           <div className="flex items-center gap-4 text-[#F5F0E8]">
             <div className="relative flex items-center">
               <button onClick={() => setIsSearchOpen(!isSearchOpen)} className="p-2 hover:text-[#F28C38]">
                 <Search className="h-5 w-5" />
               </button>
-              <AnimatePresence>
-                {isSearchOpen && (
-                  <motion.input
-                    initial={{ width: 0, opacity: 0 }}
-                    animate={{ width: 200, opacity: 1 }}
-                    exit={{ width: 0, opacity: 0 }}
-                    placeholder="Search..."
-                    className="absolute right-full mr-2 bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg px-3 py-1 text-sm text-[#F5F0E8] outline-none"
-                  />
-                )}
-              </AnimatePresence>
             </div>
             
             <Link href="/cart" className="relative p-2 hover:text-[#F28C38]">
@@ -71,9 +62,41 @@ export default function Navbar() {
                 </span>
               )}
             </Link>
+
+            <button
+              className="md:hidden p-2 hover:text-[#F28C38]"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-[#0A0A0A] border-b border-[#2A2A2A] overflow-hidden"
+          >
+            <div className="flex flex-col gap-4 p-6">
+              {["Products", "Dome Cameras", "Bullet Cameras", "NVR Systems"].map((item) => (
+                <Link
+                  key={item}
+                  href={item === "Products" ? "/products" : `/products?category=${encodeURIComponent(item)}`}
+                  className="text-lg font-bold text-[#F5F0E8] hover:text-[#F28C38] uppercase"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

@@ -28,9 +28,9 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   const category = resolvedSearchParams.category;
 
   return (
-    <main className="flex min-h-screen bg-[#0A0A0A]">
+    <main className="flex flex-col md:flex-row min-h-screen bg-[#0A0A0A]">
       <FilterSidebar />
-      <div className="flex-1 py-16 px-8">
+      <div className="flex-1 py-16 px-4 md:px-8">
         <div className="mb-12">
           <h1 className="font-heading text-4xl sm:text-5xl text-[#F5F0E8] mb-4">
             {category ? `${category}` : "All Products"}
