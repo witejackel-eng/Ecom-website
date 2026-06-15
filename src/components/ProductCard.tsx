@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import FadeIn from "@/components/ui/FadeIn";
+import ProductPlaceholder from "./ProductPlaceholder";
 
 interface Product {
   id: string;
@@ -30,13 +30,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       >
         <Link href={`/products/${product.id}`} className="block">
           <div className="relative aspect-[4/3] overflow-hidden">
-            <Image
-              src={product.images[0]}
-              alt={product.name}
-              fill
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
+            <ProductPlaceholder />
             {/* Category Badge */}
             <div className="absolute top-3 left-3">
               <span className="inline-flex items-center rounded-full bg-[#0A0A0A]/80 px-3 py-1 text-xs font-medium text-[#C9A84C] backdrop-blur-sm border border-[#C9A84C]">
@@ -44,7 +38,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               </span>
             </div>
           </div>
-
+...
           <div className="p-5 space-y-3">
             <div className="flex justify-between items-start">
               <h3 className="font-heading text-lg text-[#F5F0E8] leading-tight group-hover:text-[#F28C38] transition-colors duration-300">

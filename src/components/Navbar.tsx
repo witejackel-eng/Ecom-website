@@ -9,7 +9,6 @@ import { useCart } from "@/context/CartContext";
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { cartCount } = useCart();
 
   useEffect(() => {
@@ -20,12 +19,11 @@ export default function Navbar() {
 
   return (
     <header
-      className={clsx(
-        "fixed top-0 z-50 w-full transition-all duration-300",
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? "bg-[#0A0A0A]/90 backdrop-blur-md border-b border-[#C9A84C]"
+          ? "bg-[#0A0A0A] border-b border-[#C9A84C]"
           : "bg-transparent border-b border-transparent"
-      )}
+      }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
@@ -38,25 +36,24 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            {["Products", "Dome Cameras", "Bullet Cameras", "NVR Systems", "Biometric"].map((item) => (
+            {[
+              { name: "Home", href: "/" },
+              { name: "Products", href: "/products" },
+              { name: "About", href: "/about" },
+              { name: "Contact", href: "/contact" },
+            ].map((item) => (
               <Link
-                key={item}
-                href={item === "Products" ? "/products" : item === "Biometric" ? "/products?category=Biometric%20Machines" : `/products?category=${encodeURIComponent(item)}`}
-                className="text-sm font-bold text-[#F5F0E8] hover:text-[#F28C38] transition-colors uppercase tracking-widest border-b-2 border-transparent hover:border-[#F28C38] pb-1"
+                key={item.name}
+                href={item.href}
+                className="text-sm font-bold text-[#F5F0E8] hover:text-[#F28C38] transition-colors uppercase tracking-widest"
               >
-                {item}
+                {item.name}
               </Link>
             ))}
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-4 text-[#F5F0E8]">
-            <div className="relative flex items-center">
-              <button onClick={() => setIsSearchOpen(!isSearchOpen)} className="p-2 hover:text-[#F28C38]">
-                <Search className="h-5 w-5" />
-              </button>
-            </div>
-            
+          <div className="flex items-center gap-6 text-[#F5F0E8]">
             <Link href="/cart" className="relative p-2 hover:text-[#F28C38]">
               <ShoppingCart className="h-5 w-5" />
               {cartCount > 0 && (
@@ -86,14 +83,19 @@ export default function Navbar() {
             className="md:hidden bg-[#0A0A0A] border-b border-[#2A2A2A] overflow-hidden"
           >
             <div className="flex flex-col gap-4 p-6">
-              {["Products", "Dome Cameras", "Bullet Cameras", "NVR Systems"].map((item) => (
+              {[
+                { name: "Home", href: "/" },
+                { name: "Products", href: "/products" },
+                { name: "About", href: "/about" },
+                { name: "Contact", href: "/contact" },
+              ].map((item) => (
                 <Link
-                  key={item}
-                  href={item === "Products" ? "/products" : `/products?category=${encodeURIComponent(item)}`}
+                  key={item.name}
+                  href={item.href}
                   className="text-lg font-bold text-[#F5F0E8] hover:text-[#F28C38] uppercase"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
             </div>
@@ -102,8 +104,4 @@ export default function Navbar() {
       </AnimatePresence>
     </header>
   );
-}
-
-function clsx(...classes: (string | undefined | false)[]) {
-  return classes.filter(Boolean).join(" ");
 }

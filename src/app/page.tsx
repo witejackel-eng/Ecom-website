@@ -1,50 +1,44 @@
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Hero from "@/components/Hero";
 import Link from "next/link";
-import Image from "next/image";
-import { Shield, Eye, HardDrive, ArrowRight } from "lucide-react";
+import { ArrowRight, Shield, Eye, HardDrive } from "lucide-react";
 import { products } from "@/data/products";
 import FadeIn, { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
+import ProductPlaceholder from "@/components/ProductPlaceholder";
 
 export default function Home() {
   const featuredProducts = products.slice(0, 4);
 
   return (
     <main className="flex-1 bg-background">
-      <AnnouncementBar />
       <Hero />
 
       {/* Featured Categories */}
-      <section className="py-24 bg-surface">
+      <section className="py-24 bg-[#0A0A0A]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="text-center mb-16">
-              <h2 className="font-heading text-4xl sm:text-5xl text-foreground mb-4">
+              <h2 className="font-heading text-4xl sm:text-5xl text-[#F5F0E8] mb-4">
                 Security Solutions
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              <p className="text-gray-400 max-w-2xl mx-auto text-lg">
                 Comprehensive coverage for every environment.
               </p>
             </div>
           </FadeIn>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { name: "Dome Cameras", desc: "Discreet indoor monitoring", color: "0EA5E9" },
-              { name: "Bullet Cameras", desc: "Long-range outdoor surveillance", color: "0284C7" },
-              { name: "NVR Systems", desc: "Centralized recording and management", color: "0369A1" },
-              { name: "Biometric Machines", desc: "Advanced attendance & access", color: "F28C38" },
+              { name: "Dome Cameras", desc: "Discreet indoor monitoring" },
+              { name: "Bullet Cameras", desc: "Long-range outdoor surveillance" },
+              { name: "NVR Systems", desc: "Centralized recording and management" },
+              { name: "Biometric Machines", desc: "Advanced attendance & access" },
             ].map((cat) => (
               <StaggerItem key={cat.name}>
                 <Link
                   href={`/products?category=${encodeURIComponent(cat.name)}`}
-                  className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface-hover border border-border block"
+                  className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface-hover border border-[#2A2A2A] block"
                 >
-                  <Image
-                    src={`https://placehold.co/800x1000/${cat.color}/ffffff?text=${encodeURIComponent(cat.name)}`}
-                    alt={cat.name}
-                    fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
+                  <ProductPlaceholder className="absolute inset-0" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
                   <div className="absolute bottom-0 left-0 p-8">
                     <h3 className="font-heading text-2xl text-white mb-2">{cat.name}</h3>
@@ -110,18 +104,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Konnekt Edge */}
-      <section className="py-24 bg-surface border-y border-border">
+      {/* Why DeviceDestination */}
+      <section className="py-24 bg-[#0F0F0F] border-y border-[#2A2A2A]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeIn direction="right">
               <div>
-                <h2 className="font-heading text-4xl sm:text-5xl text-foreground mb-6">
+                <h2 className="font-heading text-4xl sm:text-5xl text-[#F5F0E8] mb-6">
                   Why DeviceDestination
                 </h2>
-                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  We provide professional security systems built for reliability. Our equipment is selected 
-                  based on rigorous testing and proven performance in real-world business environments.
+                <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+                  We provide professional security, surveillance, and biometric systems built for reliability. 
+                  Our equipment is selected based on rigorous testing and proven performance in real-world business environments.
                 </p>
                 <StaggerContainer className="space-y-6">
                   {[
@@ -130,12 +124,12 @@ export default function Home() {
                     { icon: HardDrive, title: "Scalable Systems", desc: "Solutions that grow with your business requirements." },
                   ].map((item, i) => (
                     <StaggerItem key={i} className="flex gap-4">
-                      <div className="flex-shrink-0 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <div className="flex-shrink-0 flex h-12 w-12 items-center justify-center rounded-lg bg-[#F28C38]/10 text-[#F28C38]">
                         <item.icon className="h-6 w-6" />
                       </div>
                       <div>
-                        <h3 className="font-heading text-xl text-foreground mb-1">{item.title}</h3>
-                        <p className="text-gray-600">{item.desc}</p>
+                        <h3 className="font-heading text-xl text-[#F5F0E8] mb-1">{item.title}</h3>
+                        <p className="text-gray-400">{item.desc}</p>
                       </div>
                     </StaggerItem>
                   ))}
@@ -143,13 +137,8 @@ export default function Home() {
               </div>
             </FadeIn>
             <FadeIn direction="left">
-              <div className="relative aspect-[4/5] rounded-2xl bg-surface-hover overflow-hidden border border-border">
-                <Image
-                  src="https://placehold.co/1000x1250/0ea5e9/ffffff?text=Professional+Monitoring"
-                  alt="Professional security monitoring setup"
-                  fill
-                  className="object-cover"
-                />
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-[#2A2A2A]">
+                <ProductPlaceholder />
               </div>
             </FadeIn>
           </div>
