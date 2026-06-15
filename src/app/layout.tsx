@@ -36,14 +36,15 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${outfit.variable} ${inter.variable} h-full antialiased`}
-    <body className="min-h-full flex flex-col font-sans bg-background text-foreground">
-      <CartProvider>
-        <Navbar />
-        <CartDrawer />
-        {children}
-        <Footer />
-      </CartProvider>
-    </body>
+    >
+      <body className="min-h-full flex flex-col font-sans bg-background text-foreground">
+        <CartProvider>
+          <Navbar />
+          <CartDrawer />
+          {children}
+          <Footer />
+        </CartProvider>
+      </body>
     </html>
   );
 }

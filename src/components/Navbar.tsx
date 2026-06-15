@@ -54,6 +54,7 @@ export default function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-6 text-[#F5F0E8]">
+            <Search className="h-5 w-5 cursor-pointer hover:text-[#F28C38]" />
             <Link href="/cart" className="relative p-2 hover:text-[#F28C38]">
               <ShoppingCart className="h-5 w-5" />
               {cartCount > 0 && (

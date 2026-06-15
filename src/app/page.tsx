@@ -1,4 +1,3 @@
-import AnnouncementBar from "@/components/AnnouncementBar";
 import Hero from "@/components/Hero";
 import Link from "next/link";
 import { ArrowRight, Shield, Eye, HardDrive } from "lucide-react";
@@ -78,12 +77,7 @@ export default function Home() {
                 <div className="bg-surface rounded-xl p-4 border border-border shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
                   <Link href={`/products/${product.id}`}>
                     <div className="relative aspect-square rounded-lg bg-surface-hover mb-4 overflow-hidden">
-                      <Image
-                        src={product.images[0]}
-                        alt={product.name}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
+                      <ProductPlaceholder className="absolute inset-0" />
                     </div>
                     <h3 className="font-heading text-lg text-foreground mb-1 group-hover:text-primary transition-colors">{product.name}</h3>
                     <p className="text-xs text-gray-500 uppercase tracking-wide mb-3">Model: {product.model}</p>
