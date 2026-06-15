@@ -1,0 +1,332 @@
+[
+  {
+    "id": "001",
+    "name": "CP Plus 4 MP IP Dome Camera",
+    "model": "CP-UNC-DA41L3C-Q",
+    "brand": "CP Plus",
+    "category": "Dome Cameras",
+    "price": 3100.0,
+    "mrp": 3658.0,
+    "shortDescription": "Professional CP Plus 4 MP IP Dome Camera designed for reliable surveillance and high-definition monitoring.",
+    "description": "The CP Plus 4 MP IP Dome Camera (Model: CP-UNC-DA41L3C-Q) delivers exceptional clarity and dependable performance for professional security applications. Engineered for durability and seamless integration, this unit provides consistent monitoring capabilities tailored to business requirements. Ideal for both indoor and outdoor deployment, it ensures comprehensive coverage and peace of mind.",
+    "features": [
+      "High-definition video capture for clear identification",
+      "Robust construction for extended operational lifespan",
+      "Easy integration with existing network infrastructure",
+      "Reliable performance in varied lighting conditions"
+    ],
+    "specifications": {
+      "Resolution": "4MP",
+      "Type": "IP Camera",
+      "Brand": "CP Plus",
+      "Warranty": "2 Years Manufacturer Warranty",
+      "Connectivity": "Ethernet / PoE"
+    },
+    "images": [
+      "https://placehold.co/800x800/e2e8f0/1e293b?text=CP_UNC_DA41L3C_Q",
+      "https://placehold.co/800x800/cbd5e1/1e293b?text=CP_UNC_DA41L3C_Q_Detail"
+    ],
+    "downloads": {
+      "datasheet": "/downloads/CP-UNC-DA41L3C-Q-datasheet.pdf",
+      "userManual": "/downloads/CP-UNC-DA41L3C-Q-manual.pdf",
+      "warranty": "/downloads/warranty-info.pdf"
+    }
+  },
+  {
+    "id": "002",
+    "name": "CP Plus 4 MP Bullet Camera",
+    "model": "CP-UNC-TA41L3C-Q",
+    "brand": "CP Plus",
+    "category": "Bullet Cameras",
+    "price": 3210.0,
+    "mrp": 3787.7999999999997,
+    "shortDescription": "Professional CP Plus 4 MP Bullet Camera designed for reliable surveillance and high-definition monitoring.",
+    "description": "The CP Plus 4 MP Bullet Camera (Model: CP-UNC-TA41L3C-Q) delivers exceptional clarity and dependable performance for professional security applications. Engineered for durability and seamless integration, this unit provides consistent monitoring capabilities tailored to business requirements. Ideal for both indoor and outdoor deployment, it ensures comprehensive coverage and peace of mind.",
+    "features": [
+      "High-definition video capture for clear identification",
+      "Robust construction for extended operational lifespan",
+      "Easy integration with existing network infrastructure",
+      "Reliable performance in varied lighting conditions"
+    ],
+    "specifications": {
+      "Resolution": "4MP",
+      "Type": "NVR System",
+      "Brand": "CP Plus",
+      "Warranty": "2 Years Manufacturer Warranty",
+      "Connectivity": "HDMI, VGA, Ethernet"
+    },
+    "images": [
+      "https://placehold.co/800x800/e2e8f0/1e293b?text=CP_UNC_TA41L3C_Q",
+      "https://placehold.co/800x800/cbd5e1/1e293b?text=CP_UNC_TA41L3C_Q_Detail"
+    ],
+    "downloads": {
+      "datasheet": "/downloads/CP-UNC-TA41L3C-Q-datasheet.pdf",
+      "userManual": "/downloads/CP-UNC-TA41L3C-Q-manual.pdf",
+      "warranty": "/downloads/warranty-info.pdf"
+    }
+  },
+  {
+    "id": "003",
+    "name": "CP Plus 4 MP IP Dome Color Camera",
+    "model": "CP-UNC-DA41L3C-LQ",
+    "brand": "CP Plus",
+    "category": "Dome Cameras",
+    "price": 3350.0,
+    "mrp": 3953.0,
+    "shortDescription": "Professional CP Plus 4 MP IP Dome Color Camera designed for reliable surveillance and high-definition monitoring.",
+    "description": "The CP Plus 4 MP IP Dome Color Camera (Model: CP-UNC-DA41L3C-LQ) delivers exceptional clarity and dependable performance for professional security applications. Engineered for durability and seamless integration, this unit provides consistent monitoring capabilities tailored to business requirements. Ideal for both indoor and outdoor deployment, it ensures comprehensive coverage and peace of mind.",
+    "features": [
+      "High-definition video capture for clear identification",
+      "Robust construction for extended operational lifespan",
+      "Easy integration with existing network infrastructure",
+      "Reliable performance in varied lighting conditions"
+    ],
+    "specifications": {
+      "Resolution": "4MP",
+      "Type": "IP Camera",
+      "Brand": "CP Plus",
+      "Warranty": "2 Years Manufacturer Warranty",
+      "Connectivity": "Ethernet / PoE"
+    },
+    "images": [
+      "https://placehold.co/800x800/e2e8f0/1e293b?text=CP_UNC_DA41L3C_LQ",
+      "https://placehold.co/800x800/cbd5e1/1e293b?text=CP_UNC_DA41L3C_LQ_Detail"
+    ],
+    "downloads": {
+      "datasheet": "/downloads/CP-UNC-DA41L3C-LQ-datasheet.pdf",
+      "userManual": "/downloads/CP-UNC-DA41L3C-LQ-manual.pdf",
+      "warranty": "/downloads/warranty-info.pdf"
+    }
+  },
+  {
+    "id": "004",
+    "name": "CP Plus 4 MP Bullet Color Camera",
+    "model": "CP-UNC-TA41L3C-LQ",
+    "brand": "CP Plus",
+    "category": "Bullet Cameras",
+    "price": 3410.0,
+    "mrp": 4023.7999999999997,
+    "shortDescription": "Professional CP Plus 4 MP Bullet Color Camera designed for reliable surveillance and high-definition monitoring.",
+    "description": "The CP Plus 4 MP Bullet Color Camera (Model: CP-UNC-TA41L3C-LQ) delivers exceptional clarity and dependable performance for professional security applications. Engineered for durability and seamless integration, this unit provides consistent monitoring capabilities tailored to business requirements. Ideal for both indoor and outdoor deployment, it ensures comprehensive coverage and peace of mind.",
+    "features": [
+      "High-definition video capture for clear identification",
+      "Robust construction for extended operational lifespan",
+      "Easy integration with existing network infrastructure",
+      "Reliable performance in varied lighting conditions"
+    ],
+    "specifications": {
+      "Resolution": "4MP",
+      "Type": "NVR System",
+      "Brand": "CP Plus",
+      "Warranty": "2 Years Manufacturer Warranty",
+      "Connectivity": "HDMI, VGA, Ethernet"
+    },
+    "images": [
+      "https://placehold.co/800x800/e2e8f0/1e293b?text=CP_UNC_TA41L3C_LQ",
+      "https://placehold.co/800x800/cbd5e1/1e293b?text=CP_UNC_TA41L3C_LQ_Detail"
+    ],
+    "downloads": {
+      "datasheet": "/downloads/CP-UNC-TA41L3C-LQ-datasheet.pdf",
+      "userManual": "/downloads/CP-UNC-TA41L3C-LQ-manual.pdf",
+      "warranty": "/downloads/warranty-info.pdf"
+    }
+  },
+  {
+    "id": "005",
+    "name": "CP Plus 2 MP IP Dome Camera",
+    "model": "CP-UNC-DA21L3C-Q",
+    "brand": "CP Plus",
+    "category": "Dome Cameras",
+    "price": 2150.0,
+    "mrp": 2537.0,
+    "shortDescription": "Professional CP Plus 2 MP IP Dome Camera designed for reliable surveillance and high-definition monitoring.",
+    "description": "The CP Plus 2 MP IP Dome Camera (Model: CP-UNC-DA21L3C-Q) delivers exceptional clarity and dependable performance for professional security applications. Engineered for durability and seamless integration, this unit provides consistent monitoring capabilities tailored to business requirements. Ideal for both indoor and outdoor deployment, it ensures comprehensive coverage and peace of mind.",
+    "features": [
+      "High-definition video capture for clear identification",
+      "Robust construction for extended operational lifespan",
+      "Easy integration with existing network infrastructure",
+      "Reliable performance in varied lighting conditions"
+    ],
+    "specifications": {
+      "Resolution": "2MP",
+      "Type": "IP Camera",
+      "Brand": "CP Plus",
+      "Warranty": "2 Years Manufacturer Warranty",
+      "Connectivity": "Ethernet / PoE"
+    },
+    "images": [
+      "https://placehold.co/800x800/e2e8f0/1e293b?text=CP_UNC_DA21L3C_Q",
+      "https://placehold.co/800x800/cbd5e1/1e293b?text=CP_UNC_DA21L3C_Q_Detail"
+    ],
+    "downloads": {
+      "datasheet": "/downloads/CP-UNC-DA21L3C-Q-datasheet.pdf",
+      "userManual": "/downloads/CP-UNC-DA21L3C-Q-manual.pdf",
+      "warranty": "/downloads/warranty-info.pdf"
+    }
+  },
+  {
+    "id": "006",
+    "name": "CP Plus 2 MP IP Bullet Camera",
+    "model": "CP-UNC-TA21L3C-Q",
+    "brand": "CP Plus",
+    "category": "Bullet Cameras",
+    "price": 2150.0,
+    "mrp": 2537.0,
+    "shortDescription": "Professional CP Plus 2 MP IP Bullet Camera designed for reliable surveillance and high-definition monitoring.",
+    "description": "The CP Plus 2 MP IP Bullet Camera (Model: CP-UNC-TA21L3C-Q) delivers exceptional clarity and dependable performance for professional security applications. Engineered for durability and seamless integration, this unit provides consistent monitoring capabilities tailored to business requirements. Ideal for both indoor and outdoor deployment, it ensures comprehensive coverage and peace of mind.",
+    "features": [
+      "High-definition video capture for clear identification",
+      "Robust construction for extended operational lifespan",
+      "Easy integration with existing network infrastructure",
+      "Reliable performance in varied lighting conditions"
+    ],
+    "specifications": {
+      "Resolution": "2MP",
+      "Type": "IP Camera",
+      "Brand": "CP Plus",
+      "Warranty": "2 Years Manufacturer Warranty",
+      "Connectivity": "Ethernet / PoE"
+    },
+    "images": [
+      "https://placehold.co/800x800/e2e8f0/1e293b?text=CP_UNC_TA21L3C_Q",
+      "https://placehold.co/800x800/cbd5e1/1e293b?text=CP_UNC_TA21L3C_Q_Detail"
+    ],
+    "downloads": {
+      "datasheet": "/downloads/CP-UNC-TA21L3C-Q-datasheet.pdf",
+      "userManual": "/downloads/CP-UNC-TA21L3C-Q-manual.pdf",
+      "warranty": "/downloads/warranty-info.pdf"
+    }
+  },
+  {
+    "id": "007",
+    "name": "CP Plus 2 MP IP Dome Color Camera",
+    "model": "CP-UNC-DA21L3C-LQ",
+    "brand": "CP Plus",
+    "category": "Dome Cameras",
+    "price": 2490.0,
+    "mrp": 2938.2,
+    "shortDescription": "Professional CP Plus 2 MP IP Dome Color Camera designed for reliable surveillance and high-definition monitoring.",
+    "description": "The CP Plus 2 MP IP Dome Color Camera (Model: CP-UNC-DA21L3C-LQ) delivers exceptional clarity and dependable performance for professional security applications. Engineered for durability and seamless integration, this unit provides consistent monitoring capabilities tailored to business requirements. Ideal for both indoor and outdoor deployment, it ensures comprehensive coverage and peace of mind.",
+    "features": [
+      "High-definition video capture for clear identification",
+      "Robust construction for extended operational lifespan",
+      "Easy integration with existing network infrastructure",
+      "Reliable performance in varied lighting conditions"
+    ],
+    "specifications": {
+      "Resolution": "2MP",
+      "Type": "IP Camera",
+      "Brand": "CP Plus",
+      "Warranty": "2 Years Manufacturer Warranty",
+      "Connectivity": "Ethernet / PoE"
+    },
+    "images": [
+      "https://placehold.co/800x800/e2e8f0/1e293b?text=CP_UNC_DA21L3C_LQ",
+      "https://placehold.co/800x800/cbd5e1/1e293b?text=CP_UNC_DA21L3C_LQ_Detail"
+    ],
+    "downloads": {
+      "datasheet": "/downloads/CP-UNC-DA21L3C-LQ-datasheet.pdf",
+      "userManual": "/downloads/CP-UNC-DA21L3C-LQ-manual.pdf",
+      "warranty": "/downloads/warranty-info.pdf"
+    }
+  },
+  {
+    "id": "008",
+    "name": "CP Plus 2 MP IP Bullet Color Camera",
+    "model": "CP-UNC-TA21L3C-LQ",
+    "brand": "CP Plus",
+    "category": "Bullet Cameras",
+    "price": 2560.0,
+    "mrp": 3020.7999999999997,
+    "shortDescription": "Professional CP Plus 2 MP IP Bullet Color Camera designed for reliable surveillance and high-definition monitoring.",
+    "description": "The CP Plus 2 MP IP Bullet Color Camera (Model: CP-UNC-TA21L3C-LQ) delivers exceptional clarity and dependable performance for professional security applications. Engineered for durability and seamless integration, this unit provides consistent monitoring capabilities tailored to business requirements. Ideal for both indoor and outdoor deployment, it ensures comprehensive coverage and peace of mind.",
+    "features": [
+      "High-definition video capture for clear identification",
+      "Robust construction for extended operational lifespan",
+      "Easy integration with existing network infrastructure",
+      "Reliable performance in varied lighting conditions"
+    ],
+    "specifications": {
+      "Resolution": "2MP",
+      "Type": "IP Camera",
+      "Brand": "CP Plus",
+      "Warranty": "2 Years Manufacturer Warranty",
+      "Connectivity": "Ethernet / PoE"
+    },
+    "images": [
+      "https://placehold.co/800x800/e2e8f0/1e293b?text=CP_UNC_TA21L3C_LQ",
+      "https://placehold.co/800x800/cbd5e1/1e293b?text=CP_UNC_TA21L3C_LQ_Detail"
+    ],
+    "downloads": {
+      "datasheet": "/downloads/CP-UNC-TA21L3C-LQ-datasheet.pdf",
+      "userManual": "/downloads/CP-UNC-TA21L3C-LQ-manual.pdf",
+      "warranty": "/downloads/warranty-info.pdf"
+    }
+  },
+  {
+    "id": "009",
+    "name": "CP Plus 08 Channel NVR",
+    "model": "CP-UNC-108F1",
+    "brand": "CP Plus",
+    "category": "Network Video Recorders",
+    "price": 3990.0,
+    "mrp": 4708.2,
+    "shortDescription": "Professional CP Plus 08 Channel NVR designed for reliable surveillance and high-definition monitoring.",
+    "description": "The CP Plus 08 Channel NVR (Model: CP-UNC-108F1) delivers exceptional clarity and dependable performance for professional security applications. Engineered for durability and seamless integration, this unit provides consistent monitoring capabilities tailored to business requirements. Ideal for both indoor and outdoor deployment, it ensures comprehensive coverage and peace of mind.",
+    "features": [
+      "High-definition video capture for clear identification",
+      "Robust construction for extended operational lifespan",
+      "Easy integration with existing network infrastructure",
+      "Reliable performance in varied lighting conditions"
+    ],
+    "specifications": {
+      "Resolution": "2MP",
+      "Type": "NVR System",
+      "Brand": "CP Plus",
+      "Warranty": "2 Years Manufacturer Warranty",
+      "Connectivity": "HDMI, VGA, Ethernet"
+    },
+    "images": [
+      "https://placehold.co/800x800/e2e8f0/1e293b?text=CP_UNC_108F1",
+      "https://placehold.co/800x800/cbd5e1/1e293b?text=CP_UNC_108F1_Detail"
+    ],
+    "downloads": {
+      "datasheet": "/downloads/CP-UNC-108F1-datasheet.pdf",
+      "userManual": "/downloads/CP-UNC-108F1-manual.pdf",
+      "warranty": "/downloads/warranty-info.pdf"
+    }
+  },
+  {
+    "id": "010",
+    "name": "CP Plus 16 Channel NVR",
+    "model": "CP-UNC-4K2161",
+    "brand": "CP Plus",
+    "category": "Network Video Recorders",
+    "price": 6290.0,
+    "mrp": 7422.2,
+    "shortDescription": "Professional CP Plus 16 Channel NVR designed for reliable surveillance and high-definition monitoring.",
+    "description": "The CP Plus 16 Channel NVR (Model: CP-UNC-4K2161) delivers exceptional clarity and dependable performance for professional security applications. Engineered for durability and seamless integration, this unit provides consistent monitoring capabilities tailored to business requirements. Ideal for both indoor and outdoor deployment, it ensures comprehensive coverage and peace of mind.",
+    "features": [
+      "High-definition video capture for clear identification",
+      "Robust construction for extended operational lifespan",
+      "Easy integration with existing network infrastructure",
+      "Reliable performance in varied lighting conditions"
+    ],
+    "specifications": {
+      "Resolution": "2MP",
+      "Type": "NVR System",
+      "Brand": "CP Plus",
+      "Warranty": "2 Years Manufacturer Warranty",
+      "Connectivity": "HDMI, VGA, Ethernet"
+    },
+    "images": [
+      "https://placehold.co/800x800/e2e8f0/1e293b?text=CP_UNC_4K2161",
+      "https://placehold.co/800x800/cbd5e1/1e293b?text=CP_UNC_4K2161_Detail"
+    ],
+    "downloads": {
+      "datasheet": "/downloads/CP-UNC-4K2161-datasheet.pdf",
+      "userManual": "/downloads/CP-UNC-4K2161-manual.pdf",
+      "warranty": "/downloads/warranty-info.pdf"
+    }
+  }
+]
