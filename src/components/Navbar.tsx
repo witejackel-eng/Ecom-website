@@ -10,7 +10,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const { totalItems } = useCart();
+  const { cartCount } = useCart();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -59,9 +59,9 @@ export default function Navbar() {
             
             <Link href="/cart" className="relative p-2 hover:text-[#F28C38]">
               <ShoppingCart className="h-5 w-5" />
-              {totalItems > 0 && (
+              {cartCount > 0 && (
                 <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#F28C38] text-[10px] font-bold text-[#0A0A0A]">
-                  {totalItems}
+                  {cartCount}
                 </span>
               )}
             </Link>
