@@ -1,3 +1,4 @@
+import Hero from "@/components/Hero";
 import Link from "next/link";
 import Image from "next/image";
 import { Shield, Eye, HardDrive, ArrowRight } from "lucide-react";
@@ -9,46 +10,7 @@ export default function Home() {
 
   return (
     <main className="flex-1 bg-background">
-      {/* Hero Section */}
-      <section className="relative bg-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            src="https://placehold.co/2000x1200/0f172a/0ea5e9?text=."
-            alt="Security surveillance background"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 py-32 sm:px-6 lg:px-8 lg:py-48">
-          <FadeIn direction="up">
-            <div className="max-w-3xl">
-              <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl leading-[1.1] mb-6">
-                Reliable surveillance solutions for modern business.
-              </h1>
-              <p className="text-lg sm:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
-                Professional security systems and trusted equipment for monitoring and protection. 
-                Selected specifically to meet rigorous business requirements.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/products"
-                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-sm font-medium text-white hover:bg-primary-hover transition-all duration-300 group"
-                >
-                  View Products
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded-lg border border-white/30 px-8 py-4 text-sm font-medium text-white hover:bg-white/10 transition-all duration-300"
-                >
-                  Contact Sales
-                </Link>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      <Hero />
 
       {/* Featured Categories */}
       <section className="py-24 bg-surface">
