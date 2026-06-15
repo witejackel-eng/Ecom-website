@@ -29,8 +29,11 @@ export default function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="font-heading text-2xl text-[#F5F0E8]">Konnekt Edge</span>
+          <Link href="/" className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#F28C38] text-white font-heading text-lg font-bold">
+              DD
+            </div>
+            <span className="font-heading text-2xl text-[#F5F0E8]">DeviceDestination</span>
           </Link>
 
           {/* Desktop Nav */}
