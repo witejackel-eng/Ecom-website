@@ -11,58 +11,25 @@
   --primary-hover: #C96E1A;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-hover: var(--primary-hover);
-  --color-surface: var(--surface);
-  --color-surface-hover: var(--surface-hover);
-  --color-border: var(--border);
-  --font-heading: var(--font-outfit);
-  --font-sans: var(--font-inter);
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-inter), sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading), sans-serif;
-  font-weight: 500;
+h1, h2, h3, h4 {
+  font-family: var(--font-outfit), sans-serif;
+  color: #000000;
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: -0.02em;
-  line-height: 1.2;
-  color: #1A1A1A;
 }
 
-.font-heading {
-  font-family: var(--font-heading), sans-serif;
-}
+h1 { font-size: clamp(3rem, 5vw, 4.5rem); } /* 48px - 72px */
+h2 { font-size: clamp(2.5rem, 4vw, 3rem); }  /* 40px - 48px */
+h3 { font-size: 1.5rem; }                   /* 24px */
+.body-text { font-size: 1.125rem; }          /* 18px */
+.description { font-size: 1rem; color: var(--muted); } /* 16px */
 
-.font-sans {
-  font-family: var(--font-sans), system-ui, sans-serif;
-}
-
-/* Premium smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
-::-webkit-scrollbar-thumb {
-  background: #E5E5E5;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
-}
