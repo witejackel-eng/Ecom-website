@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import Link from "next/link";
 import Image from "next/image";
 import { Shield, Eye, HardDrive, ArrowRight } from "lucide-react";
-import products from "@/data/products.json";
+import { products } from "@/data/products";
 import FadeIn, { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 
 export default function Home() {
