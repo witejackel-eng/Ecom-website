@@ -38,7 +38,7 @@ export default function Footer() {
               DeviceDestination
             </Link>
             <p className="text-sm leading-relaxed">
-              Insight Business Solutions (trading as DeviceDestination). Premium surveillance and biometric security solutions.
+              DeviceDestination. Premium surveillance and biometric security solutions.
             </p>
             <div className="text-xs space-y-1">
               <p>Plot No. 94, 3rd Floor, Block - B, Pocket - 10, Sector - 13, Dwarka, New Delhi - 110075</p>

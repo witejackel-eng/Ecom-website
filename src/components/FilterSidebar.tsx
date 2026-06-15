@@ -16,7 +16,7 @@ export default function FilterSidebar() {
     "Bullet Cameras",
     "Dual Light Cameras",
     "NVR Systems",
-    "Biometric Machines",
+    "Biometric Devices",
     "Accessories"
   ];
 
