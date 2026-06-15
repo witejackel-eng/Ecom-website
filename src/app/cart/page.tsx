@@ -6,11 +6,11 @@ import { useCart } from "@/context/CartContext";
 import FadeIn, { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 
 export default function CartPage() {
-  const { items, removeFromCart, updateQuantity, subtotal } = useCart();
-  const tax = subtotal * 0.18;
-  const total = subtotal + tax;
+  const { cartItems, removeFromCart, updateQuantity, cartTotal } = useCart();
+  const tax = cartTotal * 0.18;
+  const total = cartTotal + tax;
 
-  if (items.length === 0) {
+  if (cartItems.length === 0) {
     return (
       <main className="flex-1 py-24 bg-background">
         <div className="mx-auto max-w-2xl px-4 text-center">
@@ -44,7 +44,7 @@ export default function CartPage() {
           {/* Cart Items */}
           <div className="lg:col-span-2 space-y-4">
             <StaggerContainer className="space-y-4">
-              {items.map((item) => (
+              {cartItems.map((item) => (
                 <StaggerItem key={item.id}>
                   <div className="flex gap-4 bg-surface p-6 rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow duration-300">
                     <div className="relative h-24 w-24 flex-shrink-0 rounded-lg bg-surface-hover overflow-hidden border border-border">
@@ -100,7 +100,7 @@ export default function CartPage() {
                 <div className="space-y-3 text-sm mb-6">
                   <div className="flex justify-between text-gray-600">
                     <span>Subtotal</span>
-                    <span>₹{subtotal.toLocaleString('en-IN')}</span>
+                    <span>₹{cartTotal.toLocaleString('en-IN')}</span>
                   </div>
                   <div className="flex justify-between text-gray-600">
                     <span>Tax (18%)</span>
