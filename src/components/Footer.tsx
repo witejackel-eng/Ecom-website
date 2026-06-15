@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Facebook, Linkedin } from "lucide-react";
 
 export default function Footer() {
   const footerSections = [
@@ -47,8 +46,8 @@ export default function Footer() {
               <p>Email: <a href="mailto:manish@insight-solutions.in" className="hover:text-[#F28C38]">manish@insight-solutions.in</a></p>
             </div>
             <div className="flex gap-4 pt-2">
-              <a href="https://www.facebook.com/ibsinfra" target="_blank" rel="noreferrer" className="hover:text-[#F28C38]"><Facebook className="h-5 w-5" /></a>
-              <a href="https://www.linkedin.com/in/insight-business-4b71bb37b/" target="_blank" rel="noreferrer" className="hover:text-[#F28C38]"><Linkedin className="h-5 w-5" /></a>
+              <a href="https://www.facebook.com/ibsinfra" target="_blank" rel="noreferrer" className="text-sm hover:text-[#F28C38]">Facebook</a>
+              <a href="https://www.linkedin.com/in/insight-business-4b71bb37b/" target="_blank" rel="noreferrer" className="text-sm hover:text-[#F28C38]">LinkedIn</a>
             </div>
           </div>
 
