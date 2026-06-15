@@ -1,3 +1,5 @@
+import { biometricProducts } from "./biometricProducts";
+
 export const products = [
   {
     id: "cp-unc-da41l3c-q",
@@ -366,5 +368,6 @@ export const products = [
     highlights: ["16-Channel 4K Ultra HD Recording", "Supports up to 12MP Cameras", "4K HDMI Output (3840×2160)", "AI Smart Motion Detection", "Perimeter Protection", "Up to 20TB Storage", "144Mbps Bandwidth", "Gigabit Ethernet"],
     useCases: ["Corporate offices", "Retail stores", "Warehouses", "Schools & colleges", "Hospitals", "Residential complexes"],
     inStock: true
-  }
+  },
+  ...biometricProducts
 ];
