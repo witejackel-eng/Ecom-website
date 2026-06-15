@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import FadeIn from "@/components/ui/FadeIn";
 
 interface Product {
@@ -23,47 +24,63 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <FadeIn direction="up">
-      <Link href={`/products/${product.id}`} className="group block">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-surface-hover mb-4 border border-border">
-          <Image
-            src={product.images[0]}
-            alt={product.name}
-            fill
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-          <div className="absolute top-3 left-3">
-            <span className="inline-flex items-center rounded-full bg-surface/90 px-3 py-1 text-xs font-medium text-foreground backdrop-blur-sm border border-border shadow-sm">
-              {product.category}
-            </span>
+      <motion.div
+        whileHover={{ y: -5 }}
+        className="group relative bg-[#111111] border border-[#2A2A2A] rounded-xl overflow-hidden transition-colors duration-300 hover:border-[#F28C38]"
+      >
+        <Link href={`/products/${product.id}`} className="block">
+          <div className="relative aspect-[4/3] overflow-hidden">
+            <Image
+              src={product.images[0]}
+              alt={product.name}
+              fill
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+            {/* Category Badge */}
+            <div className="absolute top-3 left-3">
+              <span className="inline-flex items-center rounded-full bg-[#0A0A0A]/80 px-3 py-1 text-xs font-medium text-[#C9A84C] backdrop-blur-sm border border-[#C9A84C]">
+                {product.category}
+              </span>
+            </div>
           </div>
-          {/* Hover Overlay */}
-          <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-500" />
-        </div>
+
+          <div className="p-5 space-y-3">
+            <div className="flex justify-between items-start">
+              <h3 className="font-heading text-lg text-[#F5F0E8] leading-tight group-hover:text-[#F28C38] transition-colors duration-300">
+                {product.name}
+              </h3>
+            </div>
+            
+            <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">
+              Model: {product.model}
+            </p>
+            
+            {/* Rating - Hardcoded */}
+            <div className="flex text-[#F28C38] text-sm">★★★★☆</div>
+
+            <div className="flex items-baseline gap-3 pt-2">
+              <span className="text-xl font-semibold text-[#F28C38]">
+                ₹{product.price.toLocaleString('en-IN')}
+              </span>
+              <span className="text-sm text-gray-500 line-through">
+                ₹{product.mrp.toLocaleString('en-IN')}
+              </span>
+            </div>
+          </div>
+        </Link>
         
-        <div className="space-y-2 px-1">
-          <h3 className="font-heading text-lg text-foreground leading-tight group-hover:text-primary transition-colors duration-300">
-            {product.name}
-          </h3>
-          
-          <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">
-            Model: {product.model}
-          </p>
-          
-          <p className="text-sm text-gray-600 line-clamp-2 leading-relaxed">
-            {product.shortDescription}
-          </p>
-          
-          <div className="flex items-baseline gap-3 pt-3 border-t border-border/50 mt-3">
-            <span className="text-lg font-semibold text-primary">
-              ₹{product.price.toLocaleString('en-IN')}
-            </span>
-            <span className="text-sm text-gray-400 line-through">
-              ₹{product.mrp.toLocaleString('en-IN')}
-            </span>
-          </div>
-        </div>
-      </Link>
+        {/* Add to Cart Button */}
+        <motion.div 
+          initial={{ y: "100%" }}
+          whileInView={{ y: 0 }}
+          className="absolute bottom-0 left-0 w-full p-4 bg-[#1A1A1A] border-t border-[#2A2A2A] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+          <button className="w-full py-2 bg-[#F28C38] text-[#0A0A0A] font-bold rounded-lg hover:bg-[#C96E1A] transition-colors">
+            Add to Cart
+          </button>
+        </motion.div>
+      </motion.div>
     </FadeIn>
   );
 }
