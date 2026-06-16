@@ -115,12 +115,12 @@ export const products = [
     brand: "CP Plus",
     badge: "Color Night Vision",
     shortDescription: "4MP Dual Light Bullet Camera with full-color night vision, IR + warm light up to 30m, built-in mic, IP67 outdoor protection, and PoE.",
-    image: "/images/confirmed/CP-UNC-TA41L3C-LQ bullet 1st.png",
+    image: "/images/products/CP-UNC-TA41L3C-LQ bullet 1st.png",
     images: [
-      "/images/confirmed/CP-UNC-TA41L3C-LQ bullet 1st.png",
-      "/images/confirmed/CP-UNC-TA41L3C-LQ bullet 2nd.png",
-      "/images/confirmed/CP-UNC-TA41L3C-LQ bullet 3rd.png",
-      "/images/confirmed/CP-UNC-TA41L3C-LQ bullet 4th.png"
+      "/images/products/CP-UNC-TA41L3C-LQ bullet 1st.png",
+      "/images/products/CP-UNC-TA41L3C-LQ bullet 2nd.png",
+      "/images/products/CP-UNC-TA41L3C-LQ bullet 3rd.png",
+      "/images/products/CP-UNC-TA41L3C-LQ bullet 4th.png"
     ],
     datasheet: "/downloads/CP-UNC-TA41L3C-LQ bullet.pdf",
     manual: "/downloads/CP-UNC-TA41L3C-LQ bullet user manual.pdf",

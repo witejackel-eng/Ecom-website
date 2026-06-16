@@ -34,7 +34,10 @@ export default function FilterSidebar({
   };
 
   const SidebarContent = () => (
-    <div className="flex flex-col h-full glass p-8 text-white overflow-y-auto border-r border-white/5">
+    <div className="flex flex-col h-full glass p-8 text-white overflow-y-auto border-r border-white/5 scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
+      <style jsx global>{`
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+      `}</style>
       <div className="flex justify-between items-center mb-12 md:hidden">
         <h2 className="text-3xl font-black tracking-tighter">Filters</h2>
         <button onClick={() => setIsOpen(false)} className="h-10 w-10 rounded-full glass flex items-center justify-center"><X size={20} /></button>
@@ -47,7 +50,7 @@ export default function FilterSidebar({
 
       {/* Category Filter */}
       <div className="mb-12">
-        <h3 className="text-[10px] uppercase tracking-[0.3em] text-primary font-bold mb-8">Architectures</h3>
+        <h3 className="text-[10px] uppercase tracking-[0.3em] text-primary font-bold mb-8">CATEGORY</h3>
         <div className="space-y-4">
           {categories.map((cat) => (
             <div key={cat} className="flex items-center group cursor-pointer" onClick={() => handleCategoryChange(cat)}>
