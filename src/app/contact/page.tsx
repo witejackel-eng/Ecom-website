@@ -48,9 +48,9 @@ export default function ContactPage() {
 
           {/* Form */}
           <form className="space-y-4 bg-[#111] p-8 rounded-2xl border border-[#2A2A2A]">
-            <input placeholder="Your Name" className="w-full p-3 bg-[#0A0A0A] border border-[#2A2A2A] rounded-lg" />
-            <input placeholder="Your Email" className="w-full p-3 bg-[#0A0A0A] border border-[#2A2A2A] rounded-lg" />
-            <textarea placeholder="Your Message" rows={4} className="w-full p-3 bg-[#0A0A0A] border border-[#2A2A2A] rounded-lg"></textarea>
+            <input placeholder="Your Name" className="w-full p-3 bg-[#0A0A0A] border border-[#2A2A2A] rounded-lg text-white" />
+            <input placeholder="Your Email" className="w-full p-3 bg-[#0A0A0A] border border-[#2A2A2A] rounded-lg text-white" />
+            <textarea placeholder="Your Message" rows={4} className="w-full p-3 bg-[#0A0A0A] border border-[#2A2A2A] rounded-lg text-white"></textarea>
             <button className="w-full py-4 bg-[#F28C38] text-[#0A0A0A] font-bold rounded-lg flex items-center justify-center gap-2">
               Send Message <Send className="h-4 w-4" />
             </button>
