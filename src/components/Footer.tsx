@@ -6,9 +6,10 @@ export default function Footer() {
       title: "Products",
       links: [
         { name: "All Products", href: "/products" },
-        { name: "IP Cameras", href: "/products?category=IP%20Cameras" },
         { name: "Dome Cameras", href: "/products?category=Dome%20Cameras" },
         { name: "Bullet Cameras", href: "/products?category=Bullet%20Cameras" },
+        { name: "Color Dome Cameras", href: "/products?category=Color%20Dome%20Cameras" },
+        { name: "Color Bullet Cameras", href: "/products?category=Color%20Bullet%20Cameras" },
         { name: "NVR Systems", href: "/products?category=NVR%20Systems" },
         { name: "Biometric Devices", href: "/products?category=Biometric%20Devices" },
       ],
@@ -81,7 +82,7 @@ export default function Footer() {
 
         <div className="mt-16 border-t border-[#E5E5E5] pt-8 text-center text-xs">
           <p>&copy; {new Date().getFullYear()} DeviceDestination. All Rights Reserved.</p>
-          <p className="mt-2 text-[#888]">Locations Served: Delhi, Noida, Gurgaon, Faridabad, Dwarka</p>
+          <p className="mt-2 text-[#888]">Locations Served: Delhi, Noida, Gurgaon, Faridabad</p>
         </div>
       </div>
     </footer>
