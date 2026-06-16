@@ -16,15 +16,15 @@ export default function Home() {
 
       {/* Featured Categories - Solutions */}
       <section className="py-32 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] -z-10" />
+        <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px] -z-10" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="text-center mb-20">
               <SectionLabel>Solutions</SectionLabel>
-              <h2 className="text-white mb-6">
-                Security <span className="text-gradient">Architectures</span>
+              <h2 className="text-white text-5xl md:text-6xl font-black tracking-tighter mb-6">
+                Security <span className="text-gradient">Architectures.</span>
               </h2>
-              <p className="max-w-2xl mx-auto">
+              <p className="max-w-2xl mx-auto text-white/55 text-lg font-medium">
                 Comprehensive ecosystem coverage for high-stakes environments, from domestic monitoring to industrial surveillance.
               </p>
             </div>
@@ -40,17 +40,17 @@ export default function Home() {
               <StaggerItem key={cat.name}>
                 <Link
                   href={`/products?category=${encodeURIComponent(cat.name)}`}
-                  className="group relative h-[400px] overflow-hidden rounded-[2.5rem] glass border-white/5 block hover:border-white/20 transition-all duration-700 ease-out"
+                  className="group relative h-[420px] overflow-hidden rounded-[24px] glass border-white/5 block hover:border-white/20 transition-all duration-700 ease-out"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   <div className="absolute inset-0 p-10 flex flex-col justify-end">
-                    <div className="mb-6 h-14 w-14 rounded-2xl bg-white/5 flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <div className="mb-8 h-14 w-14 rounded-2xl bg-white/5 flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-xl">
                       <cat.icon size={28} />
                     </div>
-                    <h3 className="text-3xl text-white mb-3 font-bold tracking-tight">{cat.name}</h3>
-                    <p className="text-white/40 text-sm mb-6 leading-relaxed line-clamp-2">{cat.desc}</p>
-                    <div className="flex items-center gap-2 text-xs font-bold text-primary uppercase tracking-[0.2em] opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
-                      View Collection <ArrowRight size={14} />
+                    <h3 className="text-3xl text-white mb-4 font-black tracking-tight">{cat.name}</h3>
+                    <p className="text-white/40 text-sm mb-8 leading-relaxed line-clamp-2 font-medium">{cat.desc}</p>
+                    <div className="flex items-center gap-3 text-[10px] font-black text-primary uppercase tracking-[0.3em] opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+                      Explore Series <ArrowRight size={14} />
                     </div>
                   </div>
                 </Link>
@@ -62,21 +62,21 @@ export default function Home() {
 
       {/* Featured Products */}
       <section className="py-32 relative">
-        <div className="absolute top-1/2 left-0 w-[30%] h-[30%] bg-primary-dark/10 rounded-full blur-[120px] -z-10" />
+        <div className="absolute top-1/2 left-0 w-[30%] h-[30%] bg-primary/5 rounded-full blur-[120px] -z-10" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
               <div className="max-w-2xl">
                 <SectionLabel>Products</SectionLabel>
-                <h2 className="mb-6 text-white">
-                  Featured <span className="text-gradient">Innovations</span>
+                <h2 className="text-white text-5xl md:text-6xl font-black tracking-tighter mb-6">
+                  Featured <span className="text-gradient">Innovations.</span>
                 </h2>
-                <p>
+                <p className="text-white/55 text-lg font-medium leading-relaxed">
                   Professional-grade hardware selected for uncompromising reliability and next-generation performance.
                 </p>
               </div>
-              <Link href="/products" className="group flex items-center gap-3 text-xs font-bold text-primary uppercase tracking-[0.2em] glass border-white/10 px-8 py-4 rounded-full hover:bg-white/5 transition-all duration-300">
-                View all products <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2" />
+              <Link href="/products" className="group flex items-center gap-4 text-[10px] font-black text-primary uppercase tracking-[0.3em] glass border-white/10 px-10 py-5 rounded-full hover:bg-white/5 transition-all duration-300">
+                View Collections <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2" />
               </Link>
             </div>
           </FadeIn>
@@ -94,18 +94,18 @@ export default function Home() {
       {/* Why DeviceDestination - Premium Features */}
       <section className="py-32 relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="glass rounded-[3rem] p-12 lg:p-24 border-white/5 relative overflow-hidden">
+          <div className="glass rounded-[4rem] p-12 lg:p-24 border-white/5 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-premium-gradient opacity-0 group-hover:opacity-[0.02] transition-opacity duration-1000" />
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[100px]" />
-            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary-dark/10 rounded-full blur-[100px]" />
             
             <div className="relative z-10 grid lg:grid-cols-2 gap-20 items-center">
               <div>
-                <SectionLabel>Legacy</SectionLabel>
-                <h2 className="text-white mb-8">
-                  The Gold Standard of <span className="text-gradient">Professional Security</span>
+                <SectionLabel>Legacy Architecture</SectionLabel>
+                <h2 className="text-white text-5xl md:text-6xl font-black tracking-tighter mb-10 leading-tight">
+                  The Gold Standard <br/> of <span className="text-gradient">Security.</span>
                 </h2>
-                <p className="mb-12 text-lg">
-                  DeviceDestination is not just a provider; we are architects of safety. Our systems are engineered for the most demanding environments.
+                <p className="mb-12 text-lg text-white/55 font-medium leading-relaxed">
+                  DeviceDestination is not just a provider; we are architects of safety. Our systems are engineered for the most demanding environments globally.
                 </p>
                 
                 <div className="space-y-6">
@@ -115,8 +115,8 @@ export default function Home() {
                     "Seamless multi-platform integration",
                     "24/7 Redundant monitoring support"
                   ].map((feature) => (
-                    <div key={feature} className="flex items-center gap-4 text-white/80 font-medium">
-                      <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                    <div key={feature} className="flex items-center gap-6 text-white/75 font-bold uppercase text-[11px] tracking-widest">
+                      <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center text-primary shadow-lg">
                         <CheckCircle2 size={14} />
                       </div>
                       {feature}
@@ -127,15 +127,15 @@ export default function Home() {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
-                  { icon: Shield, title: "Uncompromising Quality", desc: "Rigorous stress-testing in extreme conditions." },
-                  { icon: Globe, title: "Global Standards", desc: "Compliant with international security regulations." },
-                  { icon: Wrench, title: "White-Glove Support", desc: "Certified elite engineers for every installation." },
-                  { icon: Cog, title: "Systemic Integration", desc: "Holistic ecosystems that evolve with your needs." },
+                  { icon: Shield, title: "Absolute Quality", desc: "Rigorous stress-testing in extreme conditions." },
+                  { icon: Globe, title: "Global Compliance", desc: "Adherent to international security regulations." },
+                  { icon: Wrench, title: "Elite Engineering", desc: "Certified specialists for every installation." },
+                  { icon: Cog, title: "Systemic Fusion", desc: "Holistic ecosystems that evolve with your data." },
                 ].map((item, i) => (
-                  <div key={i} className="glass p-8 rounded-[2rem] border-white/10 hover:bg-white/5 transition-all duration-300">
-                    <item.icon className="h-8 w-8 text-primary mb-6" />
-                    <h4 className="text-white text-xl font-bold mb-3">{item.title}</h4>
-                    <p className="text-white/40 text-xs leading-relaxed">{item.desc}</p>
+                  <div key={i} className="glass p-8 rounded-[32px] border-white/10 hover:bg-white/5 transition-all duration-500 group/item">
+                    <item.icon className="h-8 w-8 text-primary mb-8 group-hover/item:scale-110 transition-transform" />
+                    <h4 className="text-white text-xl font-bold mb-4">{item.title}</h4>
+                    <p className="text-white/40 text-[11px] font-medium leading-relaxed uppercase tracking-widest">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -144,29 +144,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Brands - Redesigned as Premium Watermark */}
-      <section className="py-24 relative opacity-50 grayscale hover:grayscale-0 transition-all duration-1000">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center items-center gap-16 md:gap-32">
-            {["CP Plus", "ESSL", "Hikvision", "Dahua"].map((brand) => (
-              <span key={brand} className="text-3xl md:text-5xl font-black text-white/10 tracking-tighter uppercase cursor-default hover:text-primary transition-colors duration-500">
-                {brand}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section className="py-32 relative">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <FadeIn direction="up">
-            <div className="text-center mb-20">
-              <SectionLabel>Intelligence</SectionLabel>
-              <h2 className="text-white mb-6">Expert <span className="text-gradient">Insights</span></h2>
+            <div className="text-center mb-24">
+              <SectionLabel>Intelligence Hub</SectionLabel>
+              <h2 className="text-white text-5xl md:text-7xl font-black tracking-tighter">Expert <span className="text-gradient">Insights.</span></h2>
             </div>
           </FadeIn>
-          <div className="glass rounded-[2.5rem] p-4 md:p-8 border-white/5">
+          <div className="glass rounded-[3rem] p-4 md:p-10 border-white/5 shadow-2xl">
             <Accordion items={[
               { question: "How do I choose the right surveillance architecture?", answer: "Our elite consultants evaluate your specific spatial requirements and risk profiles to architect a customized monitoring ecosystem." },
               { question: "What is your deployment timeline?", answer: "Deployment usually occurs within 48 to 72 hours following a comprehensive site architecture assessment." },
@@ -179,27 +166,28 @@ export default function Home() {
       </section>
 
       {/* CTA - Cinematic Redesign */}
-      <section className="py-40 relative">
+      <section className="py-40 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1px] bg-white/5" />
         <div className="mx-auto max-w-5xl px-6 lg:px-8 relative z-10">
-          <ScaleIn className="glass rounded-[4rem] p-12 md:p-24 text-center border-white/10 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-premium-gradient opacity-0 group-hover:opacity-10 transition-opacity duration-1000" />
+          <ScaleIn className="glass rounded-[4rem] p-12 md:p-24 text-center border-white/10 relative overflow-hidden group shadow-2xl">
+            <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-[0.03] transition-opacity duration-1000" />
             <div className="relative z-10">
-              <h2 className="text-white text-5xl md:text-7xl mb-10 leading-tight">
-                Architect Your <br/> <span className="text-gradient">Total Security</span>
+              <h2 className="text-white text-5xl md:text-8xl mb-12 font-black tracking-tighter leading-none">
+                Architect Your <br/> <span className="text-gradient">Total Security.</span>
               </h2>
-              <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto leading-relaxed">
-                Experience the pinnacle of professional surveillance. Our specialists are ready to design your bespoke security ecosystem.
+              <p className="text-xl text-white/55 mb-16 max-w-2xl mx-auto leading-relaxed font-medium">
+                Experience the pinnacle of professional surveillance. Our specialists are ready to design your bespoke security ecosystem today.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
                 <Link
                   href="/contact"
-                  className="px-12 py-6 rounded-full bg-premium-gradient text-white font-bold shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all duration-300 border border-white/10 block w-full sm:w-auto"
+                  className="btn-primary px-12 py-6 text-sm font-black uppercase tracking-[0.3em] shadow-2xl shadow-primary/30 min-w-[280px]"
                 >
                   Initiate Consultation
                 </Link>
                 <Link
                   href="/products"
-                  className="px-12 py-6 rounded-full glass text-white font-bold hover:bg-white/10 transition-all duration-300 border border-white/10 block w-full sm:w-auto"
+                  className="px-12 py-6 rounded-full glass text-white font-black text-sm uppercase tracking-[0.3em] hover:bg-white/5 transition-all border border-white/10 min-w-[280px]"
                 >
                   Explore Collection
                 </Link>

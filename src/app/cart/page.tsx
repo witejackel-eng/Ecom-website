@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Trash2, Minus, Plus, ShoppingBag } from "lucide-react";
+import { ArrowRight, Trash2, Minus, Plus, ShoppingBag, ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import FadeIn, { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
+import FadeIn, { StaggerContainer, StaggerItem, ScaleIn } from "@/components/ui/FadeIn";
+import SectionLabel from "@/components/SectionLabel";
 
 export default function CartPage() {
   const { cartItems, removeFromCart, updateQuantity, cartTotal } = useCart();
@@ -12,76 +13,76 @@ export default function CartPage() {
 
   if (cartItems.length === 0) {
     return (
-      <main className="flex-1 py-24 bg-background">
-        <div className="mx-auto max-w-2xl px-4 text-center">
-          <FadeIn direction="up">
-            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 mb-6">
-              <ShoppingBag className="h-10 w-10 text-primary" />
+      <main className="min-h-screen flex items-center justify-center p-6 text-center">
+        <ScaleIn duration={0.8}>
+          <div className="glass p-12 lg:p-20 rounded-[4rem] border-white/10 max-w-2xl">
+            <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full glass border-white/10 mb-8 text-white/10">
+              <ShoppingCart size={40} />
             </div>
-            <h1 className="font-heading text-3xl text-foreground mb-4">Your cart is empty</h1>
-            <p className="text-gray-500 mb-8">Looks like you haven't added any security equipment to your cart yet.</p>
+            <h1 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tighter">Your System is <span className="text-gradient">Empty</span></h1>
+            <p className="text-white/50 mb-12 text-lg">Looks like you haven't architected any security solutions yet. Start exploring our high-performance hardware collection.</p>
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-sm font-medium text-white hover:bg-primary-hover transition-all duration-300 group"
+              className="btn-primary inline-flex items-center gap-3"
             >
-              Browse Products
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              Explore Collection <ArrowRight size={20} />
             </Link>
-          </FadeIn>
-        </div>
+          </div>
+        </ScaleIn>
       </main>
     );
   }
 
   return (
-    <main className="flex-1 py-16 bg-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <FadeIn direction="up">
-          <h1 className="font-heading text-4xl text-foreground mb-8">Shopping Cart</h1>
+    <main className="min-h-screen pt-40 pb-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <FadeIn direction="up" className="mb-20">
+          <SectionLabel>Your System</SectionLabel>
+          <h1 className="text-white text-5xl md:text-7xl font-black tracking-tighter">Shopping <span className="text-gradient">Cart</span></h1>
         </FadeIn>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
           {/* Cart Items */}
-          <div className="lg:col-span-2 space-y-4">
-            <StaggerContainer className="space-y-4">
+          <div className="lg:col-span-7 space-y-8">
+            <StaggerContainer className="space-y-6">
               {cartItems.map((item) => (
                 <StaggerItem key={item.id}>
-                  <div className="flex gap-4 bg-surface p-6 rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <div className="relative h-24 w-24 flex-shrink-0 rounded-lg bg-surface-hover overflow-hidden border border-border">
+                  <div className="glass p-8 rounded-[2.5rem] border-white/5 hover:border-white/20 transition-all duration-500 group flex flex-col sm:flex-row gap-8 items-center">
+                    <div className="relative h-32 w-32 shrink-0 rounded-3xl glass border-white/10 overflow-hidden bg-white/5">
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="h-full w-full object-cover"
+                        className="h-full w-full object-cover p-4"
                       />
                     </div>
-                    <div className="flex-1 flex flex-col justify-between">
+                    <div className="flex-1 space-y-4 text-center sm:text-left">
                       <div>
-                        <h3 className="font-heading text-lg text-foreground">{item.name}</h3>
-                        <p className="text-sm text-gray-500">Model: {item.model}</p>
+                        <p className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] mb-1">{item.model}</p>
+                        <h3 className="text-2xl font-bold text-white leading-tight">{item.name}</h3>
                       </div>
-                      <div className="flex items-center justify-between mt-4">
-                        <div className="flex items-center gap-1 bg-surface-hover rounded-lg border border-border p-1">
+                      <div className="flex flex-wrap items-center justify-center sm:justify-between gap-6">
+                        <div className="flex items-center glass rounded-2xl border-white/10 p-1.5">
                           <button 
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                            className="h-8 w-8 flex items-center justify-center rounded-md text-gray-600 hover:bg-surface hover:text-primary transition-colors"
+                            className="h-10 w-10 flex items-center justify-center rounded-xl text-white/40 hover:text-white hover:bg-white/5 transition-all"
                           >
-                            <Minus className="h-4 w-4" />
+                            <Minus size={16} />
                           </button>
-                          <span className="text-sm font-medium w-8 text-center">{item.quantity}</span>
+                          <span className="text-sm font-black w-10 text-center text-white">{item.quantity}</span>
                           <button 
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                            className="h-8 w-8 flex items-center justify-center rounded-md text-gray-600 hover:bg-surface hover:text-primary transition-colors"
+                            className="h-10 w-10 flex items-center justify-center rounded-xl text-white/40 hover:text-white hover:bg-white/5 transition-all"
                           >
-                            <Plus className="h-4 w-4" />
+                            <Plus size={16} />
                           </button>
                         </div>
-                        <div className="flex items-center gap-6">
-                          <span className="font-semibold text-primary">₹{(item.price * item.quantity).toLocaleString('en-IN')}</span>
+                        <div className="flex items-center gap-8">
+                          <span className="text-2xl font-black text-primary">₹{(item.price * item.quantity).toLocaleString('en-IN')}</span>
                           <button 
                             onClick={() => removeFromCart(item.id)}
-                            className="text-gray-400 hover:text-red-500 transition-colors p-2 hover:bg-red-50 rounded-lg"
+                            className="text-white/20 hover:text-red-500 transition-colors p-3 glass border-white/5 rounded-2xl"
                           >
-                            <Trash2 className="h-5 w-5" />
+                            <Trash2 size={20} />
                           </button>
                         </div>
                       </div>
@@ -93,37 +94,40 @@ export default function CartPage() {
           </div>
 
           {/* Order Summary */}
-          <div className="lg:col-span-1">
-            <FadeIn direction="left">
-              <div className="bg-surface p-6 rounded-xl border border-border shadow-sm sticky top-24">
-                <h2 className="font-heading text-xl text-foreground mb-6">Order Summary</h2>
-                <div className="space-y-3 text-sm mb-6">
-                  <div className="flex justify-between text-gray-600">
-                    <span>Subtotal</span>
-                    <span>₹{cartTotal.toLocaleString('en-IN')}</span>
+          <div className="lg:col-span-5 lg:sticky lg:top-32">
+            <FadeIn direction="up">
+              <div className="glass p-10 rounded-[3rem] border-white/10 space-y-8 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-premium-gradient opacity-0 group-hover:opacity-5 transition-opacity duration-1000" />
+                <h2 className="text-2xl font-black text-white tracking-tight">System Summary</h2>
+                <div className="space-y-6">
+                  <div className="flex justify-between items-center">
+                    <span className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em]">Subtotal</span>
+                    <span className="text-white font-bold">₹{cartTotal.toLocaleString('en-IN')}</span>
                   </div>
-                  <div className="flex justify-between text-gray-600">
-                    <span>Tax (18%)</span>
-                    <span>₹{tax.toLocaleString('en-IN')}</span>
+                  <div className="flex justify-between items-center">
+                    <span className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em]">Protocol Tax (18%)</span>
+                    <span className="text-white font-bold">₹{tax.toLocaleString('en-IN')}</span>
                   </div>
-                  <div className="border-t border-border pt-3 flex justify-between font-semibold text-foreground text-base">
-                    <span>Total</span>
-                    <span className="text-primary">₹{total.toLocaleString('en-IN')}</span>
+                  <div className="border-t border-white/10 pt-6 flex justify-between items-center">
+                    <span className="text-[10px] font-bold text-primary uppercase tracking-[0.3em]">Total Investment</span>
+                    <span className="text-4xl font-black text-white">₹{total.toLocaleString('en-IN')}</span>
                   </div>
                 </div>
-                <Link
-                  href="/checkout"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-4 text-sm font-medium text-white hover:bg-primary-hover transition-all duration-300 group"
-                >
-                  Proceed to Checkout
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-                <Link
-                  href="/products"
-                  className="w-full mt-3 inline-flex items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 text-sm font-medium text-gray-700 hover:bg-surface-hover hover:border-primary/50 transition-all duration-300"
-                >
-                  Continue Shopping
-                </Link>
+                
+                <div className="space-y-4 pt-4">
+                  <Link
+                    href="/checkout"
+                    className="btn-primary w-full flex items-center justify-center gap-3 text-sm font-black uppercase tracking-[0.2em] shadow-2xl shadow-primary/30"
+                  >
+                    Proceed to Deployment <ArrowRight size={20} />
+                  </Link>
+                  <Link
+                    href="/products"
+                    className="w-full flex items-center justify-center px-8 py-4 rounded-full glass border-white/10 text-white/40 hover:text-white font-bold text-sm transition-all"
+                  >
+                    Continue Acquisition
+                  </Link>
+                </div>
               </div>
             </FadeIn>
           </div>

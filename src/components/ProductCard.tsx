@@ -4,7 +4,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import FadeIn, { ScaleIn } from "@/components/ui/FadeIn";
 import { ShoppingCart, ArrowUpRight } from "lucide-react";
-import Image from "next/image";
 
 interface Product {
   id: string;
@@ -24,10 +23,10 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <ScaleIn duration={0.8}>
-      <div className="group relative glass rounded-[2.5rem] overflow-hidden transition-all duration-500 hover:border-white/20 shadow-2xl hover:shadow-primary/10">
+    <ScaleIn duration={0.6}>
+      <div className="group relative glass rounded-[24px] overflow-hidden transition-all duration-500 hover:border-white/20 hover:-translate-y-[6px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4),0_0_20px_rgba(255,122,26,0.1)]">
         <Link href={`/products/${product.id}`} className="block">
-          <div className="relative aspect-[1/1] overflow-hidden bg-white/5">
+          <div className="relative aspect-square overflow-hidden bg-white/5">
             {/* Image Hover Zoom */}
             <motion.div 
               whileHover={{ scale: 1.1 }}
@@ -38,46 +37,46 @@ export default function ProductCard({ product }: ProductCardProps) {
                 <img 
                   src={product.image} 
                   alt={product.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:brightness-110"
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary-dark/20">
-                  <span className="text-white/20 font-bold uppercase tracking-widest text-[10px]">No Image</span>
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-white/5 to-white/10">
+                  <span className="text-white/20 font-bold uppercase tracking-widest text-[10px]">Security Asset</span>
                 </div>
               )}
             </motion.div>
 
             {/* Category Badge */}
-            <div className="absolute top-6 left-6">
-              <span className="inline-flex items-center rounded-full glass border-white/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-primary backdrop-blur-xl">
+            <div className="absolute top-4 left-4">
+              <span className="inline-flex items-center rounded-full bg-background/50 border border-white/10 px-3 py-1 text-[9px] font-bold uppercase tracking-[0.2em] text-primary backdrop-blur-md">
                 {product.category}
               </span>
             </div>
 
             {/* Quick View Icon */}
-            <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
               <div className="h-10 w-10 rounded-full glass border-white/10 flex items-center justify-center text-white">
-                <ArrowUpRight size={20} />
+                <ArrowUpRight size={18} />
               </div>
             </div>
           </div>
 
-          <div className="p-8 space-y-4">
-            <div>
-              <p className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] mb-1">
-                {product.brand} • {product.model}
+          <div className="p-6 space-y-4">
+            <div className="space-y-1">
+              <p className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em]">
+                {product.brand} &middot; {product.model}
               </p>
-              <h3 className="text-2xl font-bold text-white leading-tight group-hover:text-primary transition-colors duration-300 line-clamp-2">
+              <h3 className="text-xl font-bold text-white leading-tight group-hover:text-primary transition-colors duration-300 line-clamp-2">
                 {product.name}
               </h3>
             </div>
 
             <div className="flex items-center justify-between pt-2">
               <div className="flex flex-col">
-                <span className="text-2xl font-extrabold text-white">
+                <span className="text-2xl font-black text-white">
                   ₹{product.price.toLocaleString('en-IN')}
                 </span>
-                <span className="text-[12px] text-white/30 line-through">
+                <span className="text-[11px] text-white/30 line-through">
                   ₹{product.mrp.toLocaleString('en-IN')}
                 </span>
               </div>
@@ -85,13 +84,13 @@ export default function ProductCard({ product }: ProductCardProps) {
               <motion.button 
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="h-12 w-12 rounded-2xl bg-premium-gradient flex items-center justify-center text-white shadow-lg shadow-primary/20 border border-white/10"
+                className="h-12 w-12 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20 border border-white/10"
                 onClick={(e) => {
                   e.preventDefault();
-                  // Add to cart logic here if needed
+                  // Add to cart logic here
                 }}
               >
-                <ShoppingCart size={20} />
+                <ShoppingCart size={18} />
               </motion.button>
             </div>
           </div>

@@ -14,23 +14,23 @@ export default function Accordion({ items }: { items: { question: string; answer
         return (
           <div 
             key={index} 
-            className={`transition-all duration-500 rounded-[2rem] border ${
-              isOpen ? "glass border-white/20" : "border-white/5 hover:border-white/10"
+            className={`transition-all duration-500 rounded-[24px] border ${
+              isOpen ? "glass border-primary/30 shadow-[0_10px_30px_rgba(255,122,26,0.05)]" : "border-white/5 hover:border-white/10"
             } overflow-hidden`}
           >
             <button
-              className="w-full flex justify-between items-center p-8 text-left group"
+              className="w-full flex justify-between items-center p-6 md:p-8 text-left group"
               onClick={() => setActiveIndex(isOpen ? null : index)}
             >
-              <span className={`text-lg md:text-xl font-bold transition-colors duration-300 ${
+              <span className={`text-lg font-bold transition-colors duration-300 ${
                 isOpen ? "text-primary" : "text-white/80 group-hover:text-white"
               }`}>
                 {item.question}
               </span>
               <div className={`h-10 w-10 rounded-full flex items-center justify-center transition-all duration-500 ${
-                isOpen ? "bg-primary text-white" : "bg-white/5 text-white/40 group-hover:bg-white/10"
+                isOpen ? "bg-primary text-white" : "bg-white/5 text-primary group-hover:bg-white/10"
               }`}>
-                {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+                {isOpen ? <Minus size={18} /> : <Plus size={18} />}
               </div>
             </button>
             <AnimatePresence>
@@ -41,7 +41,7 @@ export default function Accordion({ items }: { items: { question: string; answer
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <div className="px-8 pb-8 text-white/50 text-sm md:text-base leading-relaxed max-w-2xl">
+                  <div className="px-8 pb-8 text-white/50 text-base leading-relaxed max-w-2xl">
                     {item.answer}
                   </div>
                 </motion.div>

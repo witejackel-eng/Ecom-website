@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Phone, Mail, Clock, Send, Globe, Shield, MessageSquare } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import FadeIn, { StaggerContainer, StaggerItem, ScaleIn } from "@/components/ui/FadeIn";
 import SectionLabel from "@/components/SectionLabel";
@@ -8,18 +8,17 @@ import SectionLabel from "@/components/SectionLabel";
 export default function ContactPage() {
   return (
     <main className="min-h-screen pt-40 pb-32 overflow-hidden">
-      <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-primary/10 rounded-full blur-[120px] -z-10" />
-      <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-primary-dark/10 rounded-full blur-[120px] -z-10" />
+      <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] -z-10" />
       
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Hero */}
         <FadeIn direction="up" className="text-center mb-24">
-          <SectionLabel>Connect</SectionLabel>
-          <h1 className="text-white text-5xl md:text-7xl font-black mb-6 tracking-tight">
-            Initiate <span className="text-gradient">Consultation</span>
+          <SectionLabel>Architecture Support</SectionLabel>
+          <h1 className="text-white text-5xl md:text-7xl font-black mb-6 tracking-tighter leading-tight">
+            Initiate <span className="text-gradient">Transmission.</span>
           </h1>
-          <p className="text-xl text-white/60 max-w-2xl mx-auto">
-            Our security architects are ready to design your bespoke surveillance ecosystem.
+          <p className="text-xl text-white/55 max-w-2xl mx-auto font-medium">
+            Our elite security architects are ready to design your bespoke surveillance ecosystem. Connect via secure channels below.
           </p>
         </FadeIn>
 
@@ -29,14 +28,14 @@ export default function ContactPage() {
             <StaggerContainer className="space-y-6">
               <StaggerItem>
                 <div className="glass p-10 rounded-[2.5rem] border-white/5 hover:border-white/20 transition-all duration-500 group">
-                  <div className="flex items-center gap-6 mb-6">
-                    <div className="h-12 w-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                  <div className="flex items-center gap-6 mb-8">
+                    <div className="h-12 w-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-xl">
                       <MapPin size={24} />
                     </div>
-                    <h3 className="font-bold text-white text-xl uppercase tracking-tighter">Global Headquarters</h3>
+                    <h3 className="font-bold text-white text-xl tracking-tight uppercase">Global HQ</h3>
                   </div>
-                  <p className="text-white/50 leading-relaxed font-medium">
-                    Plot No. 94, 3rd Floor, Block - B, Pocket - 10, Sector - 13, Dwarka, New Delhi - 110075
+                  <p className="text-white/55 leading-relaxed font-bold">
+                    Plot No. 94, 3rd Floor, Block - B, Sector - 13, Dwarka, New Delhi - 110075
                   </p>
                 </div>
               </StaggerItem>
@@ -44,18 +43,18 @@ export default function ContactPage() {
               <StaggerItem>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <a href="tel:+918368561919" className="glass p-10 rounded-[2.5rem] border-white/5 hover:border-white/20 transition-all duration-500 group">
-                    <div className="h-12 w-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-6">
+                    <div className="h-12 w-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-8 shadow-xl">
                       <Phone size={24} />
                     </div>
-                    <p className="text-[10px] text-white/30 font-bold uppercase tracking-[0.2em] mb-2">Voice Interface</p>
+                    <p className="text-[10px] text-white/30 font-black uppercase tracking-[0.2em] mb-2">Voice Interface</p>
                     <p className="text-white font-bold tracking-tight">+91 83685 61919</p>
                   </a>
                   <a href="mailto:manish@insight-solutions.in" className="glass p-10 rounded-[2.5rem] border-white/5 hover:border-white/20 transition-all duration-500 group">
-                    <div className="h-12 w-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-6">
+                    <div className="h-12 w-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-8 shadow-xl">
                       <Mail size={24} />
                     </div>
-                    <p className="text-[10px] text-white/30 font-bold uppercase tracking-[0.2em] mb-2">Secure Mail</p>
-                    <p className="text-white font-bold tracking-tight text-xs break-all">manish@insight-solutions.in</p>
+                    <p className="text-[10px] text-white/30 font-black uppercase tracking-[0.2em] mb-2">Secure Mail</p>
+                    <p className="text-white font-bold tracking-tight text-[11px] break-all">manish@insight-solutions.in</p>
                   </a>
                 </div>
               </StaggerItem>
@@ -63,12 +62,12 @@ export default function ContactPage() {
               <StaggerItem>
                 <div className="glass p-10 rounded-[2.5rem] border-white/5 hover:border-white/20 transition-all duration-500 group">
                   <div className="flex items-center gap-6">
-                    <div className="h-12 w-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                    <div className="h-12 w-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-xl">
                       <Clock size={24} />
                     </div>
                     <div>
-                      <h3 className="font-bold text-white text-xl uppercase tracking-tighter">Operational Hours</h3>
-                      <p className="text-white/50 font-medium">Mon – Sat &middot; 10:00 AM – 7:00 PM</p>
+                      <h3 className="font-bold text-white text-xl tracking-tight uppercase">Active Status</h3>
+                      <p className="text-white/55 font-bold mt-1">Mon – Sat &middot; 10:00 – 19:00</p>
                     </div>
                   </div>
                 </div>
@@ -84,34 +83,34 @@ export default function ContactPage() {
                 
                 <div className="relative z-10 grid sm:grid-cols-2 gap-8">
                   <div className="space-y-3">
-                    <label className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] ml-4">Identity</label>
+                    <label className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] ml-4">Identity</label>
                     <input 
-                      placeholder="Full Name" 
-                      className="w-full p-6 bg-white/5 border border-white/5 rounded-3xl text-white placeholder:text-white/20 focus:border-primary focus:bg-white/10 transition-all outline-none" 
+                      placeholder="Personnel Name" 
+                      className="w-full p-6 bg-white/5 border border-white/5 rounded-3xl text-white placeholder:text-white/20 focus:border-primary focus:bg-white/10 transition-all outline-none font-medium" 
                     />
                   </div>
                   <div className="space-y-3">
-                    <label className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] ml-4">Direct Channel</label>
+                    <label className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] ml-4">Transmission Channel</label>
                     <input 
-                      placeholder="Email Address" 
-                      className="w-full p-6 bg-white/5 border border-white/5 rounded-3xl text-white placeholder:text-white/20 focus:border-primary focus:bg-white/10 transition-all outline-none" 
+                      placeholder="Email Protocol" 
+                      className="w-full p-6 bg-white/5 border border-white/5 rounded-3xl text-white placeholder:text-white/20 focus:border-primary focus:bg-white/10 transition-all outline-none font-medium" 
                     />
                   </div>
                 </div>
                 
                 <div className="space-y-3">
-                  <label className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] ml-4">Architecture Requirements</label>
+                  <label className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] ml-4">Architecture Requirements</label>
                   <textarea 
-                    placeholder="Describe your security objectives..." 
+                    placeholder="Describe your operational objectives..." 
                     rows={5} 
-                    className="w-full p-6 bg-white/5 border border-white/5 rounded-[2rem] text-white placeholder:text-white/20 focus:border-primary focus:bg-white/10 transition-all outline-none resize-none"
+                    className="w-full p-6 bg-white/5 border border-white/5 rounded-[2rem] text-white placeholder:text-white/20 focus:border-primary focus:bg-white/10 transition-all outline-none resize-none font-medium"
                   ></textarea>
                 </div>
 
                 <motion.button 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full py-6 bg-premium-gradient text-white font-black text-sm uppercase tracking-[0.3em] rounded-3xl flex items-center justify-center gap-4 shadow-2xl shadow-primary/20"
+                  className="w-full py-6 bg-primary text-white font-black text-sm uppercase tracking-[0.3em] rounded-3xl flex items-center justify-center gap-4 shadow-2xl shadow-primary/30"
                 >
                   Initiate Transmission <Send size={18} />
                 </motion.button>
