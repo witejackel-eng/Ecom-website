@@ -5,6 +5,8 @@ import { products } from "@/data/products";
 import FadeIn, { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 import ProductPlaceholder from "@/components/ProductPlaceholder";
 import ProductCard from "@/components/ProductCard";
+import SectionLabel from "@/components/SectionLabel";
+import Accordion from "@/components/ui/Accordion";
 
 export default function Home() {
   const featuredProducts = products.slice(0, 4);
@@ -18,6 +20,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="text-center mb-16">
+              <SectionLabel>Solutions</SectionLabel>
               <h2 className="font-heading text-4xl sm:text-5xl text-[#1A1A1A] mb-4">
                 Security Solutions
               </h2>
@@ -60,6 +63,7 @@ export default function Home() {
           <FadeIn direction="up">
             <div className="flex items-end justify-between mb-16">
               <div>
+                <SectionLabel>Products</SectionLabel>
                 <h2 className="mb-4">
                   Featured Products
                 </h2>
@@ -87,6 +91,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="text-center mb-16">
+              <SectionLabel>Why Us</SectionLabel>
               <h2 className="mb-6">
                 Why DeviceDestination
               </h2>
@@ -118,7 +123,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Brands */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <FadeIn direction="up">
+            <div className="text-center">
+              <SectionLabel>Trusted Brands</SectionLabel>
+              <p className="text-sm font-medium text-[#888] uppercase tracking-wider mb-8">
+                Trusted by leading security manufacturers
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
+              {["CP Plus", "ESSL"].map((brand) => (
+                <span key={brand} className="font-heading text-2xl text-[#666666] hover:text-[#F28C38] transition-colors duration-300 cursor-default">
+                  {brand}
+                </span>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
 
+      {/* FAQ Section */}
+      <section className="py-24 bg-[#FAFAFA]">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <FadeIn direction="up">
+            <div className="text-center mb-16">
+              <SectionLabel>FAQ</SectionLabel>
+              <h2 className="mb-4">Frequently Asked Questions</h2>
+            </div>
+          </FadeIn>
+          <Accordion items={[
+            { question: "How do I choose the right surveillance system?", answer: "Our experts assess your premises to recommend the optimal camera type, resolution, and NVR capacity." },
+            { question: "What is your installation timeline?", answer: "Most installations are completed within 48-72 hours of site assessment." },
+            { question: "Do you offer post-installation support?", answer: "Yes, we provide comprehensive technical support and maintenance packages." },
+            { question: "Can I monitor cameras remotely?", answer: "Absolutely, all our NVR systems support remote viewing via iCMOB/gCMOB mobile apps." },
+            { question: "Are your products covered under warranty?", answer: "Yes, all hardware comes with a standard manufacturer warranty of 1-2 years." },
+          ]} />
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-24 bg-[#FAFAFA]">
