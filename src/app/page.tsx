@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import Link from "next/link";
-import { ArrowRight, Shield, Eye, HardDrive } from "lucide-react";
+import { ArrowRight, Shield, Eye, HardDrive, Wrench, Cog } from "lucide-react";
 import { products } from "@/data/products";
 import FadeIn, { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 import ProductPlaceholder from "@/components/ProductPlaceholder";

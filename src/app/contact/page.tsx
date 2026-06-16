@@ -9,8 +9,8 @@ export default function ContactPage() {
       <div className="mx-auto max-w-7xl">
         {/* Hero */}
         <div className="text-center mb-20">
-          <h1 className="font-heading text-5xl mb-4">Contact Us</h1>
-          <p className="text-xl text-[#888]">Get in touch with our security experts at DeviceDestination</p>
+          <h1 className="font-heading text-5xl mb-4 text-white">Contact Us</h1>
+          <p className="text-xl text-gray-200">Get in touch with our security experts at DeviceDestination</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -19,28 +19,28 @@ export default function ContactPage() {
             <div className="p-6 bg-[#111] border border-[#2A2A2A] rounded-xl">
               <div className="flex items-center gap-4 mb-4">
                 <MapPin className="h-6 w-6 text-[#F28C38]" />
-                <h3 className="font-bold text-[#C9A84C]">Our Office</h3>
+                <h3 className="font-bold text-white">Our Office</h3>
               </div>
-              <p className="text-sm">Plot No. 94, 3rd Floor, Block - B, Pocket - 10, Sector - 13, Dwarka, New Delhi - 110075</p>
+              <p className="text-sm text-gray-200">Plot No. 94, 3rd Floor, Block - B, Pocket - 10, Sector - 13, Dwarka, New Delhi - 110075</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <a href="tel:+918368561919" className="p-6 bg-[#111] border border-[#2A2A2A] rounded-xl hover:border-[#F28C38]">
                 <Phone className="h-6 w-6 text-[#F28C38] mb-2" />
-                <p className="text-xs text-[#888]">Phone</p>
-                <p className="text-sm">+91 83685 61919</p>
+                <p className="text-xs text-gray-400">Phone</p>
+                <p className="text-sm text-white">+91 83685 61919</p>
               </a>
               <a href="mailto:manish@insight-solutions.in" className="p-6 bg-[#111] border border-[#2A2A2A] rounded-xl hover:border-[#F28C38]">
                 <Mail className="h-6 w-6 text-[#F28C38] mb-2" />
-                <p className="text-xs text-[#888]">Email</p>
-                <p className="text-sm">manish@insight-solutions.in</p>
+                <p className="text-xs text-gray-400">Email</p>
+                <p className="text-sm text-white">manish@insight-solutions.in</p>
               </a>
             </div>
             <div className="p-6 bg-[#111] border border-[#2A2A2A] rounded-xl">
               <div className="flex items-center gap-4">
                 <Clock className="h-6 w-6 text-[#F28C38]" />
                 <div>
-                  <h3 className="font-bold text-[#C9A84C]">Business Hours</h3>
-                  <p className="text-sm">Monday – Saturday, 10:00 AM – 7:00 PM</p>
+                  <h3 className="font-bold text-white">Business Hours</h3>
+                  <p className="text-sm text-gray-200">Monday – Saturday, 10:00 AM – 7:00 PM</p>
                 </div>
               </div>
             </div>
