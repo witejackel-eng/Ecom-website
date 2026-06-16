@@ -6,10 +6,12 @@ import { useMotionValue, useSpring, useTransform, motion } from "framer-motion";
 export default function NumberTicker({ value, direction = "up" }: { value: number; direction?: "up" | "down" }) {
   const motionValue = useMotionValue(direction === "down" ? value : 0);
   const springValue = useSpring(motionValue, {
-    damping: 60,
-    stiffness: 100,
+    damping: 30, // Reduced damping for faster convergence
+    stiffness: 80, // Reduced stiffness to match damping
   });
-  const display = useTransform(springValue, (current) => Math.round(current));
+  const display = useTransform(springValue, (current) => 
+    Math.round(current).toLocaleString('en-IN')
+  );
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
