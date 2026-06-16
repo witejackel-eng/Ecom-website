@@ -39,7 +39,7 @@ export default function Home() {
               <StaggerItem key={cat.name}>
                 <Link
                   href={`/products?category=${encodeURIComponent(cat.name)}`}
-                  className="group relative aspect-[4/5] overflow-hidden rounded-3xl bg-[#FAFAFA] border border-[#E5E5E5] block shadow-sm hover:shadow-2xl hover:shadow-orange-100 transition-all duration-500 ease-out"
+                  className="group relative aspect-[4/5] overflow-hidden rounded-3xl bg-white/60 backdrop-blur-md border border-gray-100 block shadow-sm hover:shadow-2xl hover:shadow-orange-100 transition-all duration-500 ease-out"
                 >
                   <ProductPlaceholder className="absolute inset-0" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

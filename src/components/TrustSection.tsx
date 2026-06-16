@@ -24,10 +24,10 @@ export default function TrustSection() {
             { icon: Users, title: "Expert Support", desc: "Dedicated professionals for ongoing assistance." },
             { icon: Wrench, title: "Professional Service", desc: "Meticulous installation and maintenance." },
           ].map((item, i) => (
-            <StaggerItem key={i} className="p-8 rounded-2xl bg-[#FAFAFA] border border-[#E5E5E5] hover:border-[#F28C38] transition-all duration-300">
+            <StaggerItem key={i} className="p-8 rounded-2xl bg-white/60 backdrop-blur-md border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#F28C38]/30 transition-all duration-300">
               <item.icon className="h-10 w-10 text-[#F28C38] mb-6" />
-              <h3 className="text-xl font-heading mb-2">{item.title}</h3>
-              <p className="description text-sm">{item.desc}</p>
+              <h3 className="text-xl font-heading mb-2 text-gray-900">{item.title}</h3>
+              <p className="description text-sm text-gray-600">{item.desc}</p>
             </StaggerItem>
           ))}
         </StaggerContainer>

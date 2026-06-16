@@ -16,7 +16,7 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Info */}
           <div className="space-y-6">
-            <div className="p-6 bg-[#F9FAFB] border border-gray-200 rounded-xl">
+            <div className="p-6 bg-white/60 backdrop-blur-md border border-gray-100 rounded-xl shadow-sm hover:shadow-lg hover:border-[#F28C38]/30 transition-all duration-300">
               <div className="flex items-center gap-4 mb-4">
                 <MapPin className="h-6 w-6 text-[#F28C38]" />
                 <h3 className="font-bold text-gray-900">Our Office</h3>
@@ -24,18 +24,18 @@ export default function ContactPage() {
               <p className="text-sm text-gray-600">Plot No. 94, 3rd Floor, Block - B, Pocket - 10, Sector - 13, Dwarka, New Delhi - 110075</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <a href="tel:+918368561919" className="p-6 bg-[#F9FAFB] border border-gray-200 rounded-xl hover:border-[#F28C38]">
+              <a href="tel:+918368561919" className="p-6 bg-white/60 backdrop-blur-md border border-gray-100 rounded-xl hover:border-[#F28C38] transition-all duration-300 hover:shadow-lg">
                 <Phone className="h-6 w-6 text-[#F28C38] mb-2" />
                 <p className="text-xs text-gray-500">Phone</p>
                 <p className="text-sm text-gray-900">+91 83685 61919</p>
               </a>
-              <a href="mailto:manish@insight-solutions.in" className="p-6 bg-[#F9FAFB] border border-gray-200 rounded-xl hover:border-[#F28C38]">
+              <a href="mailto:manish@insight-solutions.in" className="p-6 bg-white/60 backdrop-blur-md border border-gray-100 rounded-xl hover:border-[#F28C38] transition-all duration-300 hover:shadow-lg">
                 <Mail className="h-6 w-6 text-[#F28C38] mb-2" />
                 <p className="text-xs text-gray-500">Email</p>
                 <p className="text-sm text-gray-900">manish@insight-solutions.in</p>
               </a>
             </div>
-            <div className="p-6 bg-[#F9FAFB] border border-gray-200 rounded-xl">
+            <div className="p-6 bg-white/60 backdrop-blur-md border border-gray-100 rounded-xl shadow-sm hover:shadow-lg hover:border-[#F28C38]/30 transition-all duration-300">
               <div className="flex items-center gap-4">
                 <Clock className="h-6 w-6 text-[#F28C38]" />
                 <div>

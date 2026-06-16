@@ -25,8 +25,8 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <FadeIn direction="up">
       <motion.div
-        whileHover={{ y: -8 }}
-        className="group relative bg-white border border-[#E5E5E5] rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-orange-100 transition-all duration-500 ease-out"
+        whileHover={{ y: -8, scale: 1.02 }}
+        className="group relative bg-white/60 backdrop-blur-md border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:border-[#F28C38]/30 transition-all duration-300 ease-out"
       >
         <Link href={`/products/${product.id}`} className="block">
           <div className="relative aspect-[4/3] overflow-hidden bg-[#FAFAFA]">
@@ -65,9 +65,9 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Add to Cart Button */}
         <div className="px-6 pb-6">
           <motion.button 
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ filter: "brightness(0.9)" }}
             whileTap={{ scale: 0.98 }}
-            className="w-full py-3 bg-[#F28C38] text-white font-bold rounded-lg hover:bg-[#C96E1A] transition-colors shadow-md shadow-[#F28C38]/20"
+            className="w-full py-3 bg-[#F28C38] text-white font-bold rounded-lg transition-all duration-200 shadow-md shadow-[#F28C38]/20"
           >
             Add to Cart
           </motion.button>
