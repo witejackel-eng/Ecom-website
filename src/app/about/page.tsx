@@ -84,9 +84,7 @@ export default function AboutPage() {
                 "Enterprise-grade surveillance solutions",
                 "Verified CP Plus & ESSL partner",
                 "Professional installation & support",
-                "Tailored solutions for diverse needs",
-                "Next-gen biometric integration",
-                "Redundant monitoring architectures"
+                "Tailored solutions for diverse needs"
               ].map((text, i) => (
                 <FadeIn key={i} direction="left" delay={i * 0.1}>
                   <div className="flex items-center gap-6 group cursor-default">

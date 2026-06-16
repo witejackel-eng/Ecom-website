@@ -22,8 +22,8 @@ export default function Footer() {
       title: "Organization",
       links: [
         { name: "Our Story", href: "/about" },
-        { name: "Contact Architecture", href: "/contact" },
-        { name: "Privacy Protocol", href: "/privacy" },
+        { name: "Contact Us", href: "/contact" },
+        { name: "Privacy Policy", href: "/privacy" },
         { name: "Terms of Service", href: "/terms" },
       ],
     },
@@ -32,8 +32,6 @@ export default function Footer() {
       links: [
         { name: "CP Plus", href: "https://www.cpplusworld.com/" },
         { name: "ESSL Security", href: "https://esslsecurity.com/" },
-        { name: "Hikvision", href: "https://www.hikvision.com/" },
-        { name: "Dahua Technology", href: "https://www.dahuasecurity.com/" },
       ],
     },
   ];

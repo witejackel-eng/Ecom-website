@@ -174,27 +174,6 @@ export default function ProductDetailPage() {
         </section>
 
         {/* Related Products */}
-        <section className="mt-48">
-          <FadeIn direction="up">
-            <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
-              <div>
-                <SectionLabel>Ecosystem</SectionLabel>
-                <h2 className="text-white text-5xl md:text-6xl font-black tracking-tighter">Related <span className="text-gradient">Technologies</span></h2>
-              </div>
-              <Link href="/products" className="group flex items-center gap-4 text-[10px] font-bold text-primary uppercase tracking-[0.3em] glass border-white/10 px-10 py-5 rounded-full hover:bg-white/5 transition-all">
-                All Collections <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2" />
-              </Link>
-            </div>
-          </FadeIn>
-          
-          <StaggerContainer className="grid md:grid-cols-4 gap-8">
-            {relatedProducts.map(p => (
-              <StaggerItem key={p.id}>
-                <ProductCard product={p as any} />
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </section>
       </div>
     </main>
   );
