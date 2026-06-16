@@ -115,12 +115,15 @@ export const products = [
     brand: "CP Plus",
     badge: "Color Night Vision",
     shortDescription: "4MP Dual Light Bullet Camera with full-color night vision, IR + warm light up to 30m, built-in mic, IP67 outdoor protection, and PoE.",
-    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80",
+    image: "/images/confirmed/CP-UNC-TA41L3C-LQ bullet 1st.png",
     images: [
-      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&q=80",
-      "https://images.unsplash.com/photo-1582639510494-c80b5de9f148?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+      "/images/confirmed/CP-UNC-TA41L3C-LQ bullet 1st.png",
+      "/images/confirmed/CP-UNC-TA41L3C-LQ bullet 2nd.png",
+      "/images/confirmed/CP-UNC-TA41L3C-LQ bullet 3rd.png",
+      "/images/confirmed/CP-UNC-TA41L3C-LQ bullet 4th.png"
     ],
+    datasheet: "/downloads/CP-UNC-TA41L3C-LQ bullet.pdf",
+    manual: "/downloads/CP-UNC-TA41L3C-LQ bullet user manual.pdf",
     specs: {
       "Image Sensor": "1/2.9\" 4MP PS CMOS",
       "Max Resolution": "2688 × 1520 @ 25/30fps",
@@ -186,12 +189,15 @@ export const products = [
     brand: "CP Plus",
     badge: null,
     shortDescription: "2MP Full HD IP Bullet Camera with 30m Smart IR, built-in mic, DWDR, IP67, and PoE for reliable outdoor surveillance in small to medium businesses.",
-    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80",
+    image: "/images/confirmed/CP-UNC-TA21L3C-Q 1st.png",
     images: [
-      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&q=80",
-      "https://images.unsplash.com/photo-1582639510494-c80b5de9f148?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+      "/images/confirmed/CP-UNC-TA21L3C-Q 1st.png",
+      "/images/confirmed/CP-UNC-TA21L3C-Q 2nd.png",
+      "/images/confirmed/CP-UNC-TA21L3C-Q 3rd.png",
+      "/images/confirmed/CP-UNC-TA21L3C-Q 4th.png"
     ],
+    datasheet: "/downloads/CP-UNC-TA21L3C-Q.pdf",
+    manual: "/downloads/CP-UNC-TA21L3C-Q user manual.pdf",
     specs: {
       "Image Sensor": "1/2.8\" 2MP Progressive Scan CMOS",
       "Max Resolution": "1920 × 1080 @ 25/30fps",
@@ -258,12 +264,15 @@ export const products = [
     brand: "CP Plus",
     badge: "Color Night Vision",
     shortDescription: "2MP Dual Light Bullet Camera from the IlluMax series. Full-color outdoor night surveillance using IR + warm light, built-in mic, PoE, IP67.",
-    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80",
+    image: "/images/confirmed/CP-UNC-TA21L3C-LQ 1st.png",
     images: [
-      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&q=80",
-      "https://images.unsplash.com/photo-1582639510494-c80b5de9f148?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+      "/images/confirmed/CP-UNC-TA21L3C-LQ 1st.png",
+      "/images/confirmed/CP-UNC-TA21L3C-LQ 2nd.png",
+      "/images/confirmed/CP-UNC-TA21L3C-LQ 3rd.png",
+      "/images/confirmed/CP-UNC-TA21L3C-LQ 4th.png"
     ],
+    datasheet: "/downloads/CP-UNC-TA21L3C-LQ.pdf",
+    manual: "/downloads/CP-UNC-TA21L3C-LQ user manual.pdf",
     specs: {
       "Image Sensor": "1/2.8\" 2MP PS CMOS",
       "Max Resolution": "1920 × 1080 @ 25/30fps",
@@ -296,12 +305,12 @@ export const products = [
     brand: "CP Plus",
     badge: "Most Popular",
     shortDescription: "8-Channel H.265+ Network Video Recorder supporting up to 8MP resolution, 80Mbps bandwidth, 1 SATA HDD (up to 8TB), HDMI/VGA output, and ONVIF compatibility.",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80",
+    image: "/images/confirmed/CP-UNR-108F1 1st.jpg",
     images: [
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80"
+      "/images/confirmed/CP-UNR-108F1 1st.jpg"
     ],
+    datasheet: "/downloads/CP-UNR-108F1.pdf",
+    manual: "/downloads/CP-UNR-108F1 user manual.pdf",
     specs: {
       "Channels": "8 IP Camera Inputs",
       "Max Resolution": "Up to 8MP preview and playback",
@@ -335,12 +344,12 @@ export const products = [
     brand: "CP Plus",
     badge: "4K Ultra HD",
     shortDescription: "Professional 16-Channel 4K Network Video Recorder. Supports up to 12MP cameras, 4K HDMI output, AI Smart Motion Detection, 144Mbps bandwidth, and up to 20TB storage.",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80",
+    image: "/images/confirmed/CP-UNR-4K2161-V2 1st.jpg",
     images: [
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80"
+      "/images/confirmed/CP-UNR-4K2161-V2 1st.jpg"
     ],
+    datasheet: "/downloads/CP-UNR-4K2161-V2.pdf",
+    manual: "/downloads/CP-UNR-4K2161-V2 user manual.pdf",
     specs: {
       "Channels": "16 IP Camera Inputs",
       "Max Camera Resolution": "Up to 12MP",
