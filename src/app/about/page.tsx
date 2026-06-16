@@ -2,8 +2,13 @@ import FadeIn from "@/components/ui/FadeIn";
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#0A0A0A] text-gray-200 pt-32 pb-20">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-[#0A0A0A] pt-32 pb-20">
+      {/* Hero Background */}
+      <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/city-night.jpg')" }}>
+        <div className="absolute inset-0 bg-black/45" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <FadeIn direction="up">
           <h1 className="font-heading text-5xl mb-8 text-white">About DeviceDestination</h1>
           <div className="prose prose-invert prose-lg max-w-none text-gray-100">
