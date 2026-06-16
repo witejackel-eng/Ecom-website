@@ -8,82 +8,92 @@ import { useCart } from "@/context/CartContext";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { cartCount } = useCart();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header
-      className="fixed top-0 z-50 w-full"
-      style={{
-        backgroundColor: "rgba(10, 31, 46, 0.85)",
-        backdropFilter: "blur(12px)",
-        borderBottom: "1px solid rgba(255, 255, 255, 0.08)"
-      }}
-    >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#F28C38] text-white font-heading text-lg font-bold">
-              DD
-            </div>
-            <span className="font-heading text-2xl text-white">DeviceDestination</span>
-          </Link>
+    <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
+      <nav 
+        className={`relative flex h-20 items-center justify-between px-6 sm:px-10 rounded-[2rem] transition-all duration-500 glass-navbar ${
+          isScrolled ? "scale-[0.98] shadow-2xl" : "scale-100"
+        }`}
+      >
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-premium-gradient text-white font-heading text-lg font-bold shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
+            DD
+          </div>
+          <span className="font-heading text-2xl text-white font-extrabold tracking-tighter">DeviceDestination</span>
+        </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {[
-              { name: "Home", href: "/" },
-              { name: "Products", href: "/products" },
-              { name: "About", href: "/about" },
-              { name: "Contact", href: "/contact" },
-            ].map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-sm font-bold text-white/80 hover:text-white transition-colors duration-200 uppercase tracking-widest"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+        {/* Desktop Nav */}
+        <nav className="hidden lg:flex items-center gap-10">
+          {[
+            { name: "Home", href: "/" },
+            { name: "Products", href: "/products" },
+            { name: "About", href: "/about" },
+            { name: "Contact", href: "/contact" },
+          ].map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="relative text-[13px] font-bold text-white/70 hover:text-white transition-colors duration-300 uppercase tracking-widest group"
+            >
+              {item.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
+            </Link>
+          ))}
+        </nav>
 
-          {/* Actions */}
-          <div className="flex items-center gap-6 text-white">
-            <Search className="h-5 w-5 cursor-pointer hover:text-[#F28C38] transition-colors" />
-            <Link href="/cart" className="relative p-2 hover:text-[#F28C38] transition-colors">
-              <ShoppingCart className="h-5 w-5" />
+        {/* Actions */}
+        <div className="flex items-center gap-6 text-white">
+          <div className="hidden sm:flex items-center gap-6">
+            <button className="p-2 hover:bg-white/5 rounded-full transition-all duration-300">
+              <Search className="h-5 w-5 cursor-pointer text-white/70 hover:text-white" />
+            </button>
+            
+            <Link href="/cart" className="relative p-2 hover:bg-white/5 rounded-full transition-all duration-300">
+              <ShoppingCart className="h-5 w-5 text-white/70 hover:text-white" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#F28C38] text-[10px] font-bold text-white">
+                <span className="absolute top-0 right-0 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white shadow-lg">
                   {cartCount}
                 </span>
               )}
             </Link>
-
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Link href="/contact" className="px-6 py-2 rounded-full bg-[#F28C38] text-white font-semibold hover:brightness-110 transition-all duration-200">
-                Contact Sales
-              </Link>
-            </motion.div>
-
-            <button
-              className="md:hidden p-2 hover:text-[#F28C38]"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
           </div>
+
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="hidden md:block">
+            <Link href="/contact" className="px-8 py-3 rounded-full bg-premium-gradient text-white text-sm font-bold shadow-xl shadow-primary/20 hover:shadow-primary/40 transition-all duration-300 border border-white/10">
+              Contact Sales
+            </Link>
+          </motion.div>
+
+          <button
+            className="lg:hidden p-2 text-white/70 hover:text-white"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#0A1F2E] border-b border-white/10 overflow-hidden"
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 10, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            className="lg:hidden glass-navbar rounded-[2rem] mt-4 overflow-hidden shadow-2xl p-8"
           >
-            <div className="flex flex-col gap-4 p-6">
+            <div className="flex flex-col gap-6">
               {[
                 { name: "Home", href: "/" },
                 { name: "Products", href: "/products" },
@@ -93,12 +103,19 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-lg font-bold text-white uppercase"
+                  className="text-2xl font-extrabold text-white/90 hover:text-white tracking-tighter"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
+              <Link 
+                href="/contact" 
+                className="mt-4 px-8 py-4 rounded-2xl bg-premium-gradient text-white text-center font-bold"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact Sales
+              </Link>
             </div>
           </motion.div>
         )}

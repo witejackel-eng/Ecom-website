@@ -1,89 +1,129 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
+import FadeIn, { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
+import { ArrowUpRight, Facebook, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   const footerSections = [
     {
-      title: "Products",
+      title: "Solutions",
       links: [
-        { name: "All Products", href: "/products" },
-        { name: "Dome Cameras", href: "/products?category=Dome%20Cameras" },
-        { name: "Bullet Cameras", href: "/products?category=Bullet%20Cameras" },
-        { name: "Color Dome Cameras", href: "/products?category=Color%20Dome%20Cameras" },
-        { name: "Color Bullet Cameras", href: "/products?category=Color%20Bullet%20Cameras" },
-        { name: "NVR Systems", href: "/products?category=NVR%20Systems" },
-        { name: "Biometric Devices", href: "/products?category=Biometric%20Devices" },
+        { name: "All Collections", href: "/products" },
+        { name: "Dome Series", href: "/products?category=Dome%20Cameras" },
+        { name: "Bullet Series", href: "/products?category=Bullet%20Cameras" },
+        { name: "Color Night Vision", href: "/products?category=Color%20Dome%20Cameras" },
+        { name: "NVR Architecture", href: "/products?category=NVR%20Systems" },
+        { name: "Biometric Access", href: "/products?category=Biometric%20Devices" },
       ],
     },
     {
-      title: "Company",
+      title: "Organization",
       links: [
-        { name: "About DeviceDestination", href: "/about" },
-        { name: "Contact Us", href: "/contact" },
-        { name: "Privacy Policy", href: "/privacy" },
+        { name: "Our Story", href: "/about" },
+        { name: "Contact Architecture", href: "/contact" },
+        { name: "Privacy Protocol", href: "/privacy" },
         { name: "Terms of Service", href: "/terms" },
       ],
     },
     {
-      title: "Support",
+      title: "Intelligence",
       links: [
-        { name: "Warranty Info", href: "/warranty" },
-        { name: "Product Downloads", href: "/downloads" },
+        { name: "Warranty System", href: "/warranty" },
+        { name: "Technical Downloads", href: "/downloads" },
+        { name: "Support Portal", href: "/support" },
       ],
     },
   ];
 
   return (
-    <footer className="bg-[#FAFAFA] border-t border-[#E5E5E5] text-[#666666]">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand & Contact */}
-          <div className="md:col-span-1 space-y-6">
-            <Link href="/" className="font-heading text-2xl text-[#1A1A1A] block">
-              DeviceDestination
-            </Link>
-            <p className="text-sm leading-relaxed max-w-xs">
-              Premium surveillance and biometric security solutions for homes, businesses, and institutions.
-            </p>
-            <div className="text-xs space-y-2">
-              <p className="font-bold text-[#1A1A1A]">Contact</p>
-              <p>Plot No. 94, 3rd Floor, Block - B, Pocket - 10, Sector - 13, Dwarka, New Delhi - 110075</p>
-              <p>
-                <a href="tel:+918368561919" className="hover:text-[#F28C38]">+91 83685 61919</a> / 
-                <a href="tel:+919873870992" className="hover:text-[#F28C38]"> +91 98738 70992</a>
+    <footer className="relative pt-32 pb-16 overflow-hidden border-t border-white/5 bg-background">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 mb-32">
+          {/* Brand & Narrative */}
+          <div className="lg:col-span-5 space-y-12">
+            <FadeIn direction="none">
+              <Link href="/" className="text-4xl font-black text-white tracking-tighter">
+                DeviceDestination<span className="text-primary">.</span>
+              </Link>
+              <p className="mt-8 text-xl text-white/50 leading-relaxed max-w-md font-medium">
+                Designing bespoke security ecosystems for those who demand uncompromising protection and absolute clarity.
               </p>
-              <p>
-                <a href="mailto:manish@insight-solutions.in" className="hover:text-[#F28C38]">manish@insight-solutions.in</a>
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <a href="https://www.facebook.com/ibsinfra" target="_blank" rel="noreferrer" className="text-sm hover:text-[#F28C38]">Facebook</a>
-              <a href="https://www.linkedin.com/in/insight-business-4b71bb37b/" target="_blank" rel="noreferrer" className="text-sm hover:text-[#F28C38]">LinkedIn</a>
+            </FadeIn>
+            
+            <div className="space-y-6">
+              <div className="flex items-start gap-4 text-white/40 group">
+                <MapPin className="h-5 w-5 text-primary shrink-0" />
+                <span className="text-sm leading-relaxed">
+                  Plot No. 94, 3rd Floor, Block - B, Sector - 13, Dwarka, New Delhi - 110075
+                </span>
+              </div>
+              <div className="flex items-center gap-4 text-white/40">
+                <Phone className="h-5 w-5 text-primary shrink-0" />
+                <div className="flex flex-col text-sm">
+                  <a href="tel:+918368561919" className="hover:text-white transition-colors">+91 83685 61919</a>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 text-white/40">
+                <Mail className="h-5 w-5 text-primary shrink-0" />
+                <a href="mailto:manish@insight-solutions.in" className="text-sm hover:text-white transition-colors">manish@insight-solutions.in</a>
+              </div>
             </div>
           </div>
 
-          {/* Links */}
-          {footerSections.map((section) => (
-            <div key={section.title}>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-[#F28C38] mb-6 font-heading">
-                {section.title}
-              </h3>
-              <ul className="space-y-4 text-sm">
-                {section.links.map((link) => (
-                  <li key={link.name}>
-                    <Link href={link.href} className="hover:text-[#F28C38] transition-colors">
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Links Hierarchy */}
+          <div className="lg:col-span-7">
+            <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-12">
+              {footerSections.map((section) => (
+                <StaggerItem key={section.title}>
+                  <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary mb-8">
+                    {section.title}
+                  </h3>
+                  <ul className="space-y-6">
+                    {section.links.map((link) => (
+                      <li key={link.name}>
+                        <Link 
+                          href={link.href} 
+                          className="text-white/40 hover:text-white text-sm transition-all duration-300 flex items-center gap-2 group"
+                        >
+                          {link.name}
+                          <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-1 translate-x-1" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
         </div>
 
-        <div className="mt-16 border-t border-[#E5E5E5] pt-8 text-center text-xs">
-          <p>&copy; {new Date().getFullYear()} DeviceDestination. All Rights Reserved.</p>
-          <p className="mt-2 text-[#888]">Locations Served: Delhi, Noida, Gurgaon, Faridabad</p>
-        </div>
+        {/* Massive Watermark */}
+        <FadeIn direction="up" delay={0.4}>
+          <div className="relative pt-16 border-t border-white/5 overflow-hidden">
+            <h2 className="text-[15vw] font-black text-white/[0.02] leading-none tracking-tighter uppercase whitespace-nowrap select-none">
+              DeviceDestination
+            </h2>
+            
+            <div className="absolute bottom-16 left-0 w-full flex flex-col md:flex-row justify-between items-center gap-8 px-2">
+              <p className="text-[10px] font-bold text-white/20 uppercase tracking-[0.4em]">
+                &copy; {new Date().getFullYear()} DeviceDestination &middot; All Rights Reserved
+              </p>
+              
+              <div className="flex gap-8">
+                <a href="https://facebook.com" className="text-white/20 hover:text-primary transition-colors"><Facebook size={20} /></a>
+                <a href="https://linkedin.com" className="text-white/20 hover:text-primary transition-colors"><Linkedin size={20} /></a>
+              </div>
+              
+              <p className="text-[10px] font-bold text-white/20 uppercase tracking-[0.4em]">
+                Delhi &middot; Noida &middot; Gurgaon &middot; Faridabad
+              </p>
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </footer>
   );

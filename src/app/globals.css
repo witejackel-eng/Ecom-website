@@ -1,40 +1,118 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-plus-jakarta), var(--font-inter), ui-sans-serif, system-ui;
+  
+  --color-background: #022433;
+  --color-foreground: #FFFFFF;
+  
+  --color-primary: #4F8AA3;
+  --color-primary-dark: #0C4960;
+  --color-primary-deep: #022433;
+  
+  --color-accent: #4F8AA3;
+  
+  /* Glassmorphism Tokens */
+  --color-glass-bg: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-glass-hover: rgba(255, 255, 255, 0.1);
+  
+  /* Typography Scale */
+  --text-hero: clamp(4.5rem, 10vw, 7.5rem); /* 72px - 120px */
+  --text-section: clamp(3rem, 6vw, 4.5rem); /* 48px - 72px */
+  --text-subheading: clamp(1.5rem, 3vw, 2rem); /* 24px - 32px */
+  --text-body-lg: 1.125rem; /* 18px */
+  --text-body: 1rem; /* 16px */
+}
+
 :root {
-  /* Dark-Teal Enterprise Palette */
-  --bg-primary: #0A2A35;
-  --bg-gradient-start: #0A1F2E;
-  --bg-gradient-end: #0D3D4F;
-  
-  /* Orange Accents (Preserved) */
-  --primary: #F28C38;
-  --primary-hover: #C96E1A;
-  
-  /* Design Tokens */
-  --glass-surface: rgba(255, 255, 255, 0.04);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-hover: rgba(255, 255, 255, 0.07);
+  --bg-primary: #022433;
+  --bg-gradient-1: #022433;
+  --bg-gradient-2: #0C4960;
+  --bg-gradient-3: #4F8AA3;
 }
 
 body {
-  background: linear-gradient(160deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 50%, var(--bg-primary) 100%);
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 0% 0%, rgba(12, 73, 96, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(79, 138, 163, 0.2) 0%, transparent 50%),
+    linear-gradient(180deg, #022433 0%, #052d3d 100%);
   background-attachment: fixed;
   color: #FFFFFF;
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
 }
 
-/* Glass Utilities */
-.bg-glass { background-color: var(--glass-surface); }
-.border-glass { border: 1px solid var(--glass-border); }
-.hover-glass:hover { background-color: var(--glass-hover); }
+/* Typography Overrides */
+h1, .hero-text {
+  font-size: var(--text-hero);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  @apply tracking-tighter;
+}
 
-h1, h2, h3, h4 {
-  font-family: var(--font-outfit), sans-serif;
-  color: #FFFFFF;
+h2, .section-title {
+  font-size: var(--text-section);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
-.description { color: #D1D5DB; } /* Light Gray for readability */
+h3, .subheading {
+  font-size: var(--text-subheading);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p, .body-text {
+  font-size: var(--text-body);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-glass-border);
+}
+
+.glass-navbar {
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-hover:hover {
+  background: var(--color-glass-hover);
+  border-color: rgba(255, 255, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Gradients */
+.text-gradient {
+  background: linear-gradient(to right, #FFFFFF, #4F8AA3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-premium-gradient {
+  background: linear-gradient(135deg, #022433 0%, #0C4960 50%, #4F8AA3 100%);
+}
+
+/* Animations Helpers */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}

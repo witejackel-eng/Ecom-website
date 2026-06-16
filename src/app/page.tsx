@@ -1,9 +1,8 @@
 import Hero from "@/components/Hero";
 import Link from "next/link";
-import { ArrowRight, Shield, Eye, HardDrive, Wrench, Cog } from "lucide-react";
+import { ArrowRight, Shield, Eye, HardDrive, Wrench, Cog, CheckCircle2, Zap, Globe } from "lucide-react";
 import { products } from "@/data/products";
-import FadeIn, { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
-import ProductPlaceholder from "@/components/ProductPlaceholder";
+import FadeIn, { StaggerContainer, StaggerItem, ScaleIn } from "@/components/ui/FadeIn";
 import ProductCard from "@/components/ProductCard";
 import SectionLabel from "@/components/SectionLabel";
 import Accordion from "@/components/ui/Accordion";
@@ -12,43 +11,47 @@ export default function Home() {
   const featuredProducts = products.slice(0, 4);
 
   return (
-    <main className="flex-1 bg-white">
+    <main className="flex-1">
       <Hero />
 
-      {/* Featured Categories */}
-      <section className="py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Featured Categories - Solutions */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] -z-10" />
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn direction="up">
-            <div className="text-center mb-16">
+            <div className="text-center mb-20">
               <SectionLabel>Solutions</SectionLabel>
-              <h2 className="font-heading text-4xl sm:text-5xl text-[#1A1A1A] mb-4">
-                Security Solutions
+              <h2 className="text-white mb-6">
+                Security <span className="text-gradient">Architectures</span>
               </h2>
-              <p className="text-[#666666] max-w-2xl mx-auto text-lg">
-                Comprehensive coverage for every environment.
+              <p className="max-w-2xl mx-auto">
+                Comprehensive ecosystem coverage for high-stakes environments, from domestic monitoring to industrial surveillance.
               </p>
             </div>
           </FadeIn>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { name: "Dome Cameras", desc: "Discreet indoor monitoring" },
-              { name: "Bullet Cameras", desc: "Long-range outdoor surveillance" },
-              { name: "NVR Systems", desc: "Centralized recording and management" },
-              { name: "Biometric Machines", desc: "Advanced attendance & access" },
+              { name: "Dome Cameras", desc: "Discreet high-definition indoor monitoring", icon: Eye },
+              { name: "Bullet Cameras", desc: "Long-range precision outdoor surveillance", icon: Shield },
+              { name: "NVR Systems", desc: "Centralized intelligence and management", icon: HardDrive },
+              { name: "Biometric Machines", desc: "Advanced biometric access control", icon: Zap },
             ].map((cat) => (
               <StaggerItem key={cat.name}>
                 <Link
                   href={`/products?category=${encodeURIComponent(cat.name)}`}
-                  className="group relative aspect-[4/5] overflow-hidden rounded-3xl bg-white/60 backdrop-blur-md border border-gray-100 block shadow-sm hover:shadow-2xl hover:shadow-orange-100 transition-all duration-500 ease-out"
+                  className="group relative h-[400px] overflow-hidden rounded-[2.5rem] glass border-white/5 block hover:border-white/20 transition-all duration-700 ease-out"
                 >
-                  <ProductPlaceholder className="absolute inset-0" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 p-8 w-full transition-transform duration-500 group-hover:-translate-y-2">
-                    <h3 className="text-2xl text-white mb-2 font-heading">{cat.name}</h3>
-                    <p className="text-white/80 text-sm mb-4 description">{cat.desc}</p>
-                    <span className="inline-flex items-center gap-2 text-sm font-bold text-[#F28C38]">
-                      Explore <ArrowRight className="h-4 w-4" />
-                    </span>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  <div className="absolute inset-0 p-10 flex flex-col justify-end">
+                    <div className="mb-6 h-14 w-14 rounded-2xl bg-white/5 flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                      <cat.icon size={28} />
+                    </div>
+                    <h3 className="text-3xl text-white mb-3 font-bold tracking-tight">{cat.name}</h3>
+                    <p className="text-white/40 text-sm mb-6 leading-relaxed line-clamp-2">{cat.desc}</p>
+                    <div className="flex items-center gap-2 text-xs font-bold text-primary uppercase tracking-[0.2em] opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+                      View Collection <ArrowRight size={14} />
+                    </div>
                   </div>
                 </Link>
               </StaggerItem>
@@ -58,24 +61,26 @@ export default function Home() {
       </section>
 
       {/* Featured Products */}
-      <section className="py-24 bg-[#FAFAFA]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="py-32 relative">
+        <div className="absolute top-1/2 left-0 w-[30%] h-[30%] bg-primary-dark/10 rounded-full blur-[120px] -z-10" />
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn direction="up">
-            <div className="flex items-end justify-between mb-16">
-              <div>
+            <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
+              <div className="max-w-2xl">
                 <SectionLabel>Products</SectionLabel>
-                <h2 className="mb-4">
-                  Featured Products
+                <h2 className="mb-6 text-white">
+                  Featured <span className="text-gradient">Innovations</span>
                 </h2>
-                <p className="description">
-                  Trusted equipment selected for professional requirements.
+                <p>
+                  Professional-grade hardware selected for uncompromising reliability and next-generation performance.
                 </p>
               </div>
-              <Link href="/products" className="hidden sm:inline-flex items-center gap-2 text-sm font-bold text-[#F28C38] hover:text-[#C96E1A] transition-colors group">
-                View all products <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Link href="/products" className="group flex items-center gap-3 text-xs font-bold text-primary uppercase tracking-[0.2em] glass border-white/10 px-8 py-4 rounded-full hover:bg-white/5 transition-all duration-300">
+                View all products <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2" />
               </Link>
             </div>
           </FadeIn>
+          
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuredProducts.map((product) => (
               <StaggerItem key={product.id}>
@@ -86,101 +91,121 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why DeviceDestination */}
-      <section className="py-24 bg-white border-t border-[#E5E5E5]">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <FadeIn direction="up">
-            <div className="text-center mb-16">
-              <SectionLabel>Why Us</SectionLabel>
-              <h2 className="mb-6">
-                Why DeviceDestination
-              </h2>
-              <p className="description max-w-2xl mx-auto leading-relaxed">
-                We provide professional security, surveillance, and biometric systems built for reliability. 
-                Our equipment is selected based on rigorous testing and proven performance in real-world business environments.
-              </p>
-            </div>
+      {/* Why DeviceDestination - Premium Features */}
+      <section className="py-32 relative">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="glass rounded-[3rem] p-12 lg:p-24 border-white/5 relative overflow-hidden">
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[100px]" />
+            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary-dark/10 rounded-full blur-[100px]" />
             
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                { icon: Shield, title: "Trusted Equipment", desc: "Every product is vetted for durability and consistent performance." },
-                { icon: Eye, title: "Clear Monitoring", desc: "High-definition capture ensures accurate identification and coverage." },
-                { icon: Wrench, title: "Expert Support", desc: "Our certified specialists handle professional installation and provide ongoing technical support." },
-                { icon: Cog, title: "Tailored Solutions", desc: "Custom-configured systems designed to meet the specific security needs of your industry." },
-              ].map((item, i) => (
-                <StaggerItem key={i} className="flex gap-4 p-6 rounded-2xl bg-[#FAFAFA] border border-[#E5E5E5]">
-                  <div className="flex-shrink-0 flex h-12 w-12 items-center justify-center rounded-lg bg-[#F28C38]/10 text-[#F28C38]">
-                    <item.icon className="h-6 w-6" />
+            <div className="relative z-10 grid lg:grid-cols-2 gap-20 items-center">
+              <div>
+                <SectionLabel>Legacy</SectionLabel>
+                <h2 className="text-white mb-8">
+                  The Gold Standard of <span className="text-gradient">Professional Security</span>
+                </h2>
+                <p className="mb-12 text-lg">
+                  DeviceDestination is not just a provider; we are architects of safety. Our systems are engineered for the most demanding environments.
+                </p>
+                
+                <div className="space-y-6">
+                  {[
+                    "Military-grade encryption protocols",
+                    "AI-driven anomaly detection",
+                    "Seamless multi-platform integration",
+                    "24/7 Redundant monitoring support"
+                  ].map((feature) => (
+                    <div key={feature} className="flex items-center gap-4 text-white/80 font-medium">
+                      <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                        <CheckCircle2 size={14} />
+                      </div>
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {[
+                  { icon: Shield, title: "Uncompromising Quality", desc: "Rigorous stress-testing in extreme conditions." },
+                  { icon: Globe, title: "Global Standards", desc: "Compliant with international security regulations." },
+                  { icon: Wrench, title: "White-Glove Support", desc: "Certified elite engineers for every installation." },
+                  { icon: Cog, title: "Systemic Integration", desc: "Holistic ecosystems that evolve with your needs." },
+                ].map((item, i) => (
+                  <div key={i} className="glass p-8 rounded-[2rem] border-white/10 hover:bg-white/5 transition-all duration-300">
+                    <item.icon className="h-8 w-8 text-primary mb-6" />
+                    <h4 className="text-white text-xl font-bold mb-3">{item.title}</h4>
+                    <p className="text-white/40 text-xs leading-relaxed">{item.desc}</p>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-heading text-[#1A1A1A] mb-1">{item.title}</h3>
-                    <p className="description text-sm">{item.desc}</p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </FadeIn>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Brands */}
-      <section className="py-16 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeIn direction="up">
-            <div className="text-center">
-              <SectionLabel>Trusted Brands</SectionLabel>
-              <p className="text-sm font-medium text-[#888] uppercase tracking-wider mb-8">
-                Trusted by leading security manufacturers
-              </p>
-            </div>
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
-              {["CP Plus", "ESSL"].map((brand) => (
-                <span key={brand} className="font-heading text-2xl text-[#666666] hover:text-[#F28C38] transition-colors duration-300 cursor-default">
-                  {brand}
-                </span>
-              ))}
-            </div>
-          </FadeIn>
+      {/* Brands - Redesigned as Premium Watermark */}
+      <section className="py-24 relative opacity-50 grayscale hover:grayscale-0 transition-all duration-1000">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center items-center gap-16 md:gap-32">
+            {["CP Plus", "ESSL", "Hikvision", "Dahua"].map((brand) => (
+              <span key={brand} className="text-3xl md:text-5xl font-black text-white/10 tracking-tighter uppercase cursor-default hover:text-primary transition-colors duration-500">
+                {brand}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-[#FAFAFA]">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <section className="py-32 relative">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <FadeIn direction="up">
-            <div className="text-center mb-16">
-              <SectionLabel>FAQ</SectionLabel>
-              <h2 className="mb-4">Frequently Asked Questions</h2>
+            <div className="text-center mb-20">
+              <SectionLabel>Intelligence</SectionLabel>
+              <h2 className="text-white mb-6">Expert <span className="text-gradient">Insights</span></h2>
             </div>
           </FadeIn>
-          <Accordion items={[
-            { question: "How do I choose the right surveillance system?", answer: "Our experts assess your premises to recommend the optimal camera type, resolution, and NVR capacity." },
-            { question: "What is your installation timeline?", answer: "Most installations are completed within 48-72 hours of site assessment." },
-            { question: "Do you offer post-installation support?", answer: "Yes, we provide comprehensive technical support and maintenance packages." },
-            { question: "Can I monitor cameras remotely?", answer: "Absolutely, all our NVR systems support remote viewing via iCMOB/gCMOB mobile apps." },
-            { question: "Are your products covered under warranty?", answer: "Yes, all hardware comes with a standard manufacturer warranty of 1-2 years." },
-          ]} />
+          <div className="glass rounded-[2.5rem] p-4 md:p-8 border-white/5">
+            <Accordion items={[
+              { question: "How do I choose the right surveillance architecture?", answer: "Our elite consultants evaluate your specific spatial requirements and risk profiles to architect a customized monitoring ecosystem." },
+              { question: "What is your deployment timeline?", answer: "Deployment usually occurs within 48 to 72 hours following a comprehensive site architecture assessment." },
+              { question: "Do you offer redundant support protocols?", answer: "Yes, we provide enterprise-tier maintenance packages that ensure continuous operation and zero-latency technical intervention." },
+              { question: "Can I monitor systems through encrypted remote access?", answer: "Absolutely. Our systems utilize military-grade encryption for secure, real-time remote monitoring via our proprietary global interface." },
+              { question: "What is the warranty lifecycle of your hardware?", answer: "All professional hardware is backed by an extensive manufacturer warranty, typically ranging from 24 to 60 months." },
+            ]} />
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-[#FAFAFA]">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <FadeIn direction="up">
-            <h2 className="font-heading text-4xl sm:text-5xl mb-6 text-[#1A1A1A]">
-              Ready to secure your business?
-            </h2>
-            <p className="text-lg text-[#666666] mb-10 max-w-2xl mx-auto leading-relaxed">
-              Speak with our security specialists to find the right surveillance solution for your specific requirements.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-[#F28C38] px-8 py-4 text-sm font-bold text-white hover:bg-[#C96E1A] transition-all duration-300 group"
-            >
-              Contact Our Team
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </FadeIn>
+      {/* CTA - Cinematic Redesign */}
+      <section className="py-40 relative">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8 relative z-10">
+          <ScaleIn className="glass rounded-[4rem] p-12 md:p-24 text-center border-white/10 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-premium-gradient opacity-0 group-hover:opacity-10 transition-opacity duration-1000" />
+            <div className="relative z-10">
+              <h2 className="text-white text-5xl md:text-7xl mb-10 leading-tight">
+                Architect Your <br/> <span className="text-gradient">Total Security</span>
+              </h2>
+              <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Experience the pinnacle of professional surveillance. Our specialists are ready to design your bespoke security ecosystem.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <Link
+                  href="/contact"
+                  className="px-12 py-6 rounded-full bg-premium-gradient text-white font-bold shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all duration-300 border border-white/10 block w-full sm:w-auto"
+                >
+                  Initiate Consultation
+                </Link>
+                <Link
+                  href="/products"
+                  className="px-12 py-6 rounded-full glass text-white font-bold hover:bg-white/10 transition-all duration-300 border border-white/10 block w-full sm:w-auto"
+                >
+                  Explore Collection
+                </Link>
+              </div>
+            </div>
+          </ScaleIn>
         </div>
       </section>
     </main>
