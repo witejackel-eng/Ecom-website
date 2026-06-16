@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import FadeIn, { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
-import { ArrowUpRight, Facebook, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowUpRight, Globe, ExternalLink, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   const footerSections = [
@@ -114,10 +114,13 @@ export default function Footer() {
             </p>
             
             <div className="flex gap-8">
-              <a href="https://facebook.com" className="text-white/20 hover:text-primary transition-colors"><Facebook size={20} /></a>
-              <a href="https://linkedin.com" className="text-white/20 hover:text-primary transition-colors"><Linkedin size={20} /></a>
+              <a href="https://facebook.com" className="text-white/20 hover:text-primary transition-colors flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest">
+                <Globe size={16} /> Facebook
+              </a>
+              <a href="https://linkedin.com" className="text-white/20 hover:text-primary transition-colors flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest">
+                <ExternalLink size={16} /> LinkedIn
+              </a>
             </div>
-            
             <p className="text-[10px] font-bold text-white/20 uppercase tracking-[0.4em]">
               Delhi &middot; Noida &middot; Gurgaon &middot; Faridabad
             </p>
