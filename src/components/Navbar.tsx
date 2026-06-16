@@ -14,6 +14,14 @@ export default function Navbar() {
   const { cartCount } = useCart();
   const searchInputRef = useRef<HTMLInputElement>(null);
 
+  const filteredProducts = searchQuery.length >= 2 
+    ? products.filter(p => 
+        p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.model.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.category.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : [];
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
