@@ -4,6 +4,7 @@ import { ArrowRight, Shield, Eye, HardDrive } from "lucide-react";
 import { products } from "@/data/products";
 import FadeIn, { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 import ProductPlaceholder from "@/components/ProductPlaceholder";
+import ProductCard from "@/components/ProductCard";
 
 export default function Home() {
   const featuredProducts = products.slice(0, 4);
