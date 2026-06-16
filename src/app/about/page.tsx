@@ -2,11 +2,18 @@ import FadeIn from "@/components/ui/FadeIn";
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#0A0A0A] pt-32 pb-20">
-      {/* Hero Background */}
-      <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/city-night.jpg')" }}>
-        <div className="absolute inset-0 bg-black/45" />
-      </div>
+    <main 
+      className="min-h-screen pt-32 pb-20 relative"
+      style={{
+        backgroundImage: "url('/images/city-night.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center top",
+        backgroundRepeat: "no-repeat",
+        backgroundColor: "#0A0A0A"
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/45 z-0" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <FadeIn direction="up">
