@@ -2,37 +2,22 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import { Menu, X, ShoppingCart, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/context/CartContext";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const { cartCount } = useCart();
-  const pathname = usePathname();
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Products", href: "/products" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
-  ];
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/80 backdrop-blur-md border-b border-[#E5E5E5]"
-          : "bg-white border-b border-transparent"
-      }`}
+      className="fixed top-0 z-50 w-full"
+      style={{
+        backgroundColor: "rgba(10, 31, 46, 0.85)",
+        backdropFilter: "blur(12px)",
+        borderBottom: "1px solid rgba(255, 255, 255, 0.08)"
+      }}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
@@ -40,18 +25,21 @@ export default function Navbar() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#F28C38] text-white font-heading text-lg font-bold">
               DD
             </div>
-            <span className="font-heading text-2xl text-[#1A1A1A]">DeviceDestination</span>
+            <span className="font-heading text-2xl text-white">DeviceDestination</span>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
+            {[
+              { name: "Home", href: "/" },
+              { name: "Products", href: "/products" },
+              { name: "About", href: "/about" },
+              { name: "Contact", href: "/contact" },
+            ].map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-bold transition-colors uppercase tracking-widest ${
-                  pathname === item.href ? "text-[#F28C38]" : "text-[#1A1A1A] hover:text-[#F28C38]"
-                }`}
+                className="text-sm font-bold text-white/80 hover:text-white transition-colors duration-200 uppercase tracking-widest"
               >
                 {item.name}
               </Link>
@@ -59,9 +47,9 @@ export default function Navbar() {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-6 text-[#1A1A1A]">
+          <div className="flex items-center gap-6 text-white">
             <Search className="h-5 w-5 cursor-pointer hover:text-[#F28C38] transition-colors" />
-            <Link href="/cart" className={`relative p-2 transition-colors ${pathname === '/cart' ? 'text-[#F28C38]' : 'hover:text-[#F28C38]'}`}>
+            <Link href="/cart" className="relative p-2 hover:text-[#F28C38] transition-colors">
               <ShoppingCart className="h-5 w-5" />
               {cartCount > 0 && (
                 <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#F28C38] text-[10px] font-bold text-white">
@@ -69,6 +57,12 @@ export default function Navbar() {
                 </span>
               )}
             </Link>
+
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Link href="/contact" className="px-6 py-2 rounded-full bg-[#F28C38] text-white font-semibold hover:brightness-110 transition-all duration-200">
+                Contact Sales
+              </Link>
+            </motion.div>
 
             <button
               className="md:hidden p-2 hover:text-[#F28C38]"
@@ -87,16 +81,19 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-[#E5E5E5] overflow-hidden"
+            className="md:hidden bg-[#0A1F2E] border-b border-white/10 overflow-hidden"
           >
             <div className="flex flex-col gap-4 p-6">
-              {navItems.map((item) => (
+              {[
+                { name: "Home", href: "/" },
+                { name: "Products", href: "/products" },
+                { name: "About", href: "/about" },
+                { name: "Contact", href: "/contact" },
+              ].map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-lg font-bold uppercase ${
-                    pathname === item.href ? "text-[#F28C38]" : "text-[#1A1A1A] hover:text-[#F28C38]"
-                  }`}
+                  className="text-lg font-bold text-white uppercase"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
