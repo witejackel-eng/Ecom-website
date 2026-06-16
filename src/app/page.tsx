@@ -119,23 +119,6 @@ export default function Home() {
       </section>
 
 
-      {/* Brands */}
-      <section className="py-16 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeIn direction="up">
-            <p className="text-center text-sm font-medium text-[#888] uppercase tracking-wider mb-8">
-              Trusted by leading security manufacturers
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
-              {["CP Plus", "ESSL"].map((brand) => (
-                <span key={brand} className="font-heading text-2xl text-[#666666] hover:text-[#F28C38] transition-colors duration-300 cursor-default">
-                  {brand}
-                </span>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-24 bg-[#FAFAFA]">
