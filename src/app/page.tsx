@@ -74,19 +74,7 @@ export default function Home() {
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuredProducts.map((product) => (
               <StaggerItem key={product.id}>
-                <div className="bg-white rounded-xl p-4 border border-[#E5E5E5] shadow-sm hover:shadow-lg hover:border-[#F28C38]/30 transition-all duration-300">
-                  <Link href={`/products/${product.id}`}>
-                    <div className="relative aspect-square rounded-lg bg-[#FAFAFA] mb-4 overflow-hidden">
-                      <ProductPlaceholder className="absolute inset-0" />
-                    </div>
-                    <h3 className="text-lg text-[#1A1A1A] mb-1 group-hover:text-[#F28C38] transition-colors">{product.name}</h3>
-                    <p className="description text-xs uppercase tracking-wide mb-3">Model: {product.model}</p>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-lg font-semibold text-[#F28C38]">₹{product.price.toLocaleString('en-IN')}</span>
-                      <span className="text-sm text-[#888] line-through">₹{product.mrp.toLocaleString('en-IN')}</span>
-                    </div>
-                  </Link>
-                </div>
+                <ProductCard product={product as any} />
               </StaggerItem>
             ))}
           </StaggerContainer>
