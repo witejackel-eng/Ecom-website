@@ -4,24 +4,16 @@
   --color-tangerine: #FF8A00;
   --color-tangerine-light: #FFA62B;
   --color-tangerine-lighter: #FFB347;
-  --color-navy: #0A1F2E;
-  --color-navy-light: #0D3D4F;
-  --color-navy-lighter: #0A2A35;
+  --color-navy-deep: #081C24;
+  --color-navy-card: #0D2530;
 }
 
 html {
-  background-color: var(--color-navy);
+  background-color: var(--color-navy-deep);
 }
 
 body {
-  background: linear-gradient(
-    160deg,
-    var(--color-navy) 0%,
-    var(--color-navy-light) 50%,
-    var(--color-navy-lighter) 100%
-  );
-  background-attachment: fixed;
-  min-height: 100vh;
+  background-color: var(--color-navy-deep);
   color: white;
   font-family: var(--font-plus-jakarta);
 }
@@ -35,19 +27,19 @@ p {
 }
 
 .text-accent {
-  @apply text-orange-400;
+  @apply text-[var(--color-tangerine)];
 }
 
 .glass {
-  @apply bg-white/5 backdrop-blur-md border border-white/10;
+  @apply bg-[var(--color-navy-card)] backdrop-blur-md border border-[rgba(255,138,0,0.18)];
 }
 
 .border-tangerine {
-  @apply border border-[rgba(255,138,0,0.2)];
+  @apply border border-[rgba(255,138,0,0.18)];
 }
 
 .border-tangerine-hover:hover {
-  @apply border-[rgba(255,138,0,0.6)];
+  @apply border-[rgba(255,138,0,0.55)];
 }
 
 .glow-tangerine {
