@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+html {
+  background-color: #0A1F2E;
+}
+
+body {
+  background: linear-gradient(
+    160deg,
+    #0A1F2E 0%,
+    #0D3D4F 50%,
+    #0A2A35 100%
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: white;
+}
+
 .cart-body::-webkit-scrollbar {
   display: none;
 }
