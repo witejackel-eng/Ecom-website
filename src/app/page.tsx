@@ -20,12 +20,12 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="text-center mb-20">
-              <SectionLabel>Solutions</SectionLabel>
+              <SectionLabel>What We Offer</SectionLabel>
               <h2 className="text-white text-5xl md:text-6xl font-black tracking-tighter mb-6">
-                Security <span className="text-gradient">Architectures.</span>
+                Everything <span className="text-gradient">You Need.</span>
               </h2>
               <p className="max-w-2xl mx-auto text-white/55 text-lg font-medium">
-                Comprehensive ecosystem coverage for high-stakes environments, from domestic monitoring to industrial surveillance.
+                From a single camera for your home to a complete system for your factory — we have it covered.
               </p>
             </div>
           </FadeIn>
@@ -67,12 +67,12 @@ export default function Home() {
           <FadeIn direction="up">
             <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
               <div className="max-w-2xl">
-                <SectionLabel>Products</SectionLabel>
+                <SectionLabel>Top Sellers</SectionLabel>
                 <h2 className="text-white text-5xl md:text-6xl font-black tracking-tighter mb-6">
-                  Featured <span className="text-gradient">Innovations.</span>
+                  Our Most Popular <span className="text-gradient">Products.</span>
                 </h2>
                 <p className="text-white/55 text-lg font-medium leading-relaxed">
-                  Professional-grade hardware selected for uncompromising reliability and next-generation performance.
+                  The cameras and devices our customers order most. Tested, trusted, and in stock.
                 </p>
               </div>
               <Link href="/products" className="group flex items-center gap-4 text-[10px] font-black text-primary uppercase tracking-[0.3em] glass border-white/10 px-10 py-5 rounded-full hover:bg-white/5 transition-all duration-300">
@@ -100,12 +100,12 @@ export default function Home() {
             
             <div className="relative z-10 grid lg:grid-cols-2 gap-20 items-center">
               <div>
-                <SectionLabel>Legacy Architecture</SectionLabel>
+                <SectionLabel>Why Us</SectionLabel>
                 <h2 className="text-white text-5xl md:text-6xl font-black tracking-tighter mb-10 leading-tight">
-                  The Gold Standard <br/> of <span className="text-gradient">Security.</span>
+                  Why Customers <br/> Come <span className="text-gradient">Back.</span>
                 </h2>
                 <p className="mb-12 text-lg text-white/55 font-medium leading-relaxed">
-                  DeviceDestination is not just a provider; we are architects of safety. Our systems are engineered for the most demanding environments globally.
+                  We've been supplying security systems to homes and businesses across Delhi NCR for years. We don't just drop off a box — we help you choose the right product, install it properly, and support you after the sale.
                 </p>
                 
                 <div className="space-y-6">
@@ -127,10 +127,10 @@ export default function Home() {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
-                  { icon: Shield, title: "Absolute Quality", desc: "Rigorous stress-testing in extreme conditions." },
-                  { icon: Globe, title: "Global Compliance", desc: "Adherent to international security regulations." },
-                  { icon: Wrench, title: "Elite Engineering", desc: "Certified specialists for every installation." },
-                  { icon: Cog, title: "Systemic Fusion", desc: "Holistic ecosystems that evolve with your data." },
+                  { icon: Shield, title: "Products That Work", desc: "Every camera and device we sell is from CP Plus or ESSL — brands with real warranties and spare parts available in India." },
+                  { icon: Globe, title: "Installed by Professionals", desc: "Our technicians handle the wiring, mounting, and configuration. You don't need to figure anything out yourself." },
+                  { icon: Wrench, title: "Honest Pricing", desc: "Competitive pricing with no hidden charges. What you see on the product page is what you pay." },
+                  { icon: Cog, title: "Support After the Sale", desc: "If something goes wrong within the warranty period, call us. We will sort it out." },
                 ].map((item, i) => (
                   <div key={i} className="glass p-8 rounded-[32px] border-white/10 hover:bg-white/5 transition-all duration-500 group/item">
                     <item.icon className="h-8 w-8 text-primary mb-8 group-hover/item:scale-110 transition-transform" />
@@ -149,17 +149,17 @@ export default function Home() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="text-center mb-24">
-              <SectionLabel>Intelligence Hub</SectionLabel>
-              <h2 className="text-white text-5xl md:text-7xl font-black tracking-tighter">Expert <span className="text-gradient">Insights.</span></h2>
+              <SectionLabel>FAQs</SectionLabel>
+              <h2 className="text-white text-5xl md:text-7xl font-black tracking-tighter">Questions We Get <span className="text-gradient">Asked a Lot.</span></h2>
             </div>
           </FadeIn>
           <div className="glass rounded-[3rem] p-4 md:p-10 border-white/5 shadow-2xl">
             <Accordion items={[
-              { question: "How do I choose the right surveillance architecture?", answer: "Our elite consultants evaluate your specific spatial requirements and risk profiles to architect a customized monitoring ecosystem." },
-              { question: "What is your deployment timeline?", answer: "Deployment usually occurs within 48 to 72 hours following a comprehensive site architecture assessment." },
-              { question: "Do you offer redundant support protocols?", answer: "Yes, we provide enterprise-tier maintenance packages that ensure continuous operation and zero-latency technical intervention." },
-              { question: "Can I monitor systems through encrypted remote access?", answer: "Absolutely. Our systems utilize military-grade encryption for secure, real-time remote monitoring via our proprietary global interface." },
-              { question: "What is the warranty lifecycle of your hardware?", answer: "All professional hardware is backed by an extensive manufacturer warranty, typically ranging from 24 to 60 months." },
+              { question: "Which camera should I get for my shop or office?", answer: "For most indoor spaces, a 2MP or 4MP dome camera is the right choice. For outdoor areas or large floor spaces, a bullet camera with night vision works better. Call us and we will recommend the right model for your space." },
+              { question: "Do you install the system or just sell it?", answer: "Both. We sell individual products if you have your own installer. We also handle complete installation — cable runs, mounting, NVR configuration, and mobile app setup." },
+              { question: "How long does installation take?", answer: "A standard 4-camera home or shop system takes about 4 to 6 hours. Larger commercial setups with 8 to 16 cameras typically take a full day. We give you a time estimate before we start." },
+              { question: "Can I view my cameras on my phone?", answer: "Yes. We set up remote viewing on the CP Plus or ESSL mobile app during installation. You can monitor your cameras from anywhere with an internet connection." },
+              { question: "What warranty do you offer?", answer: "All CP Plus and ESSL products come with a 2-year manufacturer warranty. If there is a hardware defect within that period, we will coordinate the replacement for you." },
             ]} />
           </div>
         </div>
@@ -172,24 +172,25 @@ export default function Home() {
           <ScaleIn className="glass rounded-[4rem] p-12 md:p-24 text-center border-white/10 relative overflow-hidden group shadow-2xl">
             <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-[0.03] transition-opacity duration-1000" />
             <div className="relative z-10">
+              <SectionLabel>Get Started</SectionLabel>
               <h2 className="text-white text-5xl md:text-8xl mb-12 font-black tracking-tighter leading-none">
-                Architect Your <br/> <span className="text-gradient">Total Security.</span>
+                Let's Set Up <br/> <span className="text-gradient">Your System.</span>
               </h2>
               <p className="text-xl text-white/55 mb-16 max-w-2xl mx-auto leading-relaxed font-medium">
-                Experience the pinnacle of professional surveillance. Our specialists are ready to design your bespoke security ecosystem today.
+                Tell us what you need — a single camera, a full office setup, or a biometric attendance system. We will get back to you with a recommendation and a price.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
                 <Link
                   href="/contact"
                   className="btn-primary px-12 py-6 text-sm font-black uppercase tracking-[0.3em] shadow-2xl shadow-primary/30 min-w-[280px]"
                 >
-                  Initiate Consultation
+                  Get a Quote
                 </Link>
                 <Link
                   href="/products"
                   className="px-12 py-6 rounded-full glass text-white font-black text-sm uppercase tracking-[0.3em] hover:bg-white/5 transition-all border border-white/10 min-w-[280px]"
                 >
-                  Explore Collection
+                  Browse Products
                 </Link>
               </div>
             </div>

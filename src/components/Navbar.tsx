@@ -11,7 +11,7 @@ export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
-  const { cartCount } = useCart();
+  const { cartCount, openCart } = useCart();
   const searchInputRef = useRef<HTMLInputElement>(null);
 
   const filteredProducts = searchQuery.length >= 2 
@@ -67,14 +67,17 @@ export default function Navbar() {
               <Search className="h-5 w-5 cursor-pointer text-white/70 hover:text-white" />
             </button>
             
-            <Link href="/cart" className="relative p-2 hover:bg-white/5 rounded-full transition-all duration-300">
+            <button 
+              onClick={() => openCart()}
+              className="relative p-2 hover:bg-white/5 rounded-full transition-all duration-300"
+            >
               <ShoppingCart className="h-5 w-5 text-white/70 hover:text-white" />
               {cartCount > 0 && (
                 <span className="absolute top-0 right-0 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white shadow-lg">
                   {cartCount}
                 </span>
               )}
-            </Link>
+            </button>
           </div>
 
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="hidden md:block">

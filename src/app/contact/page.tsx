@@ -13,12 +13,12 @@ export default function ContactPage() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Hero */}
         <FadeIn direction="up" className="text-center mb-24">
-          <SectionLabel>Architecture Support</SectionLabel>
+          <SectionLabel>Contact</SectionLabel>
           <h1 className="text-white text-5xl md:text-7xl font-black mb-6 tracking-tighter leading-tight">
-            Initiate <span className="text-gradient">Transmission.</span>
+            Get <span className="text-gradient">In Touch.</span>
           </h1>
           <p className="text-xl text-white/55 max-w-2xl mx-auto font-medium">
-            Our elite security architects are ready to design your bespoke surveillance ecosystem. Connect via secure channels below.
+            Have a question, need a quote, or want to book an installation? We are available Monday to Saturday.
           </p>
         </FadeIn>
 
@@ -32,7 +32,7 @@ export default function ContactPage() {
                     <div className="h-12 w-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-xl">
                       <MapPin size={24} />
                     </div>
-                    <h3 className="font-bold text-white text-xl tracking-tight uppercase">Global HQ</h3>
+                    <h3 className="font-bold text-white text-xl tracking-tight uppercase">Our Office</h3>
                   </div>
                   <p className="text-white/55 leading-relaxed font-bold">
                     Plot No. 94, 3rd Floor, Block - B, Sector - 13, Dwarka, New Delhi - 110075
@@ -46,14 +46,14 @@ export default function ContactPage() {
                     <div className="h-12 w-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-8 shadow-xl">
                       <Phone size={24} />
                     </div>
-                    <p className="text-[10px] text-white/30 font-black uppercase tracking-[0.2em] mb-2">Voice Interface</p>
+                    <p className="text-[10px] text-white/30 font-black uppercase tracking-[0.2em] mb-2">Phone</p>
                     <p className="text-white font-bold tracking-tight">+91 83685 61919</p>
                   </a>
                   <a href="mailto:manish@insight-solutions.in" className="glass p-10 rounded-[2.5rem] border-white/5 hover:border-white/20 transition-all duration-500 group">
                     <div className="h-12 w-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-8 shadow-xl">
                       <Mail size={24} />
                     </div>
-                    <p className="text-[10px] text-white/30 font-black uppercase tracking-[0.2em] mb-2">Secure Mail</p>
+                    <p className="text-[10px] text-white/30 font-black uppercase tracking-[0.2em] mb-2">Email</p>
                     <p className="text-white font-bold tracking-tight text-[11px] break-all">manish@insight-solutions.in</p>
                   </a>
                 </div>
@@ -66,8 +66,8 @@ export default function ContactPage() {
                       <Clock size={24} />
                     </div>
                     <div>
-                      <h3 className="font-bold text-white text-xl tracking-tight uppercase">Active Status</h3>
-                      <p className="text-white/55 font-bold mt-1">Mon – Sat &middot; 10:00 – 19:00</p>
+                      <h3 className="font-bold text-white text-xl tracking-tight uppercase">Business Hours</h3>
+                      <p className="text-white/55 font-bold mt-1">Monday – Saturday, 10:00 AM – 7:00 PM</p>
                     </div>
                   </div>
                 </div>
@@ -83,25 +83,25 @@ export default function ContactPage() {
                 
                 <div className="relative z-10 grid sm:grid-cols-2 gap-8">
                   <div className="space-y-3">
-                    <label className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] ml-4">Identity</label>
+                    <label className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] ml-4">YOUR NAME</label>
                     <input 
-                      placeholder="Personnel Name" 
+                      placeholder="Your Name" 
                       className="w-full p-6 bg-white/5 border border-white/5 rounded-3xl text-white placeholder:text-white/20 focus:border-primary focus:bg-white/10 transition-all outline-none font-medium" 
                     />
                   </div>
                   <div className="space-y-3">
-                    <label className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] ml-4">Transmission Channel</label>
+                    <label className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] ml-4">YOUR EMAIL</label>
                     <input 
-                      placeholder="Email Protocol" 
+                      placeholder="your@email.com" 
                       className="w-full p-6 bg-white/5 border border-white/5 rounded-3xl text-white placeholder:text-white/20 focus:border-primary focus:bg-white/10 transition-all outline-none font-medium" 
                     />
                   </div>
                 </div>
                 
                 <div className="space-y-3">
-                  <label className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] ml-4">Architecture Requirements</label>
+                  <label className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] ml-4">YOUR MESSAGE</label>
                   <textarea 
-                    placeholder="Describe your operational objectives..." 
+                    placeholder="Tell us what you need — a product question, a quote for your office, or to book an installation." 
                     rows={5} 
                     className="w-full p-6 bg-white/5 border border-white/5 rounded-[2rem] text-white placeholder:text-white/20 focus:border-primary focus:bg-white/10 transition-all outline-none resize-none font-medium"
                   ></textarea>
@@ -112,7 +112,7 @@ export default function ContactPage() {
                   whileTap={{ scale: 0.98 }}
                   className="w-full py-6 bg-primary text-white font-black text-sm uppercase tracking-[0.3em] rounded-3xl flex items-center justify-center gap-4 shadow-2xl shadow-primary/30"
                 >
-                  Initiate Transmission <Send size={18} />
+                  Send Message <Send size={18} />
                 </motion.button>
               </form>
             </ScaleIn>

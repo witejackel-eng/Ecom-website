@@ -19,26 +19,26 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full grid lg:grid-cols-2 gap-16 items-center">
-        {/* Left: Content */}
+      <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8 w-full flex items-center justify-center text-center">
+        {/* Content */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-2xl"
         >
           <span className="section-label mb-6 block">
-            // NEXT-GEN SECURITY ARCHITECTURE
+            // SECURITY SYSTEMS
           </span>
           <h1 className="text-white mb-8">
-            Secure What <br/> 
-            <span className="text-gradient">Matters Most.</span>
+            Protect What <br/> 
+            <span className="text-gradient">You've Built.</span>
           </h1>
           <p className="text-white/75 text-lg md:text-xl mb-12 leading-relaxed font-medium">
-            Enterprise-grade CCTV, surveillance and biometric solutions designed for high-stakes environments, modern homes, and global institutions.
+            CP Plus and ESSL cameras, NVR systems, and biometric devices — supplied and installed across Delhi, Noida, Gurgaon, and Faridabad.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
               <Link
                 href="/products"
@@ -56,29 +56,6 @@ export default function Hero() {
               </Link>
             </motion.div>
           </div>
-        </motion.div>
-
-        {/* Right: Stats Stack */}
-        <motion.div 
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col border-l border-white/10 pl-12"
-        >
-          {[
-            { value: "10,000+", label: "CAMERAS INSTALLED" },
-            { value: "500+", label: "BUSINESS CLIENTS" },
-            { value: "5", label: "YEARS WARRANTY", color: "text-primary" }
-          ].map((stat, i) => (
-            <div key={i} className="py-6 border-b border-white/10 last:border-b-0">
-              <div className={`text-[64px] font-black tracking-tighter ${stat.color || "text-white"}`}>
-                {stat.value}
-              </div>
-              <div className="text-[13px] font-medium text-gray-400 tracking-[0.1em] uppercase">
-                {stat.label}
-              </div>
-            </div>
-          ))}
         </motion.div>
       </div>
     </section>

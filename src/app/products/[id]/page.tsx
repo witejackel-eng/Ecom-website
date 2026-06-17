@@ -1,17 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import FadeIn, { StaggerContainer, StaggerItem, ScaleIn } from "@/components/ui/FadeIn";
 import SectionLabel from "@/components/SectionLabel";
 import { ShoppingCart, Zap, Download, FileText, MessageSquare, Plus, Check } from "lucide-react";
-import Link from "next/link";
+import { useCart } from "@/context/CartContext";
 
 export default function ProductDetailPage() {
   const { id } = useParams();
+  const router = useRouter();
+  const { addToCart } = useCart();
   const product = products.find((p) => p.id === id);
   const [mainImage, setMainImage] = useState(product?.images[0] || product?.image || "");
 
@@ -78,8 +80,21 @@ export default function ProductDetailPage() {
             </FadeIn>
 
             <FadeIn direction="up" delay={0.3} className="flex flex-wrap gap-4">
-              <button className="btn-primary flex items-center justify-center gap-3"><ShoppingCart size={18}/>Add to Cart</button>
-              <button className="px-8 py-4 rounded-full glass border-white/10 text-white font-bold text-sm hover:bg-white/5 transition-all">Buy Now</button>
+              <button 
+                onClick={() => addToCart(product, 1)}
+                className="btn-primary flex items-center justify-center gap-3"
+              >
+                <ShoppingCart size={18}/>Add to Cart
+              </button>
+              <button 
+                onClick={() => {
+                  addToCart(product, 1);
+                  router.push('/checkout');
+                }}
+                className="px-8 py-4 rounded-full glass border-white/10 text-white font-bold text-sm hover:bg-white/5 transition-all"
+              >
+                Buy Now
+              </button>
               <a href={product.datasheet} className="px-8 py-4 rounded-full glass border-white/10 text-white font-bold text-sm hover:bg-white/5 transition-all"><Download size={16}/>Datasheet</a>
               <a href={product.manual} className="px-8 py-4 rounded-full glass border-white/10 text-white font-bold text-sm hover:bg-white/5 transition-all"><FileText size={16}/>User Manual</a>
             </FadeIn>

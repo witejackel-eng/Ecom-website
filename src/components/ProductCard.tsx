@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import FadeIn, { ScaleIn } from "@/components/ui/FadeIn";
+import { ScaleIn } from "@/components/ui/FadeIn";
 import { ShoppingCart, ArrowUpRight } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 
 interface Product {
   id: string;
@@ -22,6 +23,8 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const { addToCart, openCart } = useCart();
+  
   return (
     <ScaleIn duration={0.6}>
       <div className="group relative glass rounded-[24px] overflow-hidden transition-all duration-500 hover:border-white/20 hover:-translate-y-[6px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4),0_0_20px_rgba(255,122,26,0.1)]">
@@ -87,7 +90,8 @@ export default function ProductCard({ product }: ProductCardProps) {
                 className="h-12 w-12 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20 border border-white/10"
                 onClick={(e) => {
                   e.preventDefault();
-                  // Add to cart logic here
+                  addToCart(product, 1);
+                  openCart();
                 }}
               >
                 <ShoppingCart size={18} />
