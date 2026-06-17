@@ -105,8 +105,8 @@ export default function Home() {
           <div className="bg-[var(--color-navy-card)] rounded-[3rem] border border-tangerine p-16 text-center glow-tangerine">
             <h2 className="text-white text-6xl font-black tracking-tighter mb-8">Let's Secure <br/> Your World.</h2>
             <div className="flex justify-center gap-4">
-              <button className="px-8 py-4 rounded-full bg-[var(--color-tangerine)] text-white font-bold">Get a Quote</button>
-              <button className="px-8 py-4 rounded-full border border-tangerine text-white font-bold">Browse Products</button>
+              <Link href="/contact" className="px-8 py-4 rounded-full bg-[var(--color-tangerine)] text-white font-bold">Get a Quote</Link>
+              <Link href="/products" className="px-8 py-4 rounded-full border border-tangerine text-white font-bold">Browse Products</Link>
             </div>
           </div>
         </div>
