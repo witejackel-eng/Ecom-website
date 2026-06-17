@@ -14,6 +14,10 @@ export default function Navbar() {
   const { cartCount, openCart } = useCart();
   const searchInputRef = useRef<HTMLInputElement>(null);
 
+  // Note: products data needs to be imported or handled appropriately.
+  // Assuming it was available in scope or needs to be fetched.
+  const products: any[] = []; 
+
   const filteredProducts = searchQuery.length >= 2 
     ? products.filter(p => 
         p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -31,14 +35,14 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full h-20 glass-navbar transition-all duration-300">
+    <header className={`fixed top-0 left-0 z-50 w-full h-20 transition-all duration-300 ${isScrolled ? 'bg-navy/80 backdrop-blur-md border-b border-tangerine' : 'bg-transparent'}`}>
       <nav className="mx-auto max-w-7xl h-full flex items-center justify-between px-6 lg:px-8">
         {/* Logo Left */}
         <Link href="/" className="flex items-center gap-3 group shrink-0">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white font-heading text-lg font-bold shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-tangerine)] text-white font-bold text-lg shadow-lg shadow-tangerine/20 group-hover:scale-110 transition-transform duration-300">
             DD
           </div>
-          <span className="font-heading text-2xl text-white font-extrabold tracking-tighter hidden sm:block">DeviceDestination</span>
+          <span className="text-2xl text-white font-bold tracking-tighter hidden sm:block">DeviceDestination</span>
         </Link>
 
         {/* Navigation Center */}
@@ -55,7 +59,7 @@ export default function Navbar() {
               className="relative text-[13px] font-bold text-white/70 hover:text-white transition-colors duration-300 uppercase tracking-[0.2em] group"
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[var(--color-tangerine)] transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </nav>
@@ -73,7 +77,7 @@ export default function Navbar() {
             >
               <ShoppingCart className="h-5 w-5 text-white/70 hover:text-white" />
               {cartCount > 0 && (
-                <span className="absolute top-0 right-0 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white shadow-lg">
+                <span className="absolute top-0 right-0 flex h-4 w-4 items-center justify-center rounded-full bg-[var(--color-tangerine)] text-[10px] font-bold text-white shadow-lg">
                   {cartCount}
                 </span>
               )}
@@ -81,7 +85,7 @@ export default function Navbar() {
           </div>
 
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="hidden md:block">
-            <Link href="/contact" className="px-8 py-3 rounded-full bg-primary text-white text-[13px] font-black uppercase tracking-widest shadow-xl shadow-primary/20 hover:shadow-primary/40 transition-all duration-300 border border-white/10">
+            <Link href="/contact" className="px-8 py-3 rounded-full bg-gradient-to-r from-[var(--color-tangerine)] to-[var(--color-tangerine-light)] text-white text-[13px] font-bold uppercase tracking-widest shadow-xl shadow-tangerine/20 hover:shadow-tangerine/40 transition-all duration-300 border border-white/10">
               Contact Sales
             </Link>
           </motion.div>
@@ -102,16 +106,16 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-[#031E2A]/98 backdrop-blur-md p-6 lg:p-20"
+            className="fixed inset-0 z-[100] bg-navy/98 backdrop-blur-md p-6 lg:p-20"
           >
             <div className="max-w-4xl mx-auto">
               <div className="flex items-center gap-4 mb-12">
-                <Search className="text-primary h-8 w-8" />
+                <Search className="text-[var(--color-tangerine)] h-8 w-8" />
                 <input
                   ref={searchInputRef}
                   type="text"
                   placeholder="Search products..."
-                  className="flex-1 bg-transparent border-b border-white/20 text-4xl text-white placeholder:text-white/20 py-4 focus:outline-none focus:border-primary transition-colors"
+                  className="flex-1 bg-transparent border-b border-white/20 text-4xl text-white placeholder:text-white/20 py-4 focus:outline-none focus:border-[var(--color-tangerine)] transition-colors"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyDown={(e) => e.key === 'Escape' && setSearchOpen(false)}
@@ -125,13 +129,13 @@ export default function Navbar() {
                     key={product.id} 
                     href={`/products/${product.id}`}
                     onClick={() => setSearchOpen(false)}
-                    className="flex justify-between items-center glass p-6 rounded-2xl hover:border-primary transition-all group"
+                    className="flex justify-between items-center glass p-6 rounded-2xl hover:border-[var(--color-tangerine)] transition-all group"
                   >
                     <div>
-                      <h4 className="text-xl font-bold text-white group-hover:text-primary">{product.name}</h4>
+                      <h4 className="text-xl font-bold text-white group-hover:text-[var(--color-tangerine)]">{product.name}</h4>
                       <p className="text-[10px] uppercase text-white/40">{product.category}</p>
                     </div>
-                    <span className="text-lg font-black text-primary">₹{product.price.toLocaleString('en-IN')}</span>
+                    <span className="text-lg font-black text-[var(--color-tangerine)]">₹{product.price.toLocaleString('en-IN')}</span>
                   </Link>
                 ))}
                 {searchQuery.length >= 2 && filteredProducts.length === 0 && (
@@ -150,7 +154,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden fixed inset-0 bg-background z-[60] flex flex-col items-center justify-center gap-8 p-8"
+            className="lg:hidden fixed inset-0 bg-navy z-[60] flex flex-col items-center justify-center gap-8 p-8"
           >
             <button 
               className="absolute top-6 right-6 p-2 text-white/70 hover:text-white"
@@ -167,7 +171,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-4xl font-black text-white/90 hover:text-primary tracking-tighter transition-colors"
+                className="text-4xl font-black text-white/90 hover:text-[var(--color-tangerine)] tracking-tighter transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
@@ -175,7 +179,7 @@ export default function Navbar() {
             ))}
             <Link 
               href="/contact" 
-              className="mt-8 px-12 py-5 rounded-full bg-primary text-white text-center font-black uppercase tracking-widest shadow-2xl shadow-primary/30"
+              className="mt-8 px-12 py-5 rounded-full bg-gradient-to-r from-[var(--color-tangerine)] to-[var(--color-tangerine-light)] text-white text-center font-black uppercase tracking-widest shadow-2xl shadow-tangerine/30"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact Sales

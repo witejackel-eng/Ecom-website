@@ -1,19 +1,61 @@
 @import "tailwindcss";
 
+@theme {
+  --color-tangerine: #FF8A00;
+  --color-tangerine-light: #FFA62B;
+  --color-tangerine-lighter: #FFB347;
+  --color-navy: #0A1F2E;
+  --color-navy-light: #0D3D4F;
+  --color-navy-lighter: #0A2A35;
+}
+
 html {
-  background-color: #0A1F2E;
+  background-color: var(--color-navy);
 }
 
 body {
   background: linear-gradient(
     160deg,
-    #0A1F2E 0%,
-    #0D3D4F 50%,
-    #0A2A35 100%
+    var(--color-navy) 0%,
+    var(--color-navy-light) 50%,
+    var(--color-navy-lighter) 100%
   );
   background-attachment: fixed;
   min-height: 100vh;
   color: white;
+  font-family: var(--font-plus-jakarta);
+}
+
+h1, h2, h3, h4 {
+  @apply font-bold tracking-tight text-white;
+}
+
+p {
+  @apply text-gray-300;
+}
+
+.text-accent {
+  @apply text-orange-400;
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.border-tangerine {
+  @apply border border-[rgba(255,138,0,0.2)];
+}
+
+.border-tangerine-hover:hover {
+  @apply border-[rgba(255,138,0,0.6)];
+}
+
+.glow-tangerine {
+  box-shadow: 0 0 0 1px rgba(255, 138, 0, 0.15), 0 20px 60px rgba(255, 138, 0, 0.08);
+}
+
+.glow-tangerine-hover:hover {
+  box-shadow: 0 30px 80px rgba(255, 138, 0, 0.18);
 }
 
 .cart-body::-webkit-scrollbar {
