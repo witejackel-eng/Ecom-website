@@ -37,7 +37,7 @@ export default function RootLayout({
       lang="en"
       className={`${plusJakartaSans.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans overflow-x-hidden selection:bg-teal-500/30 noise-bg" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col font-sans bg-background text-foreground overflow-x-hidden selection:bg-teal-500/30 noise-bg" suppressHydrationWarning>
         <CartProvider>
           <Navbar />
           <CartDrawer />
