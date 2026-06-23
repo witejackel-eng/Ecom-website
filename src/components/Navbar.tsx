@@ -8,18 +8,36 @@ import { useCart } from "@/context/CartContext";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { cartCount, openCart } = useCart();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 z-50 w-full h-20 transition-all duration-300 ${isScrolled ? 'bg-[var(--color-navy-deep)]/80 backdrop-blur-md border-b border-tangerine' : 'bg-transparent'}`}>
-      <nav className="mx-auto max-w-7xl h-full flex items-center justify-between px-6 lg:px-8">
+    <header
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 100,
+        transition: 'background 400ms ease, backdrop-filter 400ms ease, padding 400ms ease, box-shadow 400ms ease, border-color 400ms ease',
+        background: scrolled ? 'rgba(10, 25, 38, 0.95)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(20px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
+        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
+        boxShadow: scrolled ? '0 4px 30px rgba(0,0,0,0.3)' : 'none',
+        paddingTop: scrolled ? '12px' : '20px',
+        paddingBottom: scrolled ? '12px' : '20px',
+      }}
+    >
+      <nav className="mx-auto max-w-7xl flex items-center justify-between px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3 group">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-tangerine)] text-white font-bold text-lg shadow-lg shadow-tangerine/20 group-hover:scale-110 transition-transform duration-300">
             DD
