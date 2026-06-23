@@ -40,15 +40,15 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative pt-32 pb-16 border-t border-[rgba(255,138,0,0.18)] bg-[var(--color-navy-deep)]">
+    <footer className="relative py-16 border-t border-[rgba(255,138,0,0.18)] bg-[var(--color-navy-deep)]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {footerData.map((section) => (
             <div key={section.section}>
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--color-tangerine)] mb-8">
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--color-tangerine)] mb-6">
                 {section.section}
               </h3>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     <Link href={link.href} className="text-gray-400 hover:text-[var(--color-tangerine)] text-sm transition-colors flex items-center gap-2 group">

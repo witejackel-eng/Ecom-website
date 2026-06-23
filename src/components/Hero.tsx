@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 export default function Hero() {
   return (
     <section 
-      className="relative min-h-[90vh] flex flex-col items-start justify-center pt-32 overflow-hidden"
+      className="relative min-h-[85vh] flex flex-col items-center justify-center py-24 overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #0A1F2E 0%, #0D3D4F 40%, #0A2A35 70%, #061418 100%)'
       }}
@@ -16,14 +16,15 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--color-tangerine)] rounded-full blur-[120px] opacity-10 animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--color-tangerine)] rounded-full blur-[120px] opacity-5 animate-pulse delay-1000" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 text-left w-full">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center w-full flex justify-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-start"
+          className="flex flex-col items-center"
+          style={{ maxWidth: '650px' }}
         >
-          <span className="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--color-tangerine)] mb-6 text-left">
+          <span className="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--color-tangerine)] mb-6">
             // Professional Security Ecosystems
           </span>
           <h1 
@@ -36,10 +37,9 @@ export default function Hero() {
             Secure Your <br/> <span className="text-[var(--color-tangerine)]">World.</span>
           </h1>
           <p 
-            className="text-gray-300 mb-12"
+            className="text-gray-300 mb-16"
             style={{
-              maxWidth: '540px',
-              textAlign: 'left',
+              textAlign: 'center',
               fontSize: '18px',
               lineHeight: '1.7',
               color: 'rgba(255,255,255,0.75)'
@@ -48,7 +48,7 @@ export default function Hero() {
             CP Plus and ESSL cameras, NVR systems, and biometric devices — supplied and installed across Delhi, Noida, Gurgaon, and Faridabad.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/products" className="px-8 py-4 rounded-full bg-[var(--color-tangerine)] text-white font-bold flex items-center gap-2 hover:bg-[var(--color-tangerine-light)] transition-all">
               Browse Products <ArrowRight size={18} />
             </Link>

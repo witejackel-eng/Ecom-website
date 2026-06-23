@@ -13,17 +13,17 @@ export default function Home() {
     <main className="flex-1 bg-[var(--color-navy-deep)]">
       <Hero />
 
-      {/* What We Offer - Transparent Background, Gradient/Glass Cards */}
-      <section className="py-32 relative">
+      {/* What We Offer */}
+      <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12">
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--color-tangerine)] mb-4 block">// WHAT WE OFFER</span>
-            <h2 className="text-white text-6xl md:text-7xl font-black tracking-tighter mb-6">
+            <h2 className="text-white text-6xl md:text-7xl font-black tracking-tighter">
               Everything <span className="text-[var(--color-tangerine)]">You Need.</span>
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { name: "Dome Cameras", icon: Eye },
               { name: "Bullet Cameras", icon: Shield },
@@ -34,19 +34,19 @@ export default function Home() {
                 <div className="w-16 h-16 bg-[rgba(255,165,0,0.1)] rounded-xl flex items-center justify-center mb-4">
                   <cat.icon className="text-[var(--color-tangerine)]" size={40} />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{cat.name}</h3>
+                <h3 className="text-xl font-bold text-white">{cat.name}</h3>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Popular Products - Darker Background */}
-      <section className="py-32 bg-[var(--color-navy-card)] border-y border-[rgba(255,138,0,0.18)]">
+      {/* Popular Products */}
+      <section className="py-24 bg-[var(--color-navy-card)] border-y border-[rgba(255,138,0,0.18)]">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex justify-between items-end mb-20">
+          <div className="flex justify-between items-center mb-12">
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--color-tangerine)] mb-4 block">// TOP SELLERS</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--color-tangerine)] mb-2 block">// TOP SELLERS</span>
               <h2 className="text-white text-5xl font-black tracking-tighter">Popular Products.</h2>
             </div>
             <Link href="/products" className="flex items-center gap-2 text-sm font-bold text-white hover:text-[var(--color-tangerine)] transition-colors">
@@ -61,13 +61,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Customers - Glass container */}
-      <section className="py-32">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="glass rounded-[3rem] p-12 lg:p-20 border-tangerine grid lg:grid-cols-2 gap-16 items-center">
+      {/* Why Customers */}
+      <section className="py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="glass rounded-[3rem] p-12 lg:p-16 border-tangerine grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--color-tangerine)] mb-4 block">// WHY US</span>
-              <h2 className="text-white text-5xl font-black tracking-tighter mb-8">Why Customers <br/> Come <span className="text-[var(--color-tangerine)]">Back.</span></h2>
+              <h2 className="text-white text-5xl font-black tracking-tighter mb-6">Why Customers <br/> Come <span className="text-[var(--color-tangerine)]">Back.</span></h2>
               <p className="text-gray-400 text-lg mb-8">We combine high-end technology with expert installation and dedicated post-sales support.</p>
               <div className="space-y-4">
                 {[
@@ -81,16 +81,16 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-6">
               {[
                 { number: "10,000+", label: "Cameras Installed" },
                 { number: "500+", label: "Business Clients" },
                 { number: "5 Years", label: "Warranty on All Products" },
                 { number: "4 Cities", label: "Delhi · Noida · Gurgaon · Faridabad" }
               ].map((stat, i) => (
-                <div key={i} className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-2xl p-6">
+                <div key={i} className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-2xl p-8 flex flex-col justify-center">
                   <div className="text-[var(--color-tangerine)] text-4xl font-black">{stat.number}</div>
-                  <div className="text-gray-400 text-sm mt-1">{stat.label}</div>
+                  <div className="text-gray-400 text-sm mt-2">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -98,11 +98,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ - Lighter Background & Glow */}
-      <section className="py-32 bg-[rgba(255,138,0,0.03)] border-y border-[rgba(255,138,0,0.1)]">
-        <div className="mx-auto max-w-3xl px-6">
+      {/* FAQ */}
+      <section className="py-24 bg-[rgba(255,138,0,0.03)] border-y border-[rgba(255,138,0,0.1)]">
+        <div className="mx-auto max-w-4xl px-6">
           <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--color-tangerine)] mb-4 block text-center">// FAQS</span>
-          <h2 className="text-white text-5xl font-black tracking-tighter text-center mb-16">Questions We Get <span className="text-[var(--color-tangerine)]">Asked.</span></h2>
+          <h2 className="text-white text-5xl font-black tracking-tighter text-center mb-12">Questions We Get <span className="text-[var(--color-tangerine)]">Asked.</span></h2>
           <div className="space-y-4">
             <Accordion items={[
               { question: "Which camera should I get for my shop or office?", answer: "For most indoor spaces, a 2MP or 4MP dome camera is the right choice. For outdoor areas or large spaces, a bullet camera with night vision works better. Call us and we will recommend the right model for you." },
@@ -115,11 +115,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA - Radial Glow Stripe-like */}
-      <section className="py-40 relative">
+      {/* CTA */}
+      <section className="py-24 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-tangerine)_0%,_transparent_70%)] opacity-10" />
         <div className="mx-auto max-w-5xl px-6 relative">
-          <div className="bg-[var(--color-navy-card)] rounded-[3rem] border border-tangerine p-16 text-center glow-tangerine">
+          <div className="bg-[var(--color-navy-card)] rounded-[3rem] border border-tangerine p-16 text-center glow-tangerine flex flex-col items-center justify-center">
             <h2 className="text-white text-6xl font-black tracking-tighter mb-8">Let's Secure <br/> Your World.</h2>
             <div className="flex justify-center gap-4">
               <Link href="/contact" className="px-8 py-4 rounded-full bg-[var(--color-tangerine)] text-white font-bold">Get a Quote</Link>
