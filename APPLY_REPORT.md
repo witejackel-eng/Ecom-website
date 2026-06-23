@@ -1,9 +1,20 @@
-# Apply Report
+# APPLY_REPORT
 
-| Product Model | Images Attached | Datasheet Attached | User Manual Attached | Files Changed |
-| :--- | :---: | :---: | :---: | :--- |
-| CP-UNC-TA41L3C-LQ | 4 | Yes | Yes | `src/data/products.ts` |
-| CP-UNC-TA21L3C-Q | 4 | Yes | Yes | `src/data/products.ts` |
-| CP-UNC-TA21L3C-LQ | 4 | Yes | Yes | `src/data/products.ts` |
-| CP-UNC-108F1 | 1 | Yes | Yes | `src/data/products.ts` |
-| CP-UNC-4K2161 | 1 | Yes | Yes | `src/data/products.ts` |
+## Products updated
+All 18 products were updated with their corresponding assets as matched in `MATCH_REPORT.md`.
+
+## Images attached
+- 12 products now have multiple images.
+- 6 products now have a single primary image.
+
+## Datasheets attached
+- 8 CP Plus products now have associated datasheets attached.
+- eSSL devices remain `null` as no datasheets were matched for them.
+
+## Manuals attached
+- 8 CP Plus products now have associated user manuals attached.
+- eSSL devices remain `null` as no manuals were matched for them.
+
+## Files changed
+- `src/data/products.ts`
+- Copied ~60 images and ~10 PDFs from source directory `D:\Ecommerce\CCTV\images for ecom` to `public/images/products` and `public/docs`.
