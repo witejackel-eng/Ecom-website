@@ -42,7 +42,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             >
               {!imageError && product.images && product.images.length > 0 ? (
                 <Image 
-                  src={product.images[0]} 
+                  src={encodeURI(product.images[0])} 
                   alt={product.name}
                   fill
                   className="object-contain p-8 transition-all duration-700 group-hover:brightness-110"
