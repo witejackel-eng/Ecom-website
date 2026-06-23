@@ -7,6 +7,10 @@ import { ArrowRight } from "lucide-react";
 export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-20 overflow-hidden">
+      <div className="absolute inset-0 z-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/city-night.jpg')" }}>
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(10,31,46,0.65)_0%,rgba(13,61,79,0.45)_50%,rgba(10,31,46,0.60)_100%)]" />
+      </div>
+      
       {/* Glow Effects */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--color-tangerine)] rounded-full blur-[120px] opacity-10 animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--color-tangerine)] rounded-full blur-[120px] opacity-5 animate-pulse delay-1000" />
@@ -26,6 +30,7 @@ export default function Hero() {
           <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
             CP Plus and ESSL cameras, NVR systems, and biometric devices — supplied and installed across Delhi, Noida, Gurgaon, and Faridabad.
           </p>
+
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/products" className="px-8 py-4 rounded-full bg-[var(--color-tangerine)] text-white font-bold flex items-center gap-2 hover:bg-[var(--color-tangerine-light)] transition-all">
