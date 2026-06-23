@@ -31,7 +31,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     <ScaleIn duration={0.6}>
       <div className="group relative glass rounded-3xl overflow-hidden transition-all duration-500 border-tangerine border-tangerine-hover glow-tangerine glow-tangerine-hover hover:-translate-y-2">
         <Link href={`/products/${product.id}`} className="block">
-          <div className="relative aspect-square overflow-hidden bg-white">
+          <div className="relative aspect-square overflow-hidden bg-white flex items-center justify-center">
             {/* Image Hover Zoom */}
             <motion.div 
               whileHover={{ scale: 1.1 }}

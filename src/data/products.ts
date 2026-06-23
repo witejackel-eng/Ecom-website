@@ -508,7 +508,7 @@ export const products = [
     badge: "IP Based",
     rating: 4,
     shortDescription: "IP-based fingerprint terminal working in both network and standalone mode. 1,500 fingerprint capacity, 80,000 logs, Wiegand in/out, supports Master-Slave anti-passback configuration.",
-    images: ['/images/products/ESSL-SF100-1.webp'],
+    images: ['/images/products/ESSL-F18-1.webp'], // TODO: Replace with actual SF100 image
     datasheet: null,
     manual: null,
     specs: {
