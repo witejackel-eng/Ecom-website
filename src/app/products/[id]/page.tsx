@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
@@ -15,7 +16,7 @@ export default function ProductDetailPage() {
   const router = useRouter();
   const { addToCart } = useCart();
   const product = products.find((p) => p.id === id);
-  const [mainImage, setMainImage] = useState(product?.images[0] || product?.image || "");
+  const [mainImage, setMainImage] = useState(product?.images[0] || "");
 
   if (!product) return <div className="text-white p-40 text-center font-black tracking-tighter text-4xl opacity-10">ARCHITECTING ASSET...</div>;
 
@@ -37,30 +38,37 @@ export default function ProductDetailPage() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start mb-24">
           {/* Left: Gallery */}
           <div className="space-y-8">
-            <ScaleIn duration={0.8} className="glass rounded-[24px] border-white/10 p-4 aspect-square flex items-center justify-center bg-white/5">
-              <motion.img
+            <ScaleIn duration={0.8} className="glass rounded-[24px] border-white/10 p-4 aspect-square flex items-center justify-center bg-white">
+              <motion.div
                 key={mainImage}
-                src={mainImage}
-                alt={product.name}
-                className="max-h-full max-w-full object-contain"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-              />
+                className="w-full h-full relative"
+              >
+                <Image
+                  src={mainImage}
+                  alt={product.name}
+                  fill
+                  className="object-contain p-4"
+                />
+              </motion.div>
             </ScaleIn>
-            <div className="grid grid-cols-4 gap-4">
-              {[...product.images, ...Array(Math.max(0, 4 - product.images.length)).fill(product.images[0])].slice(0, 4).map((img, i) => (
-                <button 
-                  key={i} 
-                  onClick={() => setMainImage(img)} 
-                  className={`relative aspect-square rounded-2xl overflow-hidden border transition-all ${
-                    mainImage === img ? "border-primary glass" : "border-white/5 bg-white/5 hover:border-white/20"
-                  }`}
-                >
-                  <img src={img} alt="thumbnail" className="w-full h-full object-cover p-2" />
-                </button>
-              ))}
-            </div>
+            {product.images.length > 1 && (
+              <div className="grid grid-cols-4 gap-4">
+                {product.images.map((img, i) => (
+                  <button 
+                    key={i} 
+                    onClick={() => setMainImage(img)} 
+                    className={`relative aspect-square rounded-2xl overflow-hidden border transition-all ${
+                      mainImage === img ? "border-primary glass" : "border-white/5 bg-white/5 hover:border-white/20"
+                    }`}
+                  >
+                    <Image src={img} alt="thumbnail" fill className="object-contain p-2" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Right: Info */}
@@ -95,8 +103,12 @@ export default function ProductDetailPage() {
               >
                 Buy Now
               </button>
-              <a href={product.datasheet} className="px-8 py-4 rounded-full glass border-white/10 text-white font-bold text-sm hover:bg-white/5 transition-all"><Download size={16}/>Datasheet</a>
-              <a href={product.manual} className="px-8 py-4 rounded-full glass border-white/10 text-white font-bold text-sm hover:bg-white/5 transition-all"><FileText size={16}/>User Manual</a>
+              {product.datasheet && (
+                <a href={product.datasheet} download target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-full glass border-white/10 text-white font-bold text-sm hover:bg-white/5 transition-all flex items-center gap-2"><Download size={16}/>Datasheet</a>
+              )}
+              {product.manual && (
+                <a href={product.manual} download target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-full glass border-white/10 text-white font-bold text-sm hover:bg-white/5 transition-all flex items-center gap-2"><FileText size={16}/>User Manual</a>
+              )}
             </FadeIn>
           </div>
         </div>

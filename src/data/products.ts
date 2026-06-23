@@ -10,12 +10,15 @@ export const products = [
     badge: null,
     rating: 4,
     shortDescription: "Professional 4MP IR Network Dome Camera with 30m Smart IR, PoE, and IP67 weatherproof housing for indoor and outdoor surveillance.",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80",
     images: [
-      "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80"
+      '/images/products/CP-UNC-DA41L3C-Q-1.png',
+      '/images/products/CP-UNC-DA41L3C-Q-2.png',
+      '/images/products/CP-UNC-DA41L3C-Q-3.png',
+      '/images/products/CP-UNC-DA41L3C-Q-4.png',
+      '/images/products/CP-UNC-DA41L3C-Q-5.png',
     ],
+    datasheet: '/docs/datasheets/CP-UNC-DA41L3C-Q.pdf',
+    manual: '/docs/manuals/CP-UNC-DA41L3C-Q-manual.pdf',
     specs: {
       "Image Sensor": "1/2.9\" 4MP Progressive Scan CMOS",
       "Max Resolution": "2688 × 1520 @ 25/30fps",
@@ -45,12 +48,13 @@ export const products = [
     badge: "Best Seller",
     rating: 5,
     shortDescription: "High-performance 4MP IR Network Bullet Camera with 30m Smart IR, built-in mic, DWDR, IP67, and PoE for outdoor perimeter surveillance.",
-    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80",
     images: [
-      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&q=80",
-      "https://images.unsplash.com/photo-1582639510494-c80b5de9f148?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+      '/images/products/CP-UNC-TA41L3C-Q-1.png',
+      '/images/products/CP-UNC-TA41L3C-Q-2.png',
+      '/images/products/CP-UNC-TA41L3C-Q-3.png',
     ],
+    datasheet: '/docs/datasheets/CP-UNC-TA41L3C-Q.pdf',
+    manual: '/docs/manuals/CP-UNC-TA41L3C-Q-manual.pdf',
     specs: {
       "Image Sensor": "1/2.9\" 4MP Progressive Scan CMOS",
       "Max Resolution": "2688 × 1520 @ 30fps",
@@ -82,12 +86,14 @@ export const products = [
     badge: "Color Night Vision",
     rating: 4,
     shortDescription: "4MP Dual Light Dome Camera with full-color night vision up to 30m using IR + warm light, built-in mic, IP67, and PoE.",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80",
     images: [
-      "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
-      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+      '/images/products/CP-UNC-DA41L3C-LQ-1.png',
+      '/images/products/CP-UNC-DA41L3C-LQ-2.png',
+      '/images/products/CP-UNC-DA41L3C-LQ-3.png',
+      '/images/products/CP-UNC-DA41L3C-LQ-4.png',
     ],
+    datasheet: '/docs/datasheets/CP-UNC-DA41L3C-LQ.pdf',
+    manual: '/docs/manuals/CP-UNC-DA41L3C-LQ-manual.pdf',
     specs: {
       "Image Sensor": "1/2.9\" 4MP PS CMOS",
       "Max Resolution": "2688 × 1520 @ 25/30fps",
@@ -119,15 +125,14 @@ export const products = [
     badge: "Color Night Vision",
     rating: 5,
     shortDescription: "4MP Dual Light Bullet Camera with full-color night vision, IR + warm light up to 30m, built-in mic, IP67 outdoor protection, and PoE.",
-    image: "/images/products/CP-UNC-TA41L3C-LQ bullet 1st.png",
     images: [
-      "/images/products/CP-UNC-TA41L3C-LQ bullet 1st.png",
-      "/images/products/CP-UNC-TA41L3C-LQ bullet 2nd.png",
-      "/images/products/CP-UNC-TA41L3C-LQ bullet 3rd.png",
-      "/images/products/CP-UNC-TA41L3C-LQ bullet 4th.png"
+      '/images/products/CP-UNC-TA41L3C-LQ-1.png',
+      '/images/products/CP-UNC-TA41L3C-LQ-2.png',
+      '/images/products/CP-UNC-TA41L3C-LQ-3.png',
+      '/images/products/CP-UNC-TA41L3C-LQ-4.png',
     ],
-    datasheet: "/downloads/CP-UNC-TA41L3C-LQ bullet.pdf",
-    manual: "/downloads/CP-UNC-TA41L3C-LQ bullet user manual.pdf",
+    datasheet: '/docs/datasheets/CP-UNC-TA41L3C-LQ.pdf',
+    manual: '/docs/manuals/CP-UNC-TA41L3C-LQ-manual.pdf',
     specs: {
       "Image Sensor": "1/2.9\" 4MP PS CMOS",
       "Max Resolution": "2688 × 1520 @ 25/30fps",
@@ -159,12 +164,14 @@ export const products = [
     badge: null,
     rating: 4,
     shortDescription: "Reliable 2MP Full HD IP Dome Camera with 30m IR night vision, built-in mic, PoE, and IP67 weatherproof housing for homes, shops, and offices.",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80",
     images: [
-      "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
-      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+      '/images/products/CP-UNC-DA21L3C-Q-1.png',
+      '/images/products/CP-UNC-DA21L3C-Q-2.png',
+      '/images/products/CP-UNC-DA21L3C-Q-3.png',
+      '/images/products/CP-UNC-DA21L3C-Q-4.png',
     ],
+    datasheet: '/docs/datasheets/CP-UNC-DA21L3C-Q.pdf',
+    manual: '/docs/manuals/CP-UNC-DA21L3C-Q-manual.pdf',
     specs: {
       "Image Sensor": "1/2.8\" 2MP Progressive Scan CMOS",
       "Max Resolution": "1920 × 1080 @ 25/30fps",
@@ -195,15 +202,14 @@ export const products = [
     badge: null,
     rating: 5,
     shortDescription: "2MP Full HD IP Bullet Camera with 30m Smart IR, built-in mic, DWDR, IP67, and PoE for reliable outdoor surveillance in small to medium businesses.",
-    image: "/images/confirmed/CP-UNC-TA21L3C-Q 1st.png",
     images: [
-      "/images/confirmed/CP-UNC-TA21L3C-Q 1st.png",
-      "/images/confirmed/CP-UNC-TA21L3C-Q 2nd.png",
-      "/images/confirmed/CP-UNC-TA21L3C-Q 3rd.png",
-      "/images/confirmed/CP-UNC-TA21L3C-Q 4th.png"
+      '/images/products/CP-UNC-TA21L3C-Q-1.png',
+      '/images/products/CP-UNC-TA21L3C-Q-2.png',
+      '/images/products/CP-UNC-TA21L3C-Q-3.png',
+      '/images/products/CP-UNC-TA21L3C-Q-4.png',
     ],
-    datasheet: "/downloads/CP-UNC-TA21L3C-Q.pdf",
-    manual: "/downloads/CP-UNC-TA21L3C-Q user manual.pdf",
+    datasheet: '/docs/datasheets/CP-UNC-TA21L3C-Q.pdf',
+    manual: '/docs/manuals/CP-UNC-TA21L3C-Q-manual.pdf',
     specs: {
       "Image Sensor": "1/2.8\" 2MP Progressive Scan CMOS",
       "Max Resolution": "1920 × 1080 @ 25/30fps",
@@ -235,12 +241,11 @@ export const products = [
     badge: "Color Night Vision",
     rating: 4,
     shortDescription: "2MP Dual Light Dome Camera from the IlluMax series. Full-color night vision using IR + warm light up to 30m, built-in mic, PoE, IP67.",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80",
     images: [
-      "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
-      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+      '/images/products/CP-UNC-DA21L3C-LQ-1.png',
     ],
+    datasheet: null,
+    manual: null,
     specs: {
       "Image Sensor": "1/2.8\" 2MP PS CMOS",
       "Max Resolution": "1920 × 1080 @ 25/30fps",
@@ -272,15 +277,14 @@ export const products = [
     badge: "Color Night Vision",
     rating: 5,
     shortDescription: "2MP Dual Light Bullet Camera from the IlluMax series. Full-color outdoor night surveillance using IR + warm light, built-in mic, PoE, IP67.",
-    image: "/images/confirmed/CP-UNC-TA21L3C-LQ 1st.png",
     images: [
-      "/images/confirmed/CP-UNC-TA21L3C-LQ 1st.png",
-      "/images/confirmed/CP-UNC-TA21L3C-LQ 2nd.png",
-      "/images/confirmed/CP-UNC-TA21L3C-LQ 3rd.png",
-      "/images/confirmed/CP-UNC-TA21L3C-LQ 4th.png"
+      '/images/products/CP-UNC-TA21L3C-LQ-1.png',
+      '/images/products/CP-UNC-TA21L3C-LQ-2.png',
+      '/images/products/CP-UNC-TA21L3C-LQ-3.png',
+      '/images/products/CP-UNC-TA21L3C-LQ-4.png',
     ],
-    datasheet: "/downloads/CP-UNC-TA21L3C-LQ.pdf",
-    manual: "/downloads/CP-UNC-TA21L3C-LQ user manual.pdf",
+    datasheet: null,
+    manual: null,
     specs: {
       "Image Sensor": "1/2.8\" 2MP PS CMOS",
       "Max Resolution": "1920 × 1080 @ 25/30fps",
@@ -314,12 +318,11 @@ export const products = [
     badge: "Most Popular",
     rating: 4,
     shortDescription: "8-Channel H.265+ Network Video Recorder supporting up to 8MP resolution, 80Mbps bandwidth, 1 SATA HDD (up to 8TB), HDMI/VGA output, and ONVIF compatibility.",
-    image: "/images/confirmed/CP-UNR-108F1 1st.jpg",
     images: [
-      "/images/confirmed/CP-UNR-108F1 1st.jpg"
+      '/images/products/CP-UNR-108F1-1.jpg',
     ],
-    datasheet: "/downloads/CP-UNR-108F1.pdf",
-    manual: "/downloads/CP-UNR-108F1 user manual.pdf",
+    datasheet: '/docs/datasheets/CP-UNR-108F1.pdf',
+    manual: '/docs/manuals/CP-UNR-108F1-manual.pdf',
     specs: {
       "Channels": "8 IP Camera Inputs",
       "Max Resolution": "Up to 8MP preview and playback",
@@ -354,12 +357,11 @@ export const products = [
     badge: "4K Ultra HD",
     rating: 5,
     shortDescription: "Professional 16-Channel 4K Network Video Recorder. Supports up to 12MP cameras, 4K HDMI output, AI Smart Motion Detection, 144Mbps bandwidth, and up to 20TB storage.",
-    image: "/images/confirmed/CP-UNR-4K2161-V2 1st.jpg",
     images: [
-      "/images/confirmed/CP-UNR-4K2161-V2 1st.jpg"
+      '/images/products/CP-UNR-4K2161-V2-1.jpg',
     ],
-    datasheet: "/downloads/CP-UNR-4K2161-V2.pdf",
-    manual: "/downloads/CP-UNR-4K2161-V2 user manual.pdf",
+    datasheet: '/docs/datasheets/CP-UNR-4K2161-V2.pdf',
+    manual: '/docs/manuals/CP-UNR-4K2161-V2-manual.pdf',
     specs: {
       "Channels": "16 IP Camera Inputs",
       "Max Camera Resolution": "Up to 12MP",
@@ -397,12 +399,9 @@ export const products = [
     badge: "Best Seller",
     rating: 5,
     shortDescription: "Standalone fingerprint time attendance and access control system. Stores 10,000 fingerprints and 1,00,000 transaction logs. Ideal for offices, factories, schools and institutions.",
-    image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800&q=80",
-      "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-    ],
+    images: ['/images/products/ESSL-X990-1.png'],
+    datasheet: null,
+    manual: null,
     specs: {
       "Fingerprint Capacity": "10,000 templates",
       "Card Capacity": "10,000 cards (RFID)",
@@ -436,12 +435,9 @@ export const products = [
     badge: "Ultra-Slim",
     rating: 4,
     shortDescription: "Ultra-slim fingerprint time attendance and access control device with WiFi. Modern design, touch keypad, 3,000 fingerprint capacity. Ideal for modern offices.",
-    image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800&q=80",
-      "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-    ],
+    images: ['/images/products/ESSL-F22-1.webp'],
+    datasheet: null,
+    manual: null,
     specs: {
       "Fingerprint Capacity": "3,000 templates",
       "Card Capacity": "5,000 cards (RFID)",
@@ -475,12 +471,9 @@ export const products = [
     badge: null,
     rating: 5,
     shortDescription: "Reliable fingerprint attendance and access control system with 2.8\" TFT display, 3,000 fingerprint capacity, TCP/IP & USB connectivity and access control interface.",
-    image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800&q=80",
-      "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-    ],
+    images: ['/images/products/ESSL-F18-1.webp'],
+    datasheet: null,
+    manual: null,
     specs: {
       "Fingerprint Capacity": "3,000 templates",
       "Card Capacity": "5,000 cards (RFID)",
@@ -515,12 +508,9 @@ export const products = [
     badge: "IP Based",
     rating: 4,
     shortDescription: "IP-based fingerprint terminal working in both network and standalone mode. 1,500 fingerprint capacity, 80,000 logs, Wiegand in/out, supports Master-Slave anti-passback configuration.",
-    image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800&q=80",
-      "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-    ],
+    images: ['/images/products/ESSL-SF100-1.webp'],
+    datasheet: null,
+    manual: null,
     specs: {
       "Fingerprint Capacity": "1,500 templates",
       "Card Capacity": "5,000 cards (Optional)",
@@ -554,12 +544,9 @@ export const products = [
     badge: "WiFi + Battery",
     rating: 5,
     shortDescription: "Fingerprint time attendance and access control with inbuilt battery backup, WiFi, cloud support, and 2,000 user capacity. Ideal for SMEs and growing businesses.",
-    image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800&q=80",
-      "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-    ],
+    images: ['/images/products/ESSL-K30PRO-1.webp'],
+    datasheet: null,
+    manual: null,
     specs: {
       "User Capacity": "2,000",
       "Fingerprint Capacity": "2,000 templates",
@@ -593,12 +580,9 @@ export const products = [
     badge: "IP65",
     rating: 4,
     shortDescription: "Compact fingerprint exit reader with RS485 interface and IP65 weather rating. Works with eSSL biometric controllers, InBIO series, and 3rd party access control panels.",
-    image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800&q=80",
-      "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-    ],
+    images: ['/images/products/ESSL-FR1200-1.webp'],
+    datasheet: null,
+    manual: null,
     specs: {
       "Device Type": "Fingerprint Exit Reader (Slave Reader)",
       "Fingerprint Sensor": "Optical Sensor",
@@ -628,12 +612,9 @@ export const products = [
     badge: null,
     rating: 4,
     shortDescription: "Entry-level fingerprint attendance and access control device with LAN connectivity, 800 fingerprint capacity, and auto push data support. Best for small offices.",
-    image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800&q=80",
-      "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-    ],
+    images: ['/images/products/ESSL-K90PRO-1.webp'],
+    datasheet: null,
+    manual: null,
     specs: {
       "Fingerprint Capacity": "800 templates",
       "Card Capacity": "800 cards",
@@ -662,12 +643,9 @@ export const products = [
     badge: "Face Recognition",
     rating: 5,
     shortDescription: "Advanced visible-light facial recognition attendance and access control system. Anti-spoofing AI, 3,000 face capacity, 5\" touch screen, 900MHz dual-core CPU. Works with or without mask.",
-    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80",
-      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-    ],
+    images: ['/images/products/ESSL-AIFACE-MARS-1.webp'],
+    datasheet: null,
+    manual: null,
     specs: {
       "Recognition Technology": "Visible Light Facial Recognition",
       "Anti-Spoofing": "AI algorithm against photo (laser/color/B&W), video, and 3D mask attacks",

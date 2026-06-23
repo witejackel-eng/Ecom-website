@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ScaleIn } from "@/components/ui/FadeIn";
 import { ShoppingCart, ArrowUpRight, FileText, Eye, Star } from "lucide-react";
@@ -15,7 +16,7 @@ interface Product {
   price: number;
   mrp: number;
   shortDescription: string;
-  image?: string;
+  images: string[];
   rating: number;
 }
 
@@ -30,18 +31,19 @@ export default function ProductCard({ product }: ProductCardProps) {
     <ScaleIn duration={0.6}>
       <div className="group relative glass rounded-3xl overflow-hidden transition-all duration-500 border-tangerine border-tangerine-hover glow-tangerine glow-tangerine-hover hover:-translate-y-2">
         <Link href={`/products/${product.id}`} className="block">
-          <div className="relative aspect-square overflow-hidden bg-white/5">
+          <div className="relative aspect-square overflow-hidden bg-white">
             {/* Image Hover Zoom */}
             <motion.div 
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full h-full"
+              className="w-full h-full relative"
             >
-              {product.image ? (
-                <img 
-                  src={product.image} 
+              {product.images && product.images.length > 0 ? (
+                <Image 
+                  src={product.images[0]} 
                   alt={product.name}
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:brightness-110"
+                  fill
+                  className="object-contain p-4 transition-all duration-700 group-hover:brightness-110"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-white/5 to-white/10">
@@ -49,6 +51,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                 </div>
               )}
             </motion.div>
+
 
             {/* Category Badge */}
             <div className="absolute top-4 left-4">
