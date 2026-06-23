@@ -49,10 +49,9 @@ export const products = [
     rating: 5,
     shortDescription: "High-performance 4MP IR Network Bullet Camera with 30m Smart IR, built-in mic, DWDR, IP67, and PoE for outdoor perimeter surveillance.",
     images: [
-      '/images/products/CP-UNC-TA41L3C-Q 1st.png',
-      '/images/products/CP-UNC-TA41L3C-Q 2nd.png',
-      '/images/products/CP-UNC-TA41L3C-Q 3rd.png',
-      '/images/products/CP-UNC-TA41L3C-Q 4th.png',
+      '/images/products/CP-UNC-TA41L3C-Q bullet 1st.png',
+      '/images/products/CP-UNC-TA41L3C-Q bullet 2nd.png',
+      '/images/products/CP-UNC-TA41L3C-Q bullet 3rd.png',
     ],
     datasheet: '/docs/CP-UNC-TA41L3C-Q.pdf',
     manual: '/docs/CP-UNC-TA41L3C-Q user manual.pdf',
