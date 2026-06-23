@@ -1,10 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ScaleIn } from "@/components/ui/FadeIn";
-import { ShoppingCart, ArrowUpRight, FileText, Eye, Star } from "lucide-react";
+import { ShoppingCart, ArrowUpRight, FileText, Eye, Star, Camera } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 interface Product {
@@ -26,32 +27,34 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const { addToCart, openCart } = useCart();
+  const [imageError, setImageError] = useState(false);
   
   return (
     <ScaleIn duration={0.6}>
-      <div className="group relative glass rounded-3xl overflow-hidden transition-all duration-500 border-tangerine border-tangerine-hover glow-tangerine glow-tangerine-hover hover:-translate-y-2">
-        <Link href={`/products/${product.id}`} className="block">
-          <div className="relative aspect-square overflow-hidden bg-white flex items-center justify-center">
-            {/* Image Hover Zoom */}
+      <div className="group relative glass rounded-3xl overflow-hidden transition-all duration-500 border-tangerine border-tangerine-hover glow-tangerine glow-tangerine-hover hover:-translate-y-2 h-full flex flex-col">
+        <Link href={`/products/${product.id}`} className="block flex flex-col h-full">
+          {/* Fixed height image container */}
+          <div className="relative h-[260px] overflow-hidden bg-white flex items-center justify-center flex-shrink-0">
             <motion.div 
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="w-full h-full relative"
             >
-              {product.images && product.images.length > 0 ? (
+              {!imageError && product.images && product.images.length > 0 ? (
                 <Image 
                   src={product.images[0]} 
                   alt={product.name}
                   fill
-                  className="object-contain p-4 transition-all duration-700 group-hover:brightness-110"
+                  className="object-contain p-8 transition-all duration-700 group-hover:brightness-110"
+                  onError={() => setImageError(true)}
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-white/5 to-white/10">
-                  <span className="text-white/20 font-bold uppercase tracking-widest text-[10px]">Security Asset</span>
+                <div className="w-full h-full flex flex-col items-center justify-center bg-gray-50 text-gray-400 gap-2">
+                  <Camera size={48} />
+                  <span className="font-bold uppercase tracking-widest text-[10px]">Image Coming Soon</span>
                 </div>
               )}
             </motion.div>
-
 
             {/* Category Badge */}
             <div className="absolute top-4 left-4">
@@ -61,22 +64,22 @@ export default function ProductCard({ product }: ProductCardProps) {
             </div>
           </div>
 
-          <div className="p-6 space-y-4">
-            <div className="space-y-1">
+          <div className="p-6 flex flex-col flex-grow">
+            <div className="space-y-1 mb-4 flex-grow">
               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">
                 {product.brand} &middot; {product.model}
               </p>
-              <h3 className="text-xl font-bold text-white leading-tight group-hover:text-[var(--color-tangerine)] transition-colors duration-300 line-clamp-2">
+              <h3 className="text-xl font-bold text-white leading-tight group-hover:text-[var(--color-tangerine)] transition-colors duration-300 line-clamp-2 min-h-[3.5rem]">
                 {product.name}
               </h3>
-              <div className="flex gap-1 pt-1">
+              <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={14} className={i < product.rating ? "fill-[#F59E0B] text-[#F59E0B]" : "fill-[rgba(245,158,11,0.25)] text-[rgba(245,158,11,0.25)]"} />
                 ))}
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-2">
+            <div className="flex items-center justify-between mt-auto mb-6">
               <div className="flex flex-col">
                 <span className="text-2xl font-black text-white">
                   ₹{product.price.toLocaleString('en-IN')}
