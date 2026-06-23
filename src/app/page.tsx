@@ -30,9 +30,9 @@ export default function Home() {
               { name: "NVR Systems", icon: HardDrive },
               { name: "Biometric Machines", icon: Zap },
             ].map((cat) => (
-              <div key={cat.name} className="group p-8 rounded-3xl border border-tangerine hover:border-tangerine-hover bg-transparent hover:bg-[var(--color-navy-card)] transition-all duration-300">
-                <div className="h-14 w-14 rounded-full flex items-center justify-center bg-[var(--color-navy-card)] border border-tangerine text-[var(--color-tangerine)] mb-8 group-hover:glow-tangerine">
-                  <cat.icon size={24} />
+              <div key={cat.name} className="group p-8 rounded-3xl border border-tangerine hover:border-tangerine-hover bg-transparent hover:bg-[rgba(255,255,255,0.06)] transition-all duration-200 hover:-translate-y-1">
+                <div className="w-16 h-16 bg-[rgba(255,165,0,0.1)] rounded-xl flex items-center justify-center mb-4">
+                  <cat.icon className="text-[var(--color-tangerine)]" size={40} />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">{cat.name}</h3>
               </div>
@@ -70,15 +70,29 @@ export default function Home() {
               <h2 className="text-white text-5xl font-black tracking-tighter mb-8">Why Customers <br/> Come <span className="text-[var(--color-tangerine)]">Back.</span></h2>
               <p className="text-gray-400 text-lg mb-8">We combine high-end technology with expert installation and dedicated post-sales support.</p>
               <div className="space-y-4">
-                {["Military-grade security", "24/7 Redundant monitoring", "Expert installation"].map(f => (
-                  <div key={f} className="flex items-center gap-3 text-white font-bold text-sm">
-                    <CheckCircle2 className="text-[var(--color-tangerine)]" size={18} /> {f}
+                {[
+                  "Authorised CP Plus & ESSL dealer — not a grey market reseller",
+                  "In-house installation team across Delhi, Noida, Gurgaon & Faridabad",
+                  "Transparent pricing — no hidden charges, no surprises"
+                ].map(f => (
+                  <div key={f} className="flex items-start gap-3 text-white font-bold text-sm">
+                    <CheckCircle2 className="text-[var(--color-tangerine)] mt-0.5" size={18} /> {f}
                   </div>
                 ))}
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
-              {[1,2,3,4].map(i => <div key={i} className="bg-[var(--color-navy-deep)] p-6 rounded-2xl border border-tangerine h-40" />)}
+              {[
+                { number: "10,000+", label: "Cameras Installed" },
+                { number: "500+", label: "Business Clients" },
+                { number: "5 Years", label: "Warranty on All Products" },
+                { number: "4 Cities", label: "Delhi · Noida · Gurgaon · Faridabad" }
+              ].map((stat, i) => (
+                <div key={i} className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-2xl p-6">
+                  <div className="text-[var(--color-tangerine)] text-4xl font-black">{stat.number}</div>
+                  <div className="text-gray-400 text-sm mt-1">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -91,8 +105,11 @@ export default function Home() {
           <h2 className="text-white text-5xl font-black tracking-tighter text-center mb-16">Questions We Get <span className="text-[var(--color-tangerine)]">Asked.</span></h2>
           <div className="space-y-4">
             <Accordion items={[
-              { question: "Which system is right?", answer: "We will consult based on your specific requirements." },
-              { question: "Do you install?", answer: "Yes, we handle complete turnkey installation." },
+              { question: "Which camera should I get for my shop or office?", answer: "For most indoor spaces, a 2MP or 4MP dome camera is the right choice. For outdoor areas or large spaces, a bullet camera with night vision works better. Call us and we will recommend the right model for you." },
+              { question: "Do you install the system or just sell it?", answer: "Both. We sell individual products if you have your own installer. We also handle complete installation — cable runs, mounting, NVR configuration, and mobile app setup." },
+              { question: "How long does installation take?", answer: "A standard 4-camera home or shop system takes about 4 to 6 hours. Larger commercial setups with 8 to 16 cameras typically take a full day. We give you a time estimate before we start." },
+              { question: "Can I view my cameras on my phone?", answer: "Yes. We set up remote viewing on the CP Plus or ESSL mobile app during installation. You can monitor your cameras from anywhere with an internet connection." },
+              { question: "What warranty do you offer?", answer: "All CP Plus and ESSL products come with a 2-year manufacturer warranty. If there is a hardware defect within that period, we will coordinate the replacement for you." },
             ]} />
           </div>
         </div>

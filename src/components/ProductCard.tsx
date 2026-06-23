@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ScaleIn } from "@/components/ui/FadeIn";
-import { ShoppingCart, ArrowUpRight, FileText, Eye } from "lucide-react";
+import { ShoppingCart, ArrowUpRight, FileText, Eye, Star } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 interface Product {
@@ -16,6 +16,7 @@ interface Product {
   mrp: number;
   shortDescription: string;
   image?: string;
+  rating: number;
 }
 
 interface ProductCardProps {
@@ -65,6 +66,11 @@ export default function ProductCard({ product }: ProductCardProps) {
               <h3 className="text-xl font-bold text-white leading-tight group-hover:text-[var(--color-tangerine)] transition-colors duration-300 line-clamp-2">
                 {product.name}
               </h3>
+              <div className="flex gap-1 pt-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={14} className={i < product.rating ? "fill-[#F59E0B] text-[#F59E0B]" : "fill-[rgba(245,158,11,0.25)] text-[rgba(245,158,11,0.25)]"} />
+                ))}
+              </div>
             </div>
 
             <div className="flex items-center justify-between pt-2">

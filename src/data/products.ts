@@ -8,6 +8,7 @@ export const products = [
     mrp: 3658,
     brand: "CP Plus",
     badge: null,
+    rating: 4,
     shortDescription: "Professional 4MP IR Network Dome Camera with 30m Smart IR, PoE, and IP67 weatherproof housing for indoor and outdoor surveillance.",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80",
     images: [
@@ -42,6 +43,7 @@ export const products = [
     mrp: 3787,
     brand: "CP Plus",
     badge: "Best Seller",
+    rating: 5,
     shortDescription: "High-performance 4MP IR Network Bullet Camera with 30m Smart IR, built-in mic, DWDR, IP67, and PoE for outdoor perimeter surveillance.",
     image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80",
     images: [
@@ -78,6 +80,7 @@ export const products = [
     mrp: 3953,
     brand: "CP Plus",
     badge: "Color Night Vision",
+    rating: 4,
     shortDescription: "4MP Dual Light Dome Camera with full-color night vision up to 30m using IR + warm light, built-in mic, IP67, and PoE.",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80",
     images: [
@@ -114,6 +117,7 @@ export const products = [
     mrp: 4024,
     brand: "CP Plus",
     badge: "Color Night Vision",
+    rating: 5,
     shortDescription: "4MP Dual Light Bullet Camera with full-color night vision, IR + warm light up to 30m, built-in mic, IP67 outdoor protection, and PoE.",
     image: "/images/products/CP-UNC-TA41L3C-LQ bullet 1st.png",
     images: [
@@ -153,6 +157,7 @@ export const products = [
     mrp: 2537,
     brand: "CP Plus",
     badge: null,
+    rating: 4,
     shortDescription: "Reliable 2MP Full HD IP Dome Camera with 30m IR night vision, built-in mic, PoE, and IP67 weatherproof housing for homes, shops, and offices.",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80",
     images: [
@@ -188,6 +193,7 @@ export const products = [
     mrp: 2537,
     brand: "CP Plus",
     badge: null,
+    rating: 5,
     shortDescription: "2MP Full HD IP Bullet Camera with 30m Smart IR, built-in mic, DWDR, IP67, and PoE for reliable outdoor surveillance in small to medium businesses.",
     image: "/images/confirmed/CP-UNC-TA21L3C-Q 1st.png",
     images: [
@@ -227,6 +233,7 @@ export const products = [
     mrp: 2938,
     brand: "CP Plus",
     badge: "Color Night Vision",
+    rating: 4,
     shortDescription: "2MP Dual Light Dome Camera from the IlluMax series. Full-color night vision using IR + warm light up to 30m, built-in mic, PoE, IP67.",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80",
     images: [
@@ -263,6 +270,7 @@ export const products = [
     mrp: 3021,
     brand: "CP Plus",
     badge: "Color Night Vision",
+    rating: 5,
     shortDescription: "2MP Dual Light Bullet Camera from the IlluMax series. Full-color outdoor night surveillance using IR + warm light, built-in mic, PoE, IP67.",
     image: "/images/confirmed/CP-UNC-TA21L3C-LQ 1st.png",
     images: [
@@ -304,6 +312,7 @@ export const products = [
     mrp: 4708,
     brand: "CP Plus",
     badge: "Most Popular",
+    rating: 4,
     shortDescription: "8-Channel H.265+ Network Video Recorder supporting up to 8MP resolution, 80Mbps bandwidth, 1 SATA HDD (up to 8TB), HDMI/VGA output, and ONVIF compatibility.",
     image: "/images/confirmed/CP-UNR-108F1 1st.jpg",
     images: [
@@ -343,6 +352,7 @@ export const products = [
     mrp: 7422,
     brand: "CP Plus",
     badge: "4K Ultra HD",
+    rating: 5,
     shortDescription: "Professional 16-Channel 4K Network Video Recorder. Supports up to 12MP cameras, 4K HDMI output, AI Smart Motion Detection, 144Mbps bandwidth, and up to 20TB storage.",
     image: "/images/confirmed/CP-UNR-4K2161-V2 1st.jpg",
     images: [
@@ -385,6 +395,7 @@ export const products = [
     price: 11008,
     mrp: 12990,
     badge: "Best Seller",
+    rating: 5,
     shortDescription: "Standalone fingerprint time attendance and access control system. Stores 10,000 fingerprints and 1,00,000 transaction logs. Ideal for offices, factories, schools and institutions.",
     image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
     images: [
@@ -423,6 +434,7 @@ export const products = [
     price: 8678,
     mrp: 10240,
     badge: "Ultra-Slim",
+    rating: 4,
     shortDescription: "Ultra-slim fingerprint time attendance and access control device with WiFi. Modern design, touch keypad, 3,000 fingerprint capacity. Ideal for modern offices.",
     image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
     images: [
@@ -461,6 +473,7 @@ export const products = [
     price: 12676,
     mrp: 14958,
     badge: null,
+    rating: 5,
     shortDescription: "Reliable fingerprint attendance and access control system with 2.8\" TFT display, 3,000 fingerprint capacity, TCP/IP & USB connectivity and access control interface.",
     image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
     images: [
@@ -500,6 +513,7 @@ export const products = [
     price: 8110,
     mrp: 9570,
     badge: "IP Based",
+    rating: 4,
     shortDescription: "IP-based fingerprint terminal working in both network and standalone mode. 1,500 fingerprint capacity, 80,000 logs, Wiegand in/out, supports Master-Slave anti-passback configuration.",
     image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
     images: [
@@ -538,6 +552,7 @@ export const products = [
     price: 5042,
     mrp: 5949,
     badge: "WiFi + Battery",
+    rating: 5,
     shortDescription: "Fingerprint time attendance and access control with inbuilt battery backup, WiFi, cloud support, and 2,000 user capacity. Ideal for SMEs and growing businesses.",
     image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
     images: [
@@ -576,6 +591,7 @@ export const products = [
     price: 4661,
     mrp: 5500,
     badge: "IP65",
+    rating: 4,
     shortDescription: "Compact fingerprint exit reader with RS485 interface and IP65 weather rating. Works with eSSL biometric controllers, InBIO series, and 3rd party access control panels.",
     image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
     images: [
@@ -610,6 +626,7 @@ export const products = [
     price: 4746,
     mrp: 5600,
     badge: null,
+    rating: 4,
     shortDescription: "Entry-level fingerprint attendance and access control device with LAN connectivity, 800 fingerprint capacity, and auto push data support. Best for small offices.",
     image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
     images: [
@@ -643,6 +660,7 @@ export const products = [
     price: 14831,
     mrp: 17500,
     badge: "Face Recognition",
+    rating: 5,
     shortDescription: "Advanced visible-light facial recognition attendance and access control system. Anti-spoofing AI, 3,000 face capacity, 5\" touch screen, 900MHz dual-core CPU. Works with or without mask.",
     image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&q=80",
     images: [
