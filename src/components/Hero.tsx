@@ -24,7 +24,7 @@ export default function Hero() {
             Secure Your <br/> <span className="text-[var(--color-tangerine)]">World.</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
-            Premium surveillance solutions for businesses that demand uncompromising protection and absolute clarity.
+            CP Plus and ESSL cameras, NVR systems, and biometric devices — supplied and installed across Delhi, Noida, Gurgaon, and Faridabad.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
