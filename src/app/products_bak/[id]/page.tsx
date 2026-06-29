@@ -14,7 +14,7 @@ import Link from "next/link";
 export default function ProductDetailPage() {
   const { id } = useParams();
   const product = products.find((p) => p.id === id);
-  const [mainImage, setMainImage] = useState(product?.images[0] || product?.image || "");
+  const [mainImage, setMainImage] = useState(product?.images[0] || "");
 
   if (!product) return <div className="text-white p-40 text-center font-black tracking-tighter text-4xl opacity-10">ARCHITECTING ASSET...</div>;
 
