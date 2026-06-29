@@ -62,6 +62,19 @@ export default function AboutPage() {
               <p className="text-gray-400 text-lg leading-relaxed">
                 To make professional-grade security accessible to every home and business owner in Delhi NCR — without inflated quotes, unnecessary upsells, or going silent after installation.
               </p>
+              <ul className="space-y-4">
+                {[
+                  "Integrity — Transparent dealings and honest recommendations — no inflated quotes, no unnecessary upsells.",
+                  "Reliability — Genuine OEM-certified products with official warranty. No grey market, no counterfeits.",
+                  "Customer Focus — Tailored solutions for homes, shops, offices, and factories across Delhi NCR.",
+                  "Innovation — Keeping pace with evolving security technologies to give you the best options available.",
+                ].map((item, i) => (
+                  <li key={i} className="text-white font-bold text-lg flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-tangerine)]" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className="grid sm:grid-cols-3 gap-6">
               {[
