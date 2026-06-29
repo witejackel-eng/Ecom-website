@@ -3,10 +3,9 @@
 import { useState, useMemo, Suspense } from "react";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
-
+import FilterSidebar from "@/components/FilterSidebar";
 import FadeIn, { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 import SectionLabel from "@/components/SectionLabel";
-import FilterBar from "@/components/FilterBar";
 
 function ProductsList({ categories, priceRange }: { categories: string[], priceRange: [number, number] }) {
   const filteredProducts = useMemo(() => {
@@ -43,23 +42,15 @@ export default function ProductsPage() {
   const [categories, setCategories] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 20000]);
 
-  const CATEGORIES = Array.from(new Set(products.map(p => p.category)));
-
-  const handleCategoryChange = (cat: string) => {
-    if (cat === "All") {
-      setCategories([]);
-    } else {
-      setCategories([cat]);
-    }
-  };
-
-  const activeCategory = categories.length === 1 ? categories[0] : "All";
-
   return (
-    <main className="flex flex-col min-h-screen pt-40 pb-32">
+    <main className="flex flex-col md:flex-row min-h-screen pt-40 pb-32 overflow-hidden">
       <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] -z-10" />
       
-      <div className="w-full px-6 md:px-12 lg:px-20">
+      <FilterSidebar onFilterChange={(cats, price) => {
+        setCategories(cats);
+        setPriceRange(price);
+      }} />
+      <div className="flex-1 px-6 md:px-12 lg:px-20">
         <FadeIn direction="up" className="mb-24">
           <SectionLabel>Collections</SectionLabel>
           <h1 className="text-white text-5xl md:text-8xl font-black tracking-tighter mb-8 leading-none">
@@ -76,14 +67,6 @@ export default function ProductsPage() {
             <p className="mt-8 text-white/20 font-bold uppercase tracking-[0.3em] text-[10px]">Architecting View...</p>
           </div>
         }>
-          <FilterBar
-            categories={CATEGORIES}
-            activeCategory={activeCategory}
-            onCategoryChange={handleCategoryChange}
-            priceRange={priceRange}
-            onPriceChange={setPriceRange}
-            maxPrice={20000}
-          />
           <ProductsList categories={categories} priceRange={priceRange} />
         </Suspense>
       </div>
