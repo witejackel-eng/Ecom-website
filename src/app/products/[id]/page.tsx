@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,7 +8,7 @@ import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import FadeIn, { StaggerContainer, StaggerItem, ScaleIn } from "@/components/ui/FadeIn";
 import SectionLabel from "@/components/SectionLabel";
-import { ShoppingCart, Zap, Download, FileText, MessageSquare, Plus, Check } from "lucide-react";
+import { ShoppingCart, Download, FileText, Star, Shield, Truck, RefreshCw, Heart, Share2, Minus, Plus, Check, ChevronRight } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 export default function ProductDetailPage() {
@@ -17,6 +17,15 @@ export default function ProductDetailPage() {
   const { addToCart } = useCart();
   const product = products.find((p) => p.id === id);
   const [mainImage, setMainImage] = useState(product?.images[0] || "");
+  const [quantity, setQuantity] = useState(1);
+  const [activeTab, setActiveTab] = useState('overview');
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setIsSticky(window.scrollY > 500);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   if (!product) return <div className="text-white p-40 text-center font-black tracking-tighter text-4xl opacity-10">ARCHITECTING ASSET...</div>;
 
