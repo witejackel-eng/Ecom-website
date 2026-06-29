@@ -5,10 +5,9 @@ import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { products } from "@/data/products";
-import ProductCard from "@/components/ProductCard";
-import FadeIn, { StaggerContainer, StaggerItem, ScaleIn } from "@/components/ui/FadeIn";
+import FadeIn, { ScaleIn } from "@/components/ui/FadeIn";
 import SectionLabel from "@/components/SectionLabel";
-import { ShoppingCart, Download, FileText, Star, Shield, Truck, RefreshCw, Heart, Share2, Minus, Plus, Check, ChevronRight } from "lucide-react";
+import { ShoppingCart, Star, Shield, Truck, RefreshCw, Heart, Share2, Minus, Plus, Check } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 export default function ProductDetailPage() {
@@ -29,9 +28,6 @@ export default function ProductDetailPage() {
 
   if (!product) return <div className="text-white p-40 text-center font-black tracking-tighter text-4xl opacity-10">ARCHITECTING ASSET...</div>;
 
-  const relatedProducts = products
-    .filter((p) => p.category === product.category && p.id !== product.id)
-    .slice(0, 4);
 
   return (
     <main className="min-h-screen pt-40 pb-32 overflow-hidden">
@@ -85,11 +81,18 @@ export default function ProductDetailPage() {
             <FadeIn direction="up">
               <h1 className="text-white text-5xl font-black tracking-tighter leading-tight">{product.name}</h1>
               <p className="text-white/40 text-[10px] font-bold uppercase tracking-[0.3em]">{product.model}</p>
-              <div className="flex text-primary">★★★★☆</div>
+              <div className="flex text-[#F59E0B]">{Array.from({ length: 5 }).map((_, i) => <span key={i} className={i < product.rating ? "text-[#F59E0B]" : "text-white/10"}>&#9733;</span>)}</div>
             </FadeIn>
 
             <FadeIn direction="up" delay={0.1}>
               <span className="text-4xl font-black text-white">₹{product.price.toLocaleString('en-IN')}</span>
+              {product.mrp > product.price && (
+                <>
+                  <span className="text-white/50 line-through text-lg font-semibold ml-3">₹{product.mrp.toLocaleString('en-IN')}</span>
+                  <span className="text-[var(--color-tangerine)] text-sm font-bold ml-2">Save ₹{(product.mrp - product.price).toLocaleString('en-IN')} ({Math.round(((product.mrp - product.price) / product.mrp) * 100)}%)</span>
+                </>
+              )}
+              <p className="text-white/60 text-xs font-medium mt-2">✔ Price Includes GST · Taxes Included</p>
             </FadeIn>
 
             <FadeIn direction="up" delay={0.2} className="text-white/70 leading-relaxed font-medium">
@@ -112,12 +115,6 @@ export default function ProductDetailPage() {
               >
                 Buy Now
               </button>
-              {product.datasheet && (
-                <a href={product.datasheet} download target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-full glass border-white/10 text-white font-bold text-sm hover:bg-white/5 transition-all flex items-center gap-2"><Download size={16}/>Datasheet</a>
-              )}
-              {product.manual && (
-                <a href={product.manual} download target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-full glass border-white/10 text-white font-bold text-sm hover:bg-white/5 transition-all flex items-center gap-2"><FileText size={16}/>User Manual</a>
-              )}
             </FadeIn>
           </div>
         </div>
@@ -158,17 +155,6 @@ export default function ProductDetailPage() {
           </div>
         </section>
 
-        {/* Related Products */}
-        <section>
-          <SectionLabel>You May Also Need</SectionLabel>
-          <StaggerContainer className="grid md:grid-cols-4 gap-8">
-            {relatedProducts.map(p => (
-              <StaggerItem key={p.id}>
-                <ProductCard product={p as any} />
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </section>
       </div>
     </main>
   );
