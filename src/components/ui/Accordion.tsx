@@ -40,6 +40,7 @@ export default function Accordion({ items }: { items: { question: string; answer
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ overflow: "hidden" }}
                 >
                   <div className="px-8 pb-8 text-white/50 text-base leading-relaxed max-w-2xl">
                     {item.answer}

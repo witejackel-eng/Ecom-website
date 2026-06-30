@@ -77,7 +77,7 @@ export default function CartPage() {
                           </button>
                         </div>
                         <div className="flex items-center gap-8">
-                          <span className="text-2xl font-black text-primary">₹{(item.price * item.quantity).toLocaleString('en-IN')}</span>
+                          <span className="text-2xl font-black text-primary">₹{(item.mrp * item.quantity).toLocaleString('en-IN')}</span>
                           <button 
                             onClick={() => removeFromCart(item.id)}
                             className="text-white/20 hover:text-red-500 transition-colors p-3 glass border-white/5 rounded-2xl"

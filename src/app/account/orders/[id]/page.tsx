@@ -96,7 +96,7 @@ export default function OrderDetailPage() {
                         <p className="text-gray-500 text-xs mt-0.5">{item.model || ""}</p>
                         <p className="text-gray-400 text-xs mt-1">Qty: {item.quantity || 1}</p>
                       </div>
-                      <p className="text-white font-semibold text-sm">₹{((item.price || 0) * (item.quantity || 1)).toLocaleString("en-IN")}</p>
+                      <p className="text-white font-semibold text-sm">₹{((item.mrp || 0) * (item.quantity || 1)).toLocaleString("en-IN")}</p>
                     </motion.div>
                   ))}
                 </div>

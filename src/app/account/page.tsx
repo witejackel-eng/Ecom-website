@@ -3,15 +3,18 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Package, User, MapPin, Lock, LogOut, ChevronRight, ArrowLeft } from "lucide-react";
+import { Package, User, MapPin, Lock, LogOut, ChevronRight, ArrowLeft, FileText, Heart, Building2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useAuth } from "@/context/AuthContext";
 import FadeIn from "@/components/ui/FadeIn";
 
 const accountLinks = [
-  { label: "My Orders", href: "/account/orders", icon: Package, description: "View your order history and track shipments" },
   { label: "My Profile", href: "/account/profile", icon: User, description: "Update your personal information" },
-  { label: "My Addresses", href: "/account/addresses", icon: MapPin, description: "Manage your shipping addresses" },
+  { label: "My Orders", href: "/account/orders", icon: Package, description: "View your order history and track shipments" },
+  { label: "Quotations / RFQs", href: "/account/quotations", icon: FileText, description: "Manage your quote requests" },
+  { label: "Wishlist", href: "/account/wishlist", icon: Heart, description: "Items you have saved" },
+  { label: "Saved Addresses", href: "/account/addresses", icon: MapPin, description: "Manage your shipping addresses" },
+  { label: "Business Details", href: "/account/business", icon: Building2, description: "B2B and tax information" },
   { label: "Change Password", href: "/account/change-password", icon: Lock, description: "Update your account password" },
 ];
 

@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import { CartProvider } from "@/context/CartContext";
+import { AuthProvider } from "@/context/AuthContext";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -38,6 +39,7 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans overflow-x-hidden selection:bg-teal-500/30" suppressHydrationWarning>
+        <AuthProvider>
         <CartProvider>
           <Navbar />
           <CartDrawer />
@@ -46,6 +48,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );

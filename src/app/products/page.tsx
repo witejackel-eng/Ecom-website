@@ -11,7 +11,7 @@ function ProductsList({ categories, priceRange }: { categories: string[], priceR
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
       const matchesCategory = categories.length === 0 || categories.includes(product.category);
-      const matchesPrice = product.price >= priceRange[0] && product.price <= priceRange[1];
+      const matchesPrice = product.mrp >= priceRange[0] && product.mrp <= priceRange[1];
       return matchesCategory && matchesPrice;
     });
   }, [categories, priceRange]);
@@ -57,7 +57,7 @@ export default function ProductsPage() {
             The <span className="text-gradient">Ecosystem.</span>
           </h1>
           <p className="text-white/55 text-xl max-w-2xl leading-relaxed font-medium">
-            Browse our complete catalog of professional security, surveillance, and biometric systems engineered for uncompromising reliability.
+            Browse our complete catalogue of professional security, surveillance, and biometric systems engineered for uncompromising reliability.
           </p>
         </FadeIn>
         

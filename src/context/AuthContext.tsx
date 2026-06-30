@@ -71,6 +71,18 @@ interface AuthState {
   wishlist: WishlistItem[];
 }
 
+// Extended Quotation interface
+interface Quotation {
+  id: string;
+  quoteNumber: string;
+  date: string;
+  requestedProducts: { name: string; quantity: number; model?: string }[];
+  totalValue: number;
+  validUntil: string;
+  status: 'pending' | 'preparing' | 'approved' | 'expired' | 'rejected';
+  notes?: string;
+}
+
 type AuthAction =
   | { type: "LOGIN"; payload: any }
   | { type: "LOGOUT" }
@@ -82,6 +94,9 @@ type AuthAction =
   | { type: "SET_DEFAULT_ADDRESS"; payload: string }
   | { type: "ADD_TO_WISHLIST"; payload: any }
   | { type: "REMOVE_FROM_WISHLIST"; payload: string }
+  | { type: "UPDATE_BUSINESS_DETAILS"; payload: Partial<BusinessDetails> }
+  | { type: "ADD_QUOTATION"; payload: any }
+  | { type: "UPDATE_QUOTATION"; payload: any }
   | { type: "LOAD_STATE"; payload: AuthState };
 
 function loadState(): AuthState {
@@ -134,6 +149,13 @@ function authReducer(state: AuthState, action: AuthAction): AuthState {
       return { ...state, wishlist: [...state.wishlist, { ...action.payload, id: `wl_${Date.now()}`, addedAt: new Date().toISOString() }] };
     case "REMOVE_FROM_WISHLIST":
       return { ...state, wishlist: state.wishlist.filter((i) => i.id !== action.payload) };
+    case "UPDATE_BUSINESS_DETAILS":
+      if (!state.businessDetails) return state;
+      return { ...state, businessDetails: { ...state.businessDetails, ...action.payload } };
+    case "ADD_QUOTATION":
+      return { ...state, quotations: [...state.quotations, { ...action.payload, id: `quote_${Date.now()}` }] };
+    case "UPDATE_QUOTATION":
+      return { ...state, quotations: state.quotations.map((q) => (q.id === action.payload.id ? { ...q, ...action.payload } : q)) };
     case "LOAD_STATE":
       return action.payload;
     default:
@@ -146,6 +168,7 @@ const AuthContext = createContext<{
   login: (email: string, password: string) => Promise<void>;
   signup: (data: { firstName: string; lastName: string; email: string; password: string; phone: string }) => Promise<void>;
   logout: () => void;
+  dispatch: React.Dispatch<AuthAction>;
 } | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -184,7 +207,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ state, login, signup, logout }}>
+    <AuthContext.Provider value={{ state, login, signup, logout, dispatch }}>
       {children}
     </AuthContext.Provider>
   );

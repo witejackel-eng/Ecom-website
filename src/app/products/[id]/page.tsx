@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { products } from "@/data/products";
 import FadeIn, { ScaleIn } from "@/components/ui/FadeIn";
 import SectionLabel from "@/components/SectionLabel";
-import { ShoppingCart, Star, Shield, Truck, RefreshCw, Heart, Share2, Minus, Plus, Check } from "lucide-react";
+import { ShoppingCart, Star, Shield, Truck, RefreshCw, Heart, Share2, Minus, Plus, Check, FileText } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 export default function ProductDetailPage() {
@@ -19,12 +19,23 @@ export default function ProductDetailPage() {
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState('overview');
   const [isSticky, setIsSticky] = useState(false);
+  const [docs, setDocs] = useState<{ datasheet: boolean; manual: boolean }>({ datasheet: false, manual: false });
+  const [addedCart, setAddedCart] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setIsSticky(window.scrollY > 500);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+    const loadDocs = async () => {
+      try {
+        const res = await fetch(`/api/documents/${product.model}`);
+        if (res.ok) {
+          const data = await res.json();
+          setDocs(data);
+        }
+      } catch {
+        // leave default false values on failure
+      }
+    };
+    loadDocs();
+  }, [product.model]);
 
   if (!product) return <div className="text-white p-40 text-center font-black tracking-tighter text-4xl opacity-10">ARCHITECTING ASSET...</div>;
 
@@ -80,19 +91,12 @@ export default function ProductDetailPage() {
           <div className="space-y-8">
             <FadeIn direction="up">
               <h1 className="text-white text-5xl font-black tracking-tighter leading-tight">{product.name}</h1>
-              <p className="text-white/40 text-[10px] font-bold uppercase tracking-[0.3em]">{product.model}</p>
-              <div className="flex text-[#F59E0B]">{Array.from({ length: 5 }).map((_, i) => <span key={i} className={i < product.rating ? "text-[#F59E0B]" : "text-white/10"}>&#9733;</span>)}</div>
+              <p className="text-[var(--color-tangerine)] text-xs font-bold uppercase tracking-[0.25em] mt-3">{product.model}</p>
             </FadeIn>
 
             <FadeIn direction="up" delay={0.1}>
-              <span className="text-4xl font-black text-white">₹{product.price.toLocaleString('en-IN')}</span>
-              {product.mrp > product.price && (
-                <>
-                  <span className="text-white/50 line-through text-lg font-semibold ml-3">₹{product.mrp.toLocaleString('en-IN')}</span>
-                  <span className="text-[var(--color-tangerine)] text-sm font-bold ml-2">Save ₹{(product.mrp - product.price).toLocaleString('en-IN')} ({Math.round(((product.mrp - product.price) / product.mrp) * 100)}%)</span>
-                </>
-              )}
-              <p className="text-white/60 text-xs font-medium mt-2">✔ Price Includes GST · Taxes Included</p>
+              <span className="text-4xl font-black text-white">₹{product.mrp.toLocaleString('en-IN')}</span>
+              <p className="text-white/60 text-xs font-medium mt-3">✔ Price Includes GST · Taxes Included</p>
             </FadeIn>
 
             <FadeIn direction="up" delay={0.2} className="text-white/70 leading-relaxed font-medium">
@@ -100,12 +104,18 @@ export default function ProductDetailPage() {
             </FadeIn>
 
             <FadeIn direction="up" delay={0.3} className="flex flex-wrap gap-4">
-              <button 
-                onClick={() => addToCart(product, 1)}
-                className="btn-primary flex items-center justify-center gap-3"
+              <motion.button 
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={() => {
+                  setAddedCart(true);
+                  addToCart(product, 1);
+                  setTimeout(() => setAddedCart(false), 1200);
+                }}
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-[var(--color-tangerine)] to-[var(--color-tangerine-light)] text-white font-bold text-sm shadow-lg shadow-[var(--color-tangerine)]/25 hover:shadow-xl hover:shadow-[var(--color-tangerine)]/35 transition-shadow duration-300 flex items-center justify-center gap-3"
               >
-                <ShoppingCart size={18}/>Add to Cart
-              </button>
+                {addedCart ? <Check size={18} className="text-white" /> : <ShoppingCart size={18} />}{addedCart ? 'Added' : 'Add to Cart'}
+              </motion.button>
               <button 
                 onClick={() => {
                   addToCart(product, 1);
@@ -116,6 +126,58 @@ export default function ProductDetailPage() {
                 Buy Now
               </button>
             </FadeIn>
+
+            {/* ── Document Section ────────────────────────────────────── */}
+            {(docs.datasheet || docs.manual) && (
+              <FadeIn direction="up" delay={0.35} className="pt-6">
+                {docs.datasheet && docs.manual ? (
+                  /* ── CASE 1 — Both PDFs: two equal-width buttons ── */
+                  <div className="grid grid-cols-2 gap-3">
+                    <a
+                      href={`/api/download/${product.model}/datasheet`}
+                      aria-label={`Download ${product.model} Datasheet`}
+                      className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-[rgba(255,138,0,0.4)] hover:text-[var(--color-tangerine)] hover:bg-white/[0.06]"
+                    >
+                      <FileText size={16} className="text-[var(--color-tangerine)] shrink-0" />
+                      Datasheet
+                    </a>
+                    <a
+                      href={`/api/download/${product.model}/manual`}
+                      aria-label={`Download ${product.model} User Manual`}
+                      className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-[rgba(255,138,0,0.4)] hover:text-[var(--color-tangerine)] hover:bg-white/[0.06]"
+                    >
+                      <FileText size={16} className="text-[var(--color-tangerine)] shrink-0" />
+                      User Manual
+                    </a>
+                  </div>
+                ) : (
+                  /* ── CASE 2 — Only one PDF: centered, wider button (~55-70% width) ── */
+                  <div className="flex justify-center">
+                    {docs.datasheet && (
+                      <a
+                        href={`/api/download/${product.model}/datasheet`}
+                        aria-label={`Download ${product.model} Datasheet`}
+                        className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-[rgba(255,138,0,0.4)] hover:text-[var(--color-tangerine)] hover:bg-white/[0.06] w-full sm:w-[360px] sm:max-w-[70%]"
+                      >
+                        <FileText size={16} className="text-[var(--color-tangerine)] shrink-0" />
+                        Datasheet
+                      </a>
+                    )}
+                    {docs.manual && (
+                      <a
+                        href={`/api/download/${product.model}/manual`}
+                        aria-label={`Download ${product.model} User Manual`}
+                        className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-[rgba(255,138,0,0.4)] hover:text-[var(--color-tangerine)] hover:bg-white/[0.06] w-full sm:w-[360px] sm:max-w-[70%]"
+                      >
+                        <FileText size={16} className="text-[var(--color-tangerine)] shrink-0" />
+                        User Manual
+                      </a>
+                    )}
+                  </div>
+                )}
+              </FadeIn>
+            )}
+            {/* ── END Document Section ────────────────────────────────── */}
           </div>
         </div>
 

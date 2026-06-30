@@ -34,7 +34,7 @@ export default function CheckoutPage() {
     setIsSubmitting(true);
     
     const subject = "New Order Request - DeviceDestination";
-    const body = `NEW ORDER REQUEST\n\nCUSTOMER DETAILS:\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nAddress: ${formData.address}, ${formData.city} - ${formData.pincode}\nNotes: ${formData.notes}\n\nORDER ITEMS:\n${cartItems.map(item => `${item.name} (${item.model}) x${item.quantity} = ₹${item.price * item.quantity}`).join('\n')}\n\nTOTAL: ₹${cartTotal}`;
+    const body = `NEW ORDER REQUEST\n\nCUSTOMER DETAILS:\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nAddress: ${formData.address}, ${formData.city} - ${formData.pincode}\nNotes: ${formData.notes}\n\nORDER ITEMS:\n${cartItems.map(item => `${item.name} (${item.model}) x${item.quantity} = ₹${item.mrp * item.quantity}`).join('\n')}\n\nTOTAL: ₹${cartTotal}`;
     
     window.location.href = `mailto:sales@insight-solutions.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
@@ -75,7 +75,7 @@ export default function CheckoutPage() {
                       <p className="text-white font-medium">{item.name}</p>
                       <p className="text-gray-400 text-xs">{item.model} · Qty: {item.quantity}</p>
                     </div>
-                    <p className="text-primary font-semibold">₹{item.price * item.quantity}</p>
+                    <p className="text-primary font-semibold">₹{item.mrp * item.quantity}</p>
                   </div>
                 ))}
                 <div className="flex justify-between pt-4">
