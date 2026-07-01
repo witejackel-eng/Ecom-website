@@ -31,3 +31,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# backup files
+*.bak
+*._orig
+*.orig
+
+# windows
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# logs
+*.log
+
+# temp
+*.tmp
+*.cache

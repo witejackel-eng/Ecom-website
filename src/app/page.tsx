@@ -5,12 +5,14 @@ import { products } from "@/data/products";
 import { StaggerContainer, StaggerItem, ScaleIn } from "@/components/ui/FadeIn";
 import ProductCard from "@/components/ProductCard";
 import FaqSection from "./FaqSection";
+import FaqJsonLd from "./FaqJsonLd";
 
 export default function Home() {
   const featuredProducts = products.slice(0, 4);
 
   return (
     <main className="flex-1">
+      <FaqJsonLd />
       <Hero />
 
       {/* What We Offer */}
@@ -25,7 +27,7 @@ export default function Home() {
               Everything <span className="text-[var(--color-tangerine)]">You Need.</span>
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { name: "Dome Cameras", icon: Eye },
@@ -80,9 +82,9 @@ export default function Home() {
               <p className="text-gray-400 text-lg mb-10 leading-relaxed">We combine high-end OEM products with certified installation partners and dedicated post-sales support across Delhi NCR.</p>
               <div className="space-y-5">
                 {[
-                  "Authorised CP Plus & eSSL dealer — genuine OEM products, not grey market",
+                  "Authorised CP Plus and eSSL dealer - genuine OEM products, not grey market",
                   "OEM warranty support and certified third-party installation partners across Delhi NCR",
-                  "Transparent pricing — no hidden charges, no surprises"
+                  "Transparent pricing - no hidden charges, no surprises"
                 ].map(f => (
                   <div key={f} className="flex items-start gap-3 text-white/90 font-medium text-sm">
                     <CheckCircle2 className="text-[var(--color-tangerine)] mt-0.5 shrink-0" size={18} /> {f}
@@ -95,7 +97,7 @@ export default function Home() {
                 { number: "2,000+", label: "Products Delivered" },
                 { number: "250+", label: "Happy Clients" },
                 { number: "OEM", label: "Warranty on All Products" },
-                { number: "4 Cities", label: "Delhi · Noida · Gurgaon · Faridabad" }
+                { number: "4 Cities", label: "Delhi - Noida - Gurgaon - Faridabad" }
               ].map((stat, i) => (
                 <div key={i} className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-3xl p-8 flex flex-col justify-center h-full">
                   <div className="text-[var(--color-tangerine)] text-5xl lg:text-5xl font-black leading-none">{stat.number}</div>
