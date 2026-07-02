@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, User, Save, Upload, CheckCircle, Loader2 } from "lucide-react";
@@ -13,13 +13,29 @@ const labelClass = "text-gray-300 text-xs font-bold uppercase tracking-wider mb-
 
 export default function ProfilePage() {
   const router = useRouter();
-  const { state } = useAuth();
+  const { state, dispatch } = useAuth();
   const { user, isAuthenticated, isLoading } = state;
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const handleSave = useCallback(async () => {
+    setSaving(true);
+    setSaved(false);
+    try {
+      // Simulate API call (matching the app's existing async pattern from AuthContext)
+      await new Promise((r) => setTimeout(r, 1000));
+      dispatch({ type: "UPDATE_PROFILE", payload: { firstName, lastName, phone } });
+      setSaved(true);
+    } catch (err) {
+      console.error("Failed to save profile:", err);
+    } finally {
+      setSaving(false);
+    }
+  }, [dispatch, firstName, lastName, phone]);
+
+
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated) router.push("/login");
