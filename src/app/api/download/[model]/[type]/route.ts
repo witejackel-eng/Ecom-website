@@ -10,7 +10,8 @@ function normalize(s: string) {
 
 function matchModelFile(model: string, filename: string) {
   const baseName = path.basename(filename);
-  const nameWithoutExt = normalize(baseName).replace(/\.pdf$/i, "");
+  const normalized = normalize(baseName);
+  const nameWithoutExt = normalized.endsWith("pdf") ? normalized.slice(0, -3) : normalized;
   return nameWithoutExt.startsWith(normalize(model));
 }
 
