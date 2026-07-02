@@ -2,7 +2,7 @@ export const products = [
   {
     id: "cp-unc-da41l3c-q",
     name: "CP Plus 4 MP IP Dome Camera",
-    model: "CP-UNC-DA41L3C-Q",
+    model: "CP-UNC-DA41L3C-D-Q",
     category: "Dome Cameras",
     price: 3100,
     mrp: 3658,
@@ -17,8 +17,8 @@ export const products = [
       '/images/products/CP-UNC-DA41L3C-Q 4th.png',
       '/images/products/CP-UNC-DA41L3C-Q 5th.png',
     ],
-    datasheet: '/docs/CP-UNC-DA41L3C-Q.pdf',
-    manual: '/docs/CP-UNC-DA41L3C-Q user manual.pdf',
+    datasheet: '/docs/CP-UNC-DA41L3C-D-Q.pdf',
+    manual: '/docs/CP-UNC-DA41L3C-D-Q user manual.pdf',
     specs: {
       "Image Sensor": "1/2.9\" 4MP Progressive Scan CMOS",
       "Max Resolution": "2688 × 1520 @ 25/30fps",
@@ -30,7 +30,7 @@ export const products = [
       "IP Rating": "IP67",
       "Power": "PoE (802.3af)",
       "Protocol": "ONVIF Profiles S/G/T",
-      "Audio": "No built-in mic",
+      "Audio": "Built-in Microphone",
       "Warranty": "2 Years"
     },
     highlights: ["4MP Quad HD Resolution", "30m Smart IR Night Vision", "IP67 Weatherproof", "H.265 Compression", "PoE Support", "ONVIF Compatible"],

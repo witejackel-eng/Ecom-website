@@ -76,7 +76,7 @@ const ProductCard = memo(function ProductCard({ product }: ProductCardProps) {
           <div className="p-6 flex flex-col flex-grow gap-3">
             <div className="space-y-2 flex-grow">
               <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-[0.2em]">
-                {product.brand} &middot; {product.model}
+                {product.brand} &middot; <span className="text-[var(--color-tangerine)] text-[11px]">{product.model}</span>
               </p>
               <h3 className="text-lg font-bold text-white leading-snug group-hover:text-[var(--color-tangerine)] transition-colors duration-300 line-clamp-2">
                 {product.name}

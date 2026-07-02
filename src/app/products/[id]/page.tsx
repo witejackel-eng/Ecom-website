@@ -47,7 +47,7 @@ export default function ProductDetailPage() {
         {/* Breadcrumb */}
         <FadeIn direction="none" className="mb-8">
           <p className="text-[10px] font-bold text-white/30 uppercase tracking-[0.3em]">
-            Home / Products / {product.brand} / {product.category} / {product.model}
+            Home / Products / {product.brand} / {product.category} / <span className="text-[var(--color-tangerine)]">{product.model}</span>
           </p>
         </FadeIn>
 
@@ -91,7 +91,7 @@ export default function ProductDetailPage() {
           <div className="space-y-8">
             <FadeIn direction="up">
               <h1 className="text-white text-5xl font-black tracking-tighter leading-tight">{product.name}</h1>
-              <p className="text-[var(--color-tangerine)] text-xs font-bold uppercase tracking-[0.25em] mt-3">{product.model}</p>
+              <p className="text-[var(--color-tangerine)] text-sm font-bold uppercase tracking-[0.25em] mt-3">{product.model}</p>
             </FadeIn>
 
             <FadeIn direction="up" delay={0.1}>
@@ -101,6 +101,27 @@ export default function ProductDetailPage() {
 
             <FadeIn direction="up" delay={0.2} className="text-white/70 leading-relaxed font-medium">
               {product.shortDescription}
+            </FadeIn>
+
+            {/* ── STQC Certification Badge ────────────────────────────── */}
+            <FadeIn direction="up" delay={0.25}>
+              <div className="glass rounded-2xl border border-[rgba(255,138,0,0.15)] bg-white/[0.02] p-5 space-y-2.5">
+                <div className="flex items-center gap-2.5 flex-wrap">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-[var(--color-tangerine)]/10 shrink-0">
+                    <Check size={14} className="text-[var(--color-tangerine)]" />
+                  </div>
+                  <span className="text-white text-sm font-bold tracking-wide">
+                    STQC Ready
+                  </span>
+                  <span className="text-white/20 hidden sm:inline">&bull;</span>
+                  <span className="text-white/60 text-xs font-medium">
+                    Suitable for Government &amp; Enterprise Projects
+                  </span>
+                </div>
+                <p className="text-white/40 text-[11px] leading-relaxed pl-0 sm:pl-9">
+                  This product is suitable for STQC-compliant surveillance deployments when installed as part of a compliant CCTV solution. Please verify project-specific STQC requirements before procurement.
+                </p>
+              </div>
             </FadeIn>
 
             <FadeIn direction="up" delay={0.3} className="flex flex-wrap gap-4">
