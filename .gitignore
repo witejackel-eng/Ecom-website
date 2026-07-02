@@ -1,0 +1,60 @@
+﻿# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug & logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Local env files
+.env*.local
+.env
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Generated artifacts & audits
+all_files_list.txt
+full-backup.*
+*_REPORT.md
+REPORT.md
+audit_*.txt
+*_audit*.txt
+
+# AI agent context files
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+
+# Compiler error dumps
+tsc_errors*.txt
+
+# One-off checkout/build scripts
+write_checkout*.txt
+write_checkout*.js
+build_products.mjs
+parse_xlsx.js
+update_products_specs.js
+update_specs.js
+apply_verified_specs.mjs
