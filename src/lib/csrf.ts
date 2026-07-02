@@ -2,8 +2,7 @@ import { doubleCsrf } from 'csrf-csrf';
 import type { NextRequest } from 'next/server';
 
 const { generateCsrfToken, validateRequest } = doubleCsrf({
-  getSecret: () => process.env.CSRF_SECRET ?? '' ||
-  (() => { throw new Error('CSRF_SECRET env var is not set'); })(), (() => { throw new Error('CSRF_SECRET env var is not set'); })(),
+  getSecret: () => process.env.CSRF_SECRET ?? (() => { throw new Error('CSRF_SECRET env var is not set'); })(),
   cookieName: process.env.NODE_ENV === 'production' ? '__Host-csrf' : 'csrf',
   cookieOptions: {
     httpOnly: true,
