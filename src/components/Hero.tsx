@@ -1,12 +1,9 @@
-"use client";
-
-import Link from "next/link";
-import { motion } from "framer-motion";
+﻿import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section 
+    <section
       className="relative min-h-[85vh] flex flex-col items-center justify-center py-28 overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #0A1F2E 0%, #0D3D4F 40%, #0A2A35 70%, #0E2732 100%)'
@@ -17,17 +14,14 @@ export default function Hero() {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--color-tangerine)] rounded-full blur-[120px] opacity-5 animate-pulse delay-1000" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center w-full flex justify-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <div
           className="flex flex-col items-center"
           style={{ maxWidth: '720px' }}
         >
           <span className="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--color-tangerine)] mb-10">
             // Professional Security Ecosystems
           </span>
-          <h1 
+          <h1
             className="text-white font-black tracking-tighter mb-10"
             style={{
               fontSize: 'clamp(48px, 6vw, 80px)',
@@ -36,7 +30,7 @@ export default function Hero() {
           >
             Secure Your <br/> <span className="text-[var(--color-tangerine)]">World.</span>
           </h1>
-          <p 
+          <p
             className="text-gray-300 mb-14"
             style={{
               textAlign: 'center',
@@ -56,7 +50,7 @@ export default function Hero() {
               Request Quote
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

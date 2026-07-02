@@ -2,14 +2,16 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
-const BASE_DIR = "D:\\Ecommerce\\CCTV\\images for ecom";
+const BASE_DIR = path.join(process.cwd(), "public", "docs");
 
 function normalize(s: string) {
   return s.toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
 function matchModelFile(model: string, filename: string) {
-  const nameWithoutExt = normalize(filename).replace("\.pdf$", "");
+  const baseName = path.basename(filename);
+  const normalized = normalize(baseName);
+  const nameWithoutExt = normalized.endsWith("pdf") ? normalized.slice(0, -3) : normalized;
   return nameWithoutExt.startsWith(normalize(model));
 }
 
@@ -24,6 +26,20 @@ function classifyFile(filename: string): "datasheet" | "manual" | null {
   return null;
 }
 
+function findPdfFiles(dir: string): string[] {
+  let results: string[] = [];
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      results = results.concat(findPdfFiles(fullPath));
+    } else if (entry.isFile() && entry.name.toLowerCase().endsWith(".pdf")) {
+      results.push(fullPath);
+    }
+  }
+  return results;
+}
+
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ model: string }> }
@@ -34,12 +50,12 @@ export async function GET(
     return NextResponse.json({ datasheet: false, manual: false }, { status: 200 });
   }
 
-  const files = fs.readdirSync(BASE_DIR).filter((f) => f.toLowerCase().endsWith(".pdf"));
-  const matched = files.filter((f) => matchModelFile(model, f));
+  const allPdfs = findPdfFiles(BASE_DIR);
+  const matched = allPdfs.filter((f) => matchModelFile(model, f));
 
   const result = { datasheet: false, manual: false } as { datasheet: boolean; manual: boolean };
   for (const file of matched) {
-    const kind = classifyFile(file);
+    const kind = classifyFile(path.basename(file));
     if (kind === "datasheet") result.datasheet = true;
     if (kind === "manual") result.manual = true;
   }

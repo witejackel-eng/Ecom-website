@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, memo, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -25,11 +25,18 @@ interface ProductCardProps {
   product: Product;
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
+const ProductCard = memo(function ProductCard({ product }: ProductCardProps) {
   const { addToCart, openCart } = useCart();
   const [imageError, setImageError] = useState(false);
   const [added, setAdded] = useState(false);
   
+  const handleAddToCart = useCallback(() => {
+    setAdded(true);
+    addToCart(product, 1);
+    openCart();
+    setTimeout(() => setAdded(false), 1200);
+  }, [addToCart, openCart, product]);
+
   return (
     <ScaleIn duration={0.6}>
       <div className="group relative glass rounded-3xl overflow-hidden transition-all duration-500 border-[rgba(255,138,0,0.18)] hover:border-[rgba(255,138,0,0.55)] hover:-translate-y-[2px] h-full flex flex-col">
@@ -69,7 +76,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <div className="p-6 flex flex-col flex-grow gap-3">
             <div className="space-y-2 flex-grow">
               <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-[0.2em]">
-                {product.brand} &middot; {product.model}
+                {product.brand} &middot; <span className="text-[var(--color-tangerine)] text-[11px]">{product.model}</span>
               </p>
               <h3 className="text-lg font-bold text-white leading-snug group-hover:text-[var(--color-tangerine)] transition-colors duration-300 line-clamp-2">
                 {product.name}
@@ -87,13 +94,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                 whileHover={{ scale: 1.08, y: -2 }}
                 whileTap={{ scale: 0.92 }}
                 className="h-12 w-12 min-w-[48px] rounded-full bg-gradient-to-r from-[var(--color-tangerine)] to-[var(--color-tangerine-light)] flex items-center justify-center text-white shadow-lg shadow-[var(--color-tangerine)]/25 hover:shadow-xl hover:shadow-[var(--color-tangerine)]/35 border border-white/10 transition-shadow duration-300"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setAdded(true);
-                  addToCart(product, 1);
-                  openCart();
-                  setTimeout(() => setAdded(false), 1200);
-                }}
+                onClick={handleAddToCart}
               >
                 {added ? <Check size={18} className="text-white" /> : <ShoppingCart size={18} />}
               </motion.button>
@@ -103,4 +104,6 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
     </ScaleIn>
   );
-}
+});
+
+export default ProductCard;

@@ -1,41 +1,15 @@
-/**
- * robots.ts — generates /robots.txt for Google, Bing, and all major crawlers.
- *
- * Production rules:
- *   • Allow crawl of all public pages
- *   • Disallow /account, /api, /_next, and staged paths
- *   • Explicitly point to the sitemap
- */
+import type { MetadataRoute } from "next";
+import { SITE } from "@/lib/seo/constants";
 
-export default function robots(): {
-  rules: { userAgent: string; allow: string[]; disallow: string[] }[];
-  sitemap: string;
-} {
+export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: '*',
-        allow: ['/'],
-        disallow: [
-          '/account/',
-          '/api/',
-          '/_next/',
-          '/products_bak/',   // staged copy, keep out of index
-          '/*?*sort=',        // filter/sort query strings
-          '/checkout/',
-        ],
-      },
-      {
-        userAgent: 'Googlebot',
-        allow: ['/'],
-        disallow: ['/account/', '/api/', '/_next/', '/products_bak/'],
-      },
-      {
-        userAgent: 'Bingbot',
-        allow: ['/'],
-        disallow: ['/account/', '/api/', '/_next/', '/products_bak/'],
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/account/", "/cart", "/checkout", "/login", "/signup", "/api/"],
       },
     ],
-    sitemap: 'https://devicedestination.com/sitemap.xml',
+    sitemap: `${SITE.url}/sitemap.xml`,
   };
 }

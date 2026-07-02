@@ -1,50 +1,60 @@
-# dependencies
+﻿# Dependencies
 /node_modules
 /.pnp
 .pnp.js
 
-# testing
+# Testing
 /coverage
 
-# next.js
+# Next.js
 /.next/
 /out/
 
-# production
+# Production
 /build
 
-# misc
+# Misc
 .DS_Store
 *.pem
 
-# debug
+# Debug & logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.log
 
-# local env files
+# Local env files
 .env*.local
+.env
 
-# vercel
+# Vercel
 .vercel
 
-# typescript
+# TypeScript
 *.tsbuildinfo
 next-env.d.ts
 
-# backup files
-*.bak
-*._orig
-*.orig
+# Generated artifacts & audits
+all_files_list.txt
+full-backup.*
+*_REPORT.md
+REPORT.md
+audit_*.txt
+*_audit*.txt
 
-# windows
-Thumbs.db
-Desktop.ini
-ehthumbs.db
+# AI agent context files
+CLAUDE.md
+AGENTS.md
+GEMINI.md
 
-# logs
-*.log
+# Compiler error dumps
+tsc_errors*.txt
 
-# temp
-*.tmp
-*.cache
+# One-off checkout/build scripts
+write_checkout*.txt
+write_checkout*.js
+build_products.mjs
+parse_xlsx.js
+update_products_specs.js
+update_specs.js
+apply_verified_specs.mjs
