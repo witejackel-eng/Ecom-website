@@ -38,7 +38,13 @@ export default function FilterSidebar({
       
       <div className="flex justify-between items-center mb-12 md:hidden">
         <h2 className="text-3xl font-black tracking-tighter">Filters</h2>
-        <button onClick={() => setIsOpen(false)} className="h-10 w-10 rounded-full glass flex items-center justify-center"><X size={20} /></button>
+        <button
+            onClick={() => setIsOpen(false)}
+            className="h-10 w-10 rounded-full glass flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[var(--color-tangerine)] focus:ring-offset-2 focus:ring-offset-[#0A1F2E] transition-all duration-200"
+            aria-label="Close filters"
+          >
+            <X size={20} />
+          </button>
       </div>
       
       <div className="hidden md:block mb-12">

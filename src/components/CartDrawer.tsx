@@ -41,7 +41,10 @@ export default function CartDrawer() {
                     <span className="bg-[var(--color-tangerine)] text-white text-[11px] font-bold px-2 py-0.5 rounded-full leading-none">{cartCount}</span>
                   )}
                 </div>
-                <button onClick={closeCart} className="h-8 w-8 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200" aria-label="Close cart">
+                <button
+                  onClick={closeCart}
+                  className="h-8 w-8 rounded-full flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[var(--color-tangerine)] focus:ring-offset-2 focus:ring-offset-[#0A1F2E] transition-all duration-200"
+                  aria-label="Close cart">
                   <X size={18} />
                 </button>
               </div>
