@@ -9,7 +9,8 @@ function normalize(s: string) {
 }
 
 function matchModelFile(model: string, filename: string) {
-  const nameWithoutExt = normalize(filename).replace("\.pdf$", "");
+  const baseName = path.basename(filename);
+  const nameWithoutExt = normalize(baseName).replace(/\.pdf$/i, "");
   return nameWithoutExt.startsWith(normalize(model));
 }
 
@@ -24,6 +25,20 @@ function classifyFile(filename: string): "datasheet" | "manual" | null {
   return null;
 }
 
+function findPdfFiles(dir: string): string[] {
+  let results: string[] = [];
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      results = results.concat(findPdfFiles(fullPath));
+    } else if (entry.isFile() && entry.name.toLowerCase().endsWith(".pdf")) {
+      results.push(fullPath);
+    }
+  }
+  return results;
+}
+
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ model: string }> }
@@ -34,17 +49,15 @@ export async function GET(
     return NextResponse.json({ datasheet: false, manual: false }, { status: 200 });
   }
 
-  const files = fs.readdirSync(BASE_DIR).filter((f) => f.toLowerCase().endsWith(".pdf"));
-  const matched = files.filter((f) => matchModelFile(model, f));
+  const allPdfs = findPdfFiles(BASE_DIR);
+  const matched = allPdfs.filter((f) => matchModelFile(model, f));
 
   const result = { datasheet: false, manual: false } as { datasheet: boolean; manual: boolean };
   for (const file of matched) {
-    const kind = classifyFile(file);
+    const kind = classifyFile(path.basename(file));
     if (kind === "datasheet") result.datasheet = true;
     if (kind === "manual") result.manual = true;
   }
 
   return NextResponse.json(result, { status: 200 });
 }
-
-
