@@ -22,6 +22,7 @@ export default function ProductDetailPage() {
   const [docs, setDocs] = useState<{ datasheet: boolean; manual: boolean }>({ datasheet: false, manual: false });
   const [addedCart, setAddedCart] = useState(false);
 
+  if (!product) return;
   useEffect(() => {
     const loadDocs = async () => {
       try {
@@ -35,7 +36,7 @@ export default function ProductDetailPage() {
       }
     };
     loadDocs();
-  }, [product.model]);
+  }, [product?.model]);
 
   if (!product) return <div className="text-white p-40 text-center font-black tracking-tighter text-4xl opacity-10">ARCHITECTING ASSET...</div>;
 

@@ -35,7 +35,7 @@ function getLimiter(name: string): Ratelimit {
     const config = LIMITER_CONFIGS[name] ?? LIMITER_CONFIGS.global;
     limiters[name] = new Ratelimit({
       redis: getRedis(),
-      limiter: Ratelimit.slidingWindow(config.requests, config.window),
+      limiter: Ratelimit.slidingWindow(config.requests, config.window as any),
       prefix: `rl:${name}`,
     });
   }

@@ -9,7 +9,7 @@ export default function NumberTicker({ value, direction = "up" }: { value: numbe
     damping: 30, // Reduced damping for faster convergence
     stiffness: 80, // Reduced stiffness to match damping
   });
-  const display = useTransform(springValue, (current) => 
+  const display = useTransform(springValue, (current: number) => 
     Math.round(current).toLocaleString('en-IN')
   );
   const ref = useRef<HTMLSpanElement>(null);

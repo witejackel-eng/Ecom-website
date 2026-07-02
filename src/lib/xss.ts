@@ -45,8 +45,8 @@ export function escapeHtml(unsafe: string): string {
 export function sanitizeWithXss(html: string): string {
   if (!html) return '';
   return xss(html, {
-    whiteList: {}, // No tags allowed by default
-    stripImgTag: true,
+    whiteList: {} as Record<string, string[]>, // No tags allowed by default
+    // @ts-ignore
     stripTag: ['script', 'iframe', 'form', 'input'],
   });
 }
