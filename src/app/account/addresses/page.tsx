@@ -23,7 +23,7 @@ export default function AddrPage() {
   const { user: u, isAuthenticated: ia, isLoading: il, addresses: ca } = s;
   const [ad, setAd] = useState(ca);
   const [sf, setSf] = useState(false);
-  const [ei, setEi] = useState(null);
+  const [ei, setEi] = useState<string | null>(null);
   const [f, setF] = useState(ef);
   const [sv, setSv] = useState(false);
   const [pe, setPe] = useState("");
@@ -31,14 +31,14 @@ export default function AddrPage() {
   useEffect(() => { if (!il && !ia) r.push("/login"); }, [il, ia, r]);
   if (il) return <main className="min-h-screen flex items-center justify-center pt-28"><div className="h-10 w-10 border-4 border-[var(--color-tangerine)] border-t-transparent rounded-full animate-spin mx-auto" /></main>;
   if (!ia || !u) return null;
-  const U = v => v.charAt(0).toUpperCase() + v.slice(1);
-  const gt = (t, k) => { const x = ats.find(a => a.v === t); return x ? x[k] : k === 'c' ? "bg-white/5 text-gray-400 border-white/10" : MapPin; };
-  const hc = (fd, vl) => { setF(p => ({ ...p, [fd]: vl })); if (fd === "pincode") setPe(vl.length > 6 ? "Max 6 digits" : ""); };
+  const U = (v: string) => v.charAt(0).toUpperCase() + v.slice(1);
+  const gt = (t: string, k: string) => { const x = ats.find(a => a.v === t); return x ? (x as Record<string, any>)[k] : k === 'c' ? "bg-white/5 text-gray-400 border-white/10" : MapPin; };
+  const hc = (fd: string, vl: string | boolean) => { setF(p => ({ ...p, [fd]: vl })); if (fd === "pincode") setPe((vl as string).length > 6 ? "Max 6 digits" : ""); };
   const oa = () => { setF(ef); setEi(null); setSf(true); setPe(""); };
-  const oe = a => { setF({ type: a.type, fullName: a.fullName, phone: a.phone, addressLine1: a.addressLine1, city: a.city, state: a.state, pincode: a.pincode, country: a.country || "India", isDefault: a.isDefault }); setEi(a.id); setSf(true); setPe(""); };
+  const oe = (a: { id: string; type: string; fullName: string; phone: string; addressLine1: string; city: string; state: string; pincode: string; country: string; isDefault: boolean }) => { setF({ type: a.type, fullName: a.fullName, phone: a.phone, addressLine1: a.addressLine1, city: a.city, state: a.state, pincode: a.pincode, country: a.country || "India", isDefault: a.isDefault }); setEi(a.id); setSf(true); setPe(""); };
   const hs = async () => { if (!f.fullName || !f.phone || !f.addressLine1 || !f.city || !f.state || !f.pincode) return; if (f.pincode.length !== 6) { setPe("Enter 6-digit pincode"); return; } setSv(true); await new Promise(r => setTimeout(r, 400)); setSv(false); const addr = { ...f, id: ei || `addr_${Date.now()}` }; if (ei) setAd(p => p.map(a => a.id === ei ? { ...a, ...addr } : a)); else setAd(p => [...p, addr]); setSf(false); setEi(null); };
-  const hd = id => setAd(p => p.filter(a => a.id !== id));
-  const sd = id => setAd(p => p.map(a => ({ ...a, isDefault: a.id === id })));
+  const hd = (id: string) => setAd(p => p.filter(a => a.id !== id));
+  const sd = (id: string) => setAd(p => p.map(a => ({ ...a, isDefault: a.id === id })));
 
   return (
     <main className="min-h-screen pt-32 pb-20 px-6 relative overflow-hidden">
