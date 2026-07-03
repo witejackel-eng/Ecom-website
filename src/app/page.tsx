@@ -26,7 +26,7 @@ export default function Home() {
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
               { name: "Dome Cameras", icon: Eye },
               { name: "Bullet Cameras", icon: Shield },
@@ -50,16 +50,16 @@ export default function Home() {
           <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[60vw] h-96 bg-teal-500/3 rounded-full blur-[120px]" />
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex justify-between items-end mb-16">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6 mb-12 sm:mb-16">
             <div>
               <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--color-tangerine)] mb-6 block">// TOP SELLERS</span>
-              <h2 className="text-white text-6xl font-black tracking-tighter leading-[0.95]">Popular Products.</h2>
+              <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter leading-[0.95]">Popular Products.</h2>
             </div>
-            <Link href="/products" className="flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-[var(--color-tangerine)] transition-colors">
+            <Link href="/products" className="flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-[var(--color-tangerine)] transition-colors shrink-0">
               Browse All <ChevronRight size={16} />
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

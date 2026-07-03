@@ -83,3 +83,22 @@ p {
 .cart-body {
   scrollbar-width: none;
 }
+
+details > summary {
+  outline-offset: 4px;
+}
+
+@keyframes accordion-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+details[open] > .accordion-reveal {
+  animation: accordion-reveal 0.35s ease-out;
+}

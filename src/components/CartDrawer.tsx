@@ -43,7 +43,7 @@ export default function CartDrawer() {
                 </div>
                 <button
                   onClick={closeCart}
-                  className="h-10 w-10 rounded-full bg-white/10 text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 flex items-center justify-center transition-all duration-200 shadow-lg"
+                  className="h-11 w-11 rounded-full bg-white/10 text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 flex items-center justify-center transition-all duration-200 shadow-lg shrink-0"
                   aria-label="Close cart"
                 >
                   <X size={18} />

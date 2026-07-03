@@ -39,10 +39,10 @@ const ProductCard = memo(function ProductCard({ product }: ProductCardProps) {
 
   return (
     <ScaleIn duration={0.6}>
-      <div className="group relative glass rounded-3xl overflow-hidden transition-all duration-500 border-[rgba(255,138,0,0.18)] hover:border-[rgba(255,138,0,0.55)] hover:-translate-y-[2px] h-full flex flex-col">
+      <div className="group relative glass rounded-3xl overflow-hidden transition-all duration-300 ease-in-out border-[rgba(255,138,0,0.18)] hover:border-[rgba(255,138,0,0.55)] hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20 h-full flex flex-col">
         <Link href={"/products/" + product.id} className="block flex flex-col h-full">
-          {/* Fixed height image container */}
-          <div className="relative h-[300px] overflow-hidden bg-white flex items-center justify-center flex-shrink-0">
+          {/* Fixed-dimension image container to prevent layout shift */}
+          <div className="relative aspect-square sm:h-[300px] sm:aspect-auto overflow-hidden bg-white flex items-center justify-center flex-shrink-0">
             <motion.div 
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}

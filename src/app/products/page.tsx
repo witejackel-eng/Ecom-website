@@ -28,7 +28,7 @@ function ProductsList({ categories, priceRange }: { categories: string[], priceR
   }
 
   return (
-    <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+    <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
       {filteredProducts.map((product) => (
         <StaggerItem key={product.id}>
           <ProductCard product={product as any} />

@@ -104,26 +104,28 @@ export default function ProductDetailPage() {
               {product.shortDescription}
             </FadeIn>
 
-            {/* ── STQC Certification Badge ────────────────────────────── */}
-            <FadeIn direction="up" delay={0.25}>
-              <div className="glass rounded-2xl border border-[rgba(255,138,0,0.15)] bg-white/[0.02] p-5 space-y-2.5">
-                <div className="flex items-center gap-2.5 flex-wrap">
-                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-[var(--color-tangerine)]/10 shrink-0">
-                    <Check size={14} className="text-[var(--color-tangerine)]" />
+            {/* ── STQC Certification Badge (Camera categories only) ───── */}
+            {product.category.toLowerCase().includes("camera") && (
+              <FadeIn direction="up" delay={0.25}>
+                <div className="glass rounded-2xl border border-[rgba(255,138,0,0.15)] bg-white/[0.02] p-5 space-y-2.5">
+                  <div className="flex items-center gap-2.5 flex-wrap">
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-[var(--color-tangerine)]/10 shrink-0">
+                      <Check size={14} className="text-[var(--color-tangerine)]" />
+                    </div>
+                    <span className="text-white text-sm font-bold tracking-wide">
+                      STQC Ready
+                    </span>
+                    <span className="text-white/20 hidden sm:inline">&bull;</span>
+                    <span className="text-white/60 text-xs font-medium">
+                      Suitable for Government &amp; Enterprise Projects
+                    </span>
                   </div>
-                  <span className="text-white text-sm font-bold tracking-wide">
-                    STQC Ready
-                  </span>
-                  <span className="text-white/20 hidden sm:inline">&bull;</span>
-                  <span className="text-white/60 text-xs font-medium">
-                    Suitable for Government &amp; Enterprise Projects
-                  </span>
+                  <p className="text-white/40 text-[11px] leading-relaxed pl-0 sm:pl-9">
+                    This product is suitable for STQC-compliant surveillance deployments when installed as part of a compliant CCTV solution. Please verify project-specific STQC requirements before procurement.
+                  </p>
                 </div>
-                <p className="text-white/40 text-[11px] leading-relaxed pl-0 sm:pl-9">
-                  This product is suitable for STQC-compliant surveillance deployments when installed as part of a compliant CCTV solution. Please verify project-specific STQC requirements before procurement.
-                </p>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            )}
 
             <FadeIn direction="up" delay={0.3} className="flex flex-wrap gap-4">
               <motion.button 
