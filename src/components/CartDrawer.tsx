@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ShoppingCart, Minus, Plus, Trash2 } from "lucide-react";
+import { ShoppingCart, Minus, Plus, Trash2 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -32,24 +32,24 @@ export default function CartDrawer() {
             className="fixed top-0 right-0 h-full w-full max-w-[420px] bg-[#0A1F2E] border-l border-[rgba(255,138,0,0.15)] z-[60] flex flex-col shadow-2xl shadow-black/40"
           >
             {/* Header */}
-            <div className="px-6 pt-6 pb-5 border-b border-white/10 shrink-0">
-              <div className="flex items-center justify-between mb-5">
-                <div className="flex items-center gap-3">
-                  <ShoppingCart size={20} className="text-[var(--color-tangerine)]" />
-                  <h2 className="text-lg font-bold text-white tracking-tight">Your Cart</h2>
-                  {cartCount > 0 && (
-                    <span className="bg-[var(--color-tangerine)] text-white text-[11px] font-bold px-2 py-0.5 rounded-full leading-none">{cartCount}</span>
-                  )}
-                </div>
-                <button
-                  onClick={closeCart}
-                  className="h-11 w-11 rounded-full bg-white/10 text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 flex items-center justify-center transition-all duration-200 shadow-lg shrink-0"
-                  aria-label="Close cart"
-                >
-                  <X size={18} />
-                </button>
+            <div className="relative px-6 pt-6 pb-5 border-b border-white/10 shrink-0">
+              <div className="flex items-center gap-3 mb-5 pr-14">
+                <ShoppingCart size={20} className="text-[var(--color-tangerine)]" />
+                <h2 className="text-lg font-bold text-white tracking-tight">Your Cart</h2>
+                {cartCount > 0 && (
+                  <span className="bg-[var(--color-tangerine)] text-white text-[11px] font-bold px-2 py-0.5 rounded-full leading-none">{cartCount}</span>
+                )}
               </div>
-              <p className="text-xs text-gray-500 font-medium">Review your selected security products.</p>
+              <p className="text-xs text-gray-500 font-medium pr-14">Review your selected security products.</p>
+              <button
+                onClick={closeCart}
+                className="absolute top-4 right-4 p-2 text-zinc-400 hover:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                aria-label="Close cart drawer"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
             </div>
 
             {/* Body */}
