@@ -1,5 +1,6 @@
 
-import Link from "next/link";
+
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
@@ -33,7 +34,7 @@ export default function Footer() {
     {
       section: "Contact",
       links: [
-        { name: "+91 83685 61919", href: "tel:+918368561919", type: "external" },
+        { name: "+91 9873870992", href: "tel:+919873870992", type: "external" },
         { name: "manish@insight-solutions.in", href: "mailto:manish@insight-solutions.in", type: "external" },
         { name: "Dwarka, New Delhi", href: null, type: "text" },
       ],
