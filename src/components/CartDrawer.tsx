@@ -43,8 +43,8 @@ export default function CartDrawer() {
               <p className="text-xs text-gray-500 font-medium pr-14">Review your selected security products.</p>
               <button
                 onClick={closeCart}
-                className="absolute top-4 right-4 p-2 text-zinc-400 hover:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
-                aria-label="Close cart drawer"
+                className="absolute top-4 right-4 p-2 text-zinc-400 hover:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-tangerine)] rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                aria-label="Close cart"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />

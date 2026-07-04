@@ -34,9 +34,9 @@ export default function FilterSidebar({
   };
 
   const SidebarContent = () => (
-    <div className="flex flex-col h-full glass p-8 text-white overflow-y-auto border-r border-white/5 scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
+    <div className="flex flex-col h-full glass text-white border-r border-white/5 scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
       
-      <div className="flex justify-between items-center mb-12 md:hidden">
+      <div className="shrink-0 px-8 pt-8 pb-5 border-b border-white/10 flex items-center justify-between md:hidden">
         <h2 className="text-3xl font-black tracking-tighter">Filters</h2>
         <button
             onClick={() => setIsOpen(false)}
@@ -47,6 +47,7 @@ export default function FilterSidebar({
           </button>
       </div>
       
+      <div className="flex-1 overflow-y-auto p-8">
       <div className="hidden md:block mb-12">
         <SectionLabel>Refine</SectionLabel>
         <h2 className="text-3xl font-black tracking-tighter text-white">Filters</h2>
@@ -95,6 +96,7 @@ export default function FilterSidebar({
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 
