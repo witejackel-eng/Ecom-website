@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { products } from "@/data/products";
 import FadeIn, { ScaleIn } from "@/components/ui/FadeIn";
 import SectionLabel from "@/components/SectionLabel";
-import { ShoppingCart, Star, Shield, Truck, RefreshCw, Heart, Share2, Minus, Plus, Check, FileText } from "lucide-react";
+import { ShoppingCart, Check, FileText } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 export default function ProductDetailPage() {

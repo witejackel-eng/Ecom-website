@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingCart, Minus, Plus, Trash2 } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
