@@ -99,17 +99,17 @@ export default function ProfilePage() {
             {/* Form Fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className={labelClass}>First Name</label>
-                <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} className={inputClass} placeholder="First name" />
+                <label htmlFor="firstName" className={labelClass}>First Name</label>
+                <input id="firstName" type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} className={inputClass} placeholder="First name" />
               </div>
               <div>
-                <label className={labelClass}>Last Name</label>
-                <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} className={inputClass} placeholder="Last name" />
+                <label htmlFor="lastName" className={labelClass}>Last Name</label>
+                <input id="lastName" type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} className={inputClass} placeholder="Last name" />
               </div>
               <div>
-                <label className={labelClass}>Email</label>
+                <label htmlFor="email" className={labelClass}>Email</label>
                 <div className="relative">
-                  <input type="email" value={user.email} readOnly className={`${inputClass} pr-16 opacity-60 cursor-not-allowed`} />
+                  <input id="email" type="email" value={user.email} readOnly className={`${inputClass} pr-16 opacity-60 cursor-not-allowed`} />
                   {user.emailVerified ? (
                     <span className="absolute right-3 top-1/2 -translate-y-1/2 inline-flex items-center gap-1 text-teal-400 text-xs font-bold">
                       <CheckCircle className="h-4 w-4" /> Verified
@@ -122,8 +122,8 @@ export default function ProfilePage() {
                 </div>
               </div>
               <div>
-                <label className={labelClass}>Mobile Phone</label>
-                <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className={inputClass} placeholder="Phone number" />
+                <label htmlFor="phone" className={labelClass}>Mobile Phone</label>
+                <input id="phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className={inputClass} placeholder="Phone number" />
               </div>
             </div>
 

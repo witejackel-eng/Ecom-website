@@ -112,10 +112,10 @@ export default function ChangePasswordPage() {
             )}
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className={labelClass}>Current Password</label>
+                <label htmlFor="currentPassword" className={labelClass}>Current Password</label>
                 <div className="relative">
-                  <input type={showCurrent ? "text" : "password"} value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} placeholder="••••••••" className={`${inputClass} pr-12`} autoComplete="current-password" />
-                  <button type="button" onClick={() => setShowCurrent(!showCurrent)} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors" tabIndex={-1}>
+                  <input id="currentPassword" type={showCurrent ? "text" : "password"} value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} placeholder="••••••••" className={`${inputClass} pr-12`} autoComplete="current-password" />
+                  <button type="button" aria-label="Toggle password visibility" onClick={() => setShowCurrent(!showCurrent)} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors" tabIndex={-1}>
                     {showCurrent ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                   </button>
                 </div>
@@ -123,10 +123,10 @@ export default function ChangePasswordPage() {
 
               {/* New Password */}
               <div>
-                <label className={labelClass}>New Password</label>
+                <label htmlFor="newPassword" className={labelClass}>New Password</label>
                 <div className="relative">
-                  <input type={showNew ? "text" : "password"} value={newPassword} onChange={(e) => setNewPassword(e.target.value)} placeholder="••••••••" className={`${inputClass} pr-12`} autoComplete="new-password" />
-                  <button type="button" onClick={() => setShowNew(!showNew)} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors" tabIndex={-1}>
+                  <input id="newPassword" type={showNew ? "text" : "password"} value={newPassword} onChange={(e) => setNewPassword(e.target.value)} placeholder="••••••••" className={`${inputClass} pr-12`} autoComplete="new-password" />
+                  <button type="button" aria-label="Toggle password visibility" onClick={() => setShowNew(!showNew)} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors" tabIndex={-1}>
                     {showNew ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                   </button>
                 </div>
@@ -149,10 +149,10 @@ export default function ChangePasswordPage() {
 
               {/* Confirm New Password */}
               <div>
-                <label className={labelClass}>Confirm New Password</label>
+                <label htmlFor="confirmPassword" className={labelClass}>Confirm New Password</label>
                 <div className="relative">
-                  <input type={showConfirm ? "text" : "password"} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="••••••••" className={`${inputClass} pr-12 ${passwordsDirty && !passwordsMatch ? "border-red-500/50" : passwordsDirty && passwordsMatch ? "border-teal-500/50" : ""}`} autoComplete="new-password" />
-                  <button type="button" onClick={() => setShowConfirm(!showConfirm)} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors" tabIndex={-1}>
+                  <input id="confirmPassword" type={showConfirm ? "text" : "password"} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="••••••••" className={`${inputClass} pr-12 ${passwordsDirty && !passwordsMatch ? "border-red-500/50" : passwordsDirty && passwordsMatch ? "border-teal-500/50" : ""}`} autoComplete="new-password" />
+                  <button type="button" aria-label="Toggle password visibility" onClick={() => setShowConfirm(!showConfirm)} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors" tabIndex={-1}>
                     {showConfirm ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                   </button>
                 </div>

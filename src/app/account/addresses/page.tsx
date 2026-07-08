@@ -118,14 +118,14 @@ export default function AddrPage() {
                 <div className="border-t border-white/10 pt-8 mt-8">
                   <h3 className="text-lg font-bold text-white mb-6">{ei ? "Edit Address" : "Add New Address"}</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div><label className={lc}>Type</label><select value={f.type} onChange={e => hc("type", e.target.value)} className={ic}>{ats.map(t => <option key={t.v} value={t.v}>{t.l}</option>)}</select></div>
-                    <div><label className={lc}>Full Name</label><input type="text" value={f.fullName} onChange={e => hc("fullName", e.target.value)} className={ic} placeholder="Full name" /></div>
-                    <div><label className={lc}>Phone</label><input type="tel" value={f.phone} onChange={e => hc("phone", e.target.value)} className={ic} placeholder="Phone number" /></div>
-                    <div className="md:col-span-2"><label className={lc}>Address</label><input type="text" value={f.addressLine1} onChange={e => hc("addressLine1", e.target.value)} className={ic} placeholder="Street address, area" /></div>
-                    <div><label className={lc}>City</label><input type="text" value={f.city} onChange={e => hc("city", e.target.value)} className={ic} placeholder="City" /></div>
-                    <div><label className={lc}>State</label><input type="text" value={f.state} onChange={e => hc("state", e.target.value)} className={ic} placeholder="State" /></div>
-                    <div><label className={lc}>Pincode</label><input type="text" value={f.pincode} onChange={e => hc("pincode", e.target.value.replace(/\D/g,"").slice(0,6))} className={`${ic} ${pe ? "border-red-500/50" : ""}`} placeholder="6-digit" maxLength={6} />{pe && <p className="text-red-400 text-xs mt-1">{pe}</p>}</div>
-                    <div><label className={lc}>Country</label><input type="text" value={f.country} onChange={e => hc("country", e.target.value)} className={ic} placeholder="Country" /></div>
+                    <div><label htmlFor="type" className={lc}>Type</label><select id="type" value={f.type} onChange={e => hc("type", e.target.value)} className={ic}>{ats.map(t => <option key={t.v} value={t.v}>{t.l}</option>)}</select></div>
+                    <div><label htmlFor="fullName" className={lc}>Full Name</label><input id="fullName" type="text" value={f.fullName} onChange={e => hc("fullName", e.target.value)} className={ic} placeholder="Full name" /></div>
+                    <div><label htmlFor="addressPhone" className={lc}>Phone</label><input id="addressPhone" type="tel" value={f.phone} onChange={e => hc("phone", e.target.value)} className={ic} placeholder="Phone number" /></div>
+                    <div className="md:col-span-2"><label htmlFor="addressLine1" className={lc}>Address</label><input id="addressLine1" type="text" value={f.addressLine1} onChange={e => hc("addressLine1", e.target.value)} className={ic} placeholder="Street address, area" /></div>
+                    <div><label htmlFor="city" className={lc}>City</label><input id="city" type="text" value={f.city} onChange={e => hc("city", e.target.value)} className={ic} placeholder="City" /></div>
+                    <div><label htmlFor="state" className={lc}>State</label><input id="state" type="text" value={f.state} onChange={e => hc("state", e.target.value)} className={ic} placeholder="State" /></div>
+                    <div><label htmlFor="pincode" className={lc}>Pincode</label><input id="pincode" type="text" value={f.pincode} onChange={e => hc("pincode", e.target.value.replace(/\D/g,"").slice(0,6))} className={`${ic} ${pe ? "border-red-500/50" : ""}`} placeholder="6-digit" maxLength={6} />{pe && <p className="text-red-400 text-xs mt-1">{pe}</p>}</div>
+                    <div><label htmlFor="country" className={lc}>Country</label><input id="country" type="text" value={f.country} onChange={e => hc("country", e.target.value)} className={ic} placeholder="Country" /></div>
                     <div className="md:col-span-2">
                       <label className="flex items-center gap-3 cursor-pointer">
                         <input type="checkbox" checked={f.isDefault} onChange={e => hc("isDefault", e.target.checked)} className="h-4 w-4 rounded border-white/10 bg-white/5 accent-[var(--color-tangerine)]" />

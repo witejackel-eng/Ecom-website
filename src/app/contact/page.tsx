@@ -100,30 +100,34 @@ export default function ContactPage() {
                 
                 <div className="relative z-10 grid sm:grid-cols-2 gap-7">
                   <div className="space-y-2.5">
-                    <label className="text-[11px] font-bold text-gray-200 uppercase tracking-[0.25em] ml-1">Name</label>
+                    <label htmlFor="name" className="text-[11px] font-bold text-gray-200 uppercase tracking-[0.25em] ml-1">Name</label>
                     <input 
+                      id="name"
                       placeholder="Your full name" 
                       className="w-full h-14 px-5 bg-white/[0.04] border border-white/10 rounded-2xl text-white placeholder:text-gray-500 focus:border-[var(--color-tangerine)] focus:bg-white/[0.07] transition-all duration-200 outline-none font-medium"
                     />
                   </div>
                   <div className="space-y-2.5">
-                    <label className="text-[11px] font-bold text-gray-200 uppercase tracking-[0.25em] ml-1">Email</label>
+                    <label htmlFor="email" className="text-[11px] font-bold text-gray-200 uppercase tracking-[0.25em] ml-1">Email</label>
                     <input 
+                      id="email"
                       type="email"
                       placeholder="you@company.com" 
                       className="w-full h-14 px-5 bg-white/[0.04] border border-white/10 rounded-2xl text-white placeholder:text-gray-500 focus:border-[var(--color-tangerine)] focus:bg-white/[0.07] transition-all duration-200 outline-none font-medium"
                     />
                   </div>
                   <div className="space-y-2.5">
-                    <label className="text-[11px] font-bold text-gray-200 uppercase tracking-[0.25em] ml-1">Phone Number</label>
+                    <label htmlFor="phone" className="text-[11px] font-bold text-gray-200 uppercase tracking-[0.25em] ml-1">Phone Number</label>
                     <input 
+                      id="phone"
                       placeholder="+91 98765 43210" 
                       className="w-full h-14 px-5 bg-white/[0.04] border border-white/10 rounded-2xl text-white placeholder:text-gray-500 focus:border-[var(--color-tangerine)] focus:bg-white/[0.07] transition-all duration-200 outline-none font-medium"
                     />
                   </div>
                   <div className="space-y-2.5">
-                    <label className="text-[11px] font-bold text-gray-200 uppercase tracking-[0.25em] ml-1">Company <span className="normal-case tracking-normal text-gray-500 font-medium">(Optional)</span></label>
+                    <label htmlFor="company" className="text-[11px] font-bold text-gray-200 uppercase tracking-[0.25em] ml-1">Company <span className="normal-case tracking-normal text-gray-500 font-medium">(Optional)</span></label>
                     <input 
+                      id="company"
                       placeholder="Company name" 
                       className="w-full h-14 px-5 bg-white/[0.04] border border-white/10 rounded-2xl text-white placeholder:text-gray-500 focus:border-[var(--color-tangerine)] focus:bg-white/[0.07] transition-all duration-200 outline-none font-medium"
                     />
@@ -131,8 +135,8 @@ export default function ContactPage() {
                 </div>
                 
                 <div className="space-y-2.5">
-                  <label className="text-[11px] font-bold text-gray-200 uppercase tracking-[0.25em] ml-1">Subject</label>
-                  <select className="w-full h-14 px-5 bg-white/[0.04] border border-white/10 rounded-2xl text-white focus:border-[var(--color-tangerine)] focus:bg-white/[0.07] transition-all duration-200 outline-none font-medium appearance-none">
+                  <label htmlFor="subject" className="text-[11px] font-bold text-gray-200 uppercase tracking-[0.25em] ml-1">Subject</label>
+                  <select id="subject" className="w-full h-14 px-5 bg-white/[0.04] border border-white/10 rounded-2xl text-white focus:border-[var(--color-tangerine)] focus:bg-white/[0.07] transition-all duration-200 outline-none font-medium appearance-none">
                     <option value="" className="bg-[#0D2530]">Select a topic</option>
                     <option value="inquiry" className="bg-[#0D2530]">Product Inquiry</option>
                     <option value="bulk" className="bg-[#0D2530]">Bulk Order</option>
@@ -143,8 +147,9 @@ export default function ContactPage() {
                 </div>
                 
                 <div className="space-y-2.5">
-                  <label className="text-[11px] font-bold text-gray-200 uppercase tracking-[0.25em] ml-1">Message</label>
+                  <label htmlFor="message" className="text-[11px] font-bold text-gray-200 uppercase tracking-[0.25em] ml-1">Message</label>
                   <textarea 
+                    id="message"
                     placeholder="Tell us about your requirements, project scope, or any questions you have." 
                     rows={5} 
                     className="w-full p-5 bg-white/[0.04] border border-white/10 rounded-[1.5rem] text-white placeholder:text-gray-500 focus:border-[var(--color-tangerine)] focus:bg-white/[0.07] transition-all duration-200 outline-none resize-none font-medium leading-relaxed"

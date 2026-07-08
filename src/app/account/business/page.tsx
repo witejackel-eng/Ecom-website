@@ -99,32 +99,32 @@ export default function BusinessDetailsPage() {
           <div className="glass rounded-[2rem] p-8 md:p-10 glow-tangerine">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="md:col-span-2">
-                <label className={labelClass}>Company Name <span className="text-red-400">*</span></label>
-                <input type="text" value={form.companyName} onChange={(e) => handleChange("companyName", e.target.value)} className={inputClass} placeholder="Your registered company name" />
+                <label htmlFor="companyName" className={labelClass}>Company Name <span className="text-red-400">*</span></label>
+                <input id="companyName" type="text" value={form.companyName} onChange={(e) => handleChange("companyName", e.target.value)} className={inputClass} placeholder="Your registered company name" />
               </div>
               <div>
-                <label className={labelClass}>GSTIN <span className="text-red-400">*</span></label>
-                <input type="text" value={form.gstin} onChange={(e) => handleChange("gstin", e.target.value.toUpperCase())} className={inputClass} placeholder="07AABCD1234E1Z5" maxLength={15} />
+                <label htmlFor="gstin" className={labelClass}>GSTIN <span className="text-red-400">*</span></label>
+                <input id="gstin" type="text" value={form.gstin} onChange={(e) => handleChange("gstin", e.target.value.toUpperCase())} className={inputClass} placeholder="07AABCD1234E1Z5" maxLength={15} />
               </div>
               <div>
-                <label className={labelClass}>PAN <span className="text-gray-500">(optional)</span></label>
-                <input type="text" value={form.pan} onChange={(e) => handleChange("pan", e.target.value.toUpperCase())} className={inputClass} placeholder="AABCD1234E" maxLength={10} />
+                <label htmlFor="pan" className={labelClass}>PAN <span className="text-gray-500">(optional)</span></label>
+                <input id="pan" type="text" value={form.pan} onChange={(e) => handleChange("pan", e.target.value.toUpperCase())} className={inputClass} placeholder="AABCD1234E" maxLength={10} />
               </div>
               <div className="md:col-span-2">
-                <label className={labelClass}>Business Address <span className="text-red-400">*</span></label>
-                <textarea value={form.businessAddress} onChange={(e) => handleChange("businessAddress", e.target.value)} className={`${inputClass} resize-none min-h-[90px]`} placeholder="Registered business address" rows={3} />
+                <label htmlFor="businessAddress" className={labelClass}>Business Address <span className="text-red-400">*</span></label>
+                <textarea id="businessAddress" value={form.businessAddress} onChange={(e) => handleChange("businessAddress", e.target.value)} className={`${inputClass} resize-none min-h-[90px]`} placeholder="Registered business address" rows={3} />
               </div>
               <div>
-                <label className={labelClass}>Contact Person <span className="text-red-400">*</span></label>
-                <input type="text" value={form.contactPerson} onChange={(e) => handleChange("contactPerson", e.target.value)} className={inputClass} placeholder="Full name of contact person" />
+                <label htmlFor="contactPerson" className={labelClass}>Contact Person <span className="text-red-400">*</span></label>
+                <input id="contactPerson" type="text" value={form.contactPerson} onChange={(e) => handleChange("contactPerson", e.target.value)} className={inputClass} placeholder="Full name of contact person" />
               </div>
               <div>
-                <label className={labelClass}>Business Email <span className="text-red-400">*</span></label>
-                <input type="email" value={form.businessEmail} onChange={(e) => handleChange("businessEmail", e.target.value)} className={inputClass} placeholder="billing@company.com" />
+                <label htmlFor="businessEmail" className={labelClass}>Business Email <span className="text-red-400">*</span></label>
+                <input id="businessEmail" type="email" value={form.businessEmail} onChange={(e) => handleChange("businessEmail", e.target.value)} className={inputClass} placeholder="billing@company.com" />
               </div>
               <div>
-                <label className={labelClass}>Business Phone <span className="text-red-400">*</span></label>
-                <input type="tel" value={form.businessPhone} onChange={(e) => handleChange("businessPhone", e.target.value)} className={inputClass} placeholder="+91 11 2345 6789" />
+                <label htmlFor="businessPhone" className={labelClass}>Business Phone <span className="text-red-400">*</span></label>
+                <input id="businessPhone" type="tel" value={form.businessPhone} onChange={(e) => handleChange("businessPhone", e.target.value)} className={inputClass} placeholder="+91 11 2345 6789" />
               </div>
             </div>
 
