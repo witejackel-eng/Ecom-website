@@ -39,7 +39,7 @@ const ProductCard = memo(function ProductCard({ product }: ProductCardProps) {
 
   return (
     <ScaleIn duration={0.6}>
-      <div className="group relative glass rounded-3xl overflow-hidden transition-all duration-300 ease-in-out border-[rgba(255,138,0,0.18)] hover:border-[rgba(255,138,0,0.55)] hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20 h-full flex flex-col">
+      <div className="group relative glass rounded-3xl overflow-hidden transition-all duration-300 ease-in-out border-[rgb(var(--tangerine-rgb)_/_0.18)] hover:border-[rgb(var(--tangerine-rgb)_/_0.55)] hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20 h-full flex flex-col">
         <Link href={"/products/" + product.id} className="block flex flex-col h-full">
           {/* Fixed-dimension image container to prevent layout shift */}
           <div className="relative aspect-square sm:h-[300px] sm:aspect-auto overflow-hidden bg-white flex items-center justify-center flex-shrink-0">
@@ -67,7 +67,7 @@ const ProductCard = memo(function ProductCard({ product }: ProductCardProps) {
 
             {/* Category Badge */}
             <div className="absolute top-4 left-4">
-              <span className="inline-flex items-center rounded-full bg-navy/50 border border-[rgba(255,138,0,0.3)] px-3 py-1 text-[9px] font-bold uppercase tracking-[0.2em] text-[var(--color-tangerine)] backdrop-blur-md">
+              <span className="inline-flex items-center rounded-full bg-navy/50 border border-[rgb(var(--tangerine-rgb)_/_0.3)] px-3 py-1 text-[9px] font-bold uppercase tracking-[0.2em] text-[var(--color-tangerine)] backdrop-blur-md">
                 {product.category}
               </span>
             </div>

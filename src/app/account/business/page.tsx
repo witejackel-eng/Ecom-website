@@ -80,7 +80,7 @@ export default function BusinessDetailsPage() {
         <FadeIn direction="up">
           {/* Header */}
           <div className="flex items-center gap-4 mb-10">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgba(255,138,0,0.25)]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgb(var(--tangerine-rgb)_/_0.25)]">
               <Building2 className="h-6 w-6 text-[var(--color-tangerine)]" />
             </div>
             <div>
@@ -130,7 +130,7 @@ export default function BusinessDetailsPage() {
 
             <div className="mt-10 flex items-center gap-4">
               <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onClick={handleSave} disabled={saving}
-                className="inline-flex items-center gap-2 bg-[var(--color-tangerine)] text-white py-3 px-8 rounded-full font-bold text-[14px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+                className="inline-flex items-center gap-2 bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] py-3 px-8 rounded-full font-bold text-[14px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {saving ? <><Loader2 className="h-4 w-4 animate-spin" /> Saving...</> : <><Save className="h-4 w-4" /> Save Changes</>}
               </motion.button>

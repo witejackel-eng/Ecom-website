@@ -46,7 +46,7 @@ export default function QuotationsPage() {
         </Link>
         <FadeIn direction="up">
           <div className="flex items-center gap-4 mb-10">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgba(255,138,0,0.25)]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgb(var(--tangerine-rgb)_/_0.25)]">
               <FileText className="h-6 w-6 text-[var(--color-tangerine)]" />
             </div>
             <div>
@@ -62,7 +62,7 @@ export default function QuotationsPage() {
               </div>
               <h3 className="text-xl font-bold text-white mb-3">No quotations yet</h3>
               <p className="text-gray-400 text-sm mb-8">Submit a request for a quote on bulk or custom orders.</p>
-              <Link href="/contact" className="inline-flex bg-[var(--color-tangerine)] text-white py-3 px-8 rounded-full font-bold text-[14px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all">
+              <Link href="/contact" className="inline-flex bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] py-3 px-8 rounded-full font-bold text-[14px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all">
                 Request a Quote
               </Link>
             </div>
@@ -71,7 +71,7 @@ export default function QuotationsPage() {
               {quotations.map((quote: any, index: number) => (
                 <motion.div key={quote.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.05 * index, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                  className="glass rounded-2xl p-6 group hover:border-[rgba(255,138,0,0.45)] transition-all"
+                  className="glass rounded-2xl p-6 group hover:border-[rgb(var(--tangerine-rgb)_/_0.45)] transition-all"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1 min-w-0">

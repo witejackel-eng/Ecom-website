@@ -59,7 +59,7 @@ export default function LoginPage() {
           <div className="glass rounded-[2rem] p-8 md:p-10 glow-tangerine">
             {/* Header */}
             <div className="text-center mb-8">
-              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgba(255,138,0,0.25)]">
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgb(var(--tangerine-rgb)_/_0.25)]">
                 <LogIn className="h-7 w-7 text-[var(--color-tangerine)]" />
               </div>
               <h1 className="text-3xl md:text-4xl font-black text-white mb-2">
@@ -146,7 +146,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-[var(--color-tangerine)] text-white py-3.5 rounded-xl font-bold text-[15px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] py-3.5 rounded-xl font-bold text-[15px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {isLoading ? (
                   <>

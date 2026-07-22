@@ -84,7 +84,7 @@ export default function SignupPage() {
         <FadeIn direction="up">
           <div className="glass rounded-[2rem] p-8 md:p-10 glow-tangerine">
             <div className="text-center mb-8">
-              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgba(255,138,0,0.25)]">
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgb(var(--tangerine-rgb)_/_0.25)]">
                 <UserPlus className="h-7 w-7 text-[var(--color-tangerine)]" />
               </div>
               <h1 className="text-3xl md:text-4xl font-black text-white mb-2">Create Account</h1>
@@ -162,7 +162,7 @@ export default function SignupPage() {
                 </div>
               </div>
               {/* Submit */}
-              <button type="submit" disabled={isLoading} className="w-full bg-[var(--color-tangerine)] text-white py-3.5 rounded-xl font-bold text-[15px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+              <button type="submit" disabled={isLoading} className="w-full bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] py-3.5 rounded-xl font-bold text-[15px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
                 {isLoading ? (
                   <>
                     <div className="h-5 w-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

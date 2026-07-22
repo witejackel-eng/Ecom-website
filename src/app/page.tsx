@@ -33,8 +33,8 @@ export default function Home() {
               { name: "NVR Systems", icon: HardDrive },
               { name: "Biometric Machines", icon: Zap },
             ].map((cat) => (
-              <div key={cat.name} className="group h-full flex flex-col p-10 rounded-3xl border border-[rgba(255,138,0,0.18)] bg-transparent hover:bg-[rgba(255,255,255,0.06)] transition-all duration-300 hover:border-[rgba(255,138,0,0.55)] hover:-translate-y-[2px]">
-                <div className="w-16 h-16 bg-[rgba(255,165,0,0.1)] rounded-xl flex items-center justify-center mb-5 mx-auto lg:mx-0">
+              <div key={cat.name} className="group h-full flex flex-col p-10 rounded-3xl border border-[rgb(var(--tangerine-rgb)_/_0.18)] bg-transparent hover:bg-[rgba(255,255,255,0.06)] transition-all duration-300 hover:border-[rgb(var(--tangerine-rgb)_/_0.55)] hover:-translate-y-[2px]">
+                <div className="w-16 h-16 bg-[rgb(var(--tangerine-rgb)_/_0.1)] rounded-xl flex items-center justify-center mb-5 mx-auto lg:mx-0">
                   <cat.icon className="text-[var(--color-tangerine)]" size={36} />
                 </div>
                 <h3 className="text-xl font-bold text-white text-center lg:text-left">{cat.name}</h3>

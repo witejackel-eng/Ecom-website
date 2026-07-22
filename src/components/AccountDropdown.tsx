@@ -110,9 +110,9 @@ export default function AccountDropdown() {
         aria-haspopup="true"
         aria-expanded={isOpen}
         aria-label="Account menu"
-        className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-[rgba(255,138,0,0.35)] transition-all group"
+        className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-[rgb(var(--tangerine-rgb)_/_0.35)] transition-all group"
       >
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-tangerine)] text-white font-bold text-sm">
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] font-bold text-sm">
           {initials}
         </div>
         <span className="hidden lg:block text-sm text-gray-300 group-hover:text-white transition-colors">
@@ -132,11 +132,11 @@ export default function AccountDropdown() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 8, scale: 0.96 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute right-0 top-full mt-2 w-[340px] rounded-2xl bg-[#0D2530] border border-[rgba(255,138,0,0.18)] backdrop-blur-md shadow-2xl shadow-black/40 overflow-hidden z-50"
+            className="absolute right-0 top-full mt-2 w-[340px] rounded-2xl bg-[#0D2530] border border-[rgb(var(--tangerine-rgb)_/_0.18)] backdrop-blur-md shadow-2xl shadow-black/40 overflow-hidden z-50"
           >
             {/* User info header */}
             <div className="px-4 py-4 border-b border-white/10 flex items-center gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--color-tangerine)] text-white font-bold text-sm">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] font-bold text-sm">
                 {initials}
               </div>
               <div className="min-w-0 flex-1">

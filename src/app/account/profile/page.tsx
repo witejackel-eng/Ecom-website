@@ -73,7 +73,7 @@ export default function ProfilePage() {
 
         <FadeIn direction="up">
           <div className="flex items-center gap-4 mb-10">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgba(255,138,0,0.25)]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgb(var(--tangerine-rgb)_/_0.25)]">
               <User className="h-6 w-6 text-[var(--color-tangerine)]" />
             </div>
             <div>
@@ -86,7 +86,7 @@ export default function ProfilePage() {
             {/* Profile Photo */}
             <div className="flex flex-col items-center mb-10">
               <div className="relative group cursor-pointer">
-                <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-[var(--color-tangerine)] text-white font-bold text-4xl shadow-lg shadow-tangerine/20">
+                <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] font-bold text-4xl shadow-lg shadow-tangerine/20">
                   {initials}
                 </div>
                 <div className="absolute inset-0 rounded-2xl bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -130,7 +130,7 @@ export default function ProfilePage() {
             {/* Save */}
             <div className="mt-10 flex items-center gap-4">
               <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onClick={handleSave} disabled={saving}
-                className="inline-flex items-center gap-2 bg-[var(--color-tangerine)] text-white py-3 px-8 rounded-full font-bold text-[14px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+                className="inline-flex items-center gap-2 bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] py-3 px-8 rounded-full font-bold text-[14px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {saving ? <><Loader2 className="h-4 w-4 animate-spin" /> Saving...</> : <><Save className="h-4 w-4" /> Save Changes</>}
               </motion.button>

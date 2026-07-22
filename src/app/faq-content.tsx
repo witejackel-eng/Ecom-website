@@ -20,7 +20,7 @@ type Props = {
 
 export function FaqContent({ visibleFaqs, showAll, onToggle }: Props) {
   return (
-    <section className="py-28 bg-[rgba(255,138,0,0.03)] border-y border-[rgba(255,138,0,0.1)]">
+    <section className="py-28 bg-[rgb(var(--tangerine-rgb)_/_0.03)] border-y border-[rgb(var(--tangerine-rgb)_/_0.1)]">
       <div className="mx-auto max-w-4xl px-6">
         <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--color-tangerine)] mb-4 block text-center">// FAQS</span>
         <h2 className="text-white text-5xl lg:text-6xl font-black tracking-tighter text-center mb-12 leading-[0.95]">Questions We Get <span className="text-[var(--color-tangerine)]">Asked.</span></h2>
@@ -29,7 +29,7 @@ export function FaqContent({ visibleFaqs, showAll, onToggle }: Props) {
         </div>
         <button
           onClick={onToggle}
-          className="mt-8 mx-auto block text-sm font-bold uppercase tracking-wider border border-[var(--color-tangerine)] text-[var(--color-tangerine)] bg-transparent hover:bg-[var(--color-tangerine)] hover:text-white transition-colors py-3 px-10 rounded-full"
+          className="mt-8 mx-auto block text-sm font-bold uppercase tracking-wider border border-[var(--color-tangerine)] text-[var(--color-tangerine)] bg-transparent hover:bg-[var(--color-tangerine)] hover:text-[var(--color-navy-deep)] transition-colors py-3 px-10 rounded-full"
         >
           {showAll ? "Show Less" : "Show More"}
         </button>

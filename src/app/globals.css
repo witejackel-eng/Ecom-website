@@ -8,6 +8,18 @@
   --color-navy-card: #0D2530;
 }
 
+:root {
+  --tangerine-rgb: 255 138 0;
+  --tangerine: var(--color-tangerine);
+  --tangerine-hover: var(--color-tangerine-light);
+  --tangerine-lighter: var(--color-tangerine-lighter);
+  --tangerine-soft: rgb(var(--tangerine-rgb) / 0.1);
+  --tangerine-border: rgb(var(--tangerine-rgb) / 0.18);
+  --tangerine-border-hover: rgb(var(--tangerine-rgb) / 0.55);
+  --tangerine-focus: rgb(var(--tangerine-rgb) / 0.4);
+  --tangerine-shadow: rgb(var(--tangerine-rgb) / 0.24);
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -24,7 +36,7 @@ body::before {
 html {
   background-color: var(--color-navy-deep);
   background: 
-    radial-gradient(ellipse at 50% 0%, rgba(255, 138, 0, 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 0%, rgb(var(--tangerine-rgb) / 0.03) 0%, transparent 60%),
     radial-gradient(ellipse at 20% 80%, rgba(16, 44, 56, 0.5) 0%, transparent 50%),
     radial-gradient(ellipse at 80% 20%, rgba(11, 29, 37, 0.4) 0%, transparent 50%),
     linear-gradient(180deg, #0E2732 0%, #102C38 45%, #0B1D25 100%);
@@ -33,7 +45,7 @@ html {
 body {
   background-color: var(--color-navy-deep);
   background: 
-    radial-gradient(ellipse at 50% 0%, rgba(255, 138, 0, 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 0%, rgb(var(--tangerine-rgb) / 0.03) 0%, transparent 60%),
     radial-gradient(ellipse at 20% 80%, rgba(16, 44, 56, 0.5) 0%, transparent 50%),
     radial-gradient(ellipse at 80% 20%, rgba(11, 29, 37, 0.4) 0%, transparent 50%),
     linear-gradient(180deg, #0E2732 0%, #102C38 45%, #0B1D25 100%);
@@ -58,23 +70,25 @@ p {
 }
 
 .glass {
-  @apply bg-[var(--color-navy-card)] backdrop-blur-md border border-[rgba(255,138,0,0.18)];
+  @apply bg-[var(--color-navy-card)] backdrop-blur-md border;
+  border-color: var(--tangerine-border);
 }
 
 .border-tangerine {
-  @apply border border-[rgba(255,138,0,0.18)];
+  @apply border;
+  border-color: var(--tangerine-border);
 }
 
 .border-tangerine-hover:hover {
-  @apply border-[rgba(255,138,0,0.55)];
+  border-color: var(--tangerine-border-hover);
 }
 
 .glow-tangerine {
-  box-shadow: 0 0 0 1px rgba(255, 138, 0, 0.15), 0 20px 60px rgba(255, 138, 0, 0.08);
+  box-shadow: 0 0 0 1px rgb(var(--tangerine-rgb) / 0.15), 0 20px 60px rgb(var(--tangerine-rgb) / 0.08);
 }
 
 .glow-tangerine-hover:hover {
-  box-shadow: 0 30px 80px rgba(255, 138, 0, 0.18);
+  box-shadow: 0 30px 80px rgb(var(--tangerine-rgb) / 0.18);
 }
 
 .cart-body::-webkit-scrollbar {

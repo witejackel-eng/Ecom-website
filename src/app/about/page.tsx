@@ -25,9 +25,9 @@ export default function AboutPage() {
             
             <ScaleIn duration={1} className="relative">
               <div className="absolute inset-0 bg-[var(--color-tangerine)] rounded-[2rem] blur-[80px] opacity-10" />
-              <div className="relative glass rounded-[2rem] border border-[rgba(255,138,0,0.3)] p-12 overflow-hidden flex flex-col justify-center gap-6">
+              <div className="relative glass rounded-[2rem] border border-[rgb(var(--tangerine-rgb)_/_0.3)] p-12 overflow-hidden flex flex-col justify-center gap-6">
                 <div className="flex items-center gap-4">
-                  <div className="h-16 w-16 rounded-2xl bg-[rgba(255,165,0,0.1)] border border-[rgba(255,138,0,0.2)] flex items-center justify-center text-[var(--color-tangerine)]">
+                  <div className="h-16 w-16 rounded-2xl bg-[rgb(var(--tangerine-rgb)_/_0.1)] border border-[rgb(var(--tangerine-rgb)_/_0.2)] flex items-center justify-center text-[var(--color-tangerine)]">
                     <Shield size={32} />
                   </div>
                   <div>
@@ -54,7 +54,7 @@ export default function AboutPage() {
         </section>
 
         {/* Mission and Values */}
-        <section className="py-24 border-t border-[rgba(255,138,0,0.1)] bg-gradient-to-b from-transparent via-white/[0.01] to-transparent">
+        <section className="py-24 border-t border-[rgb(var(--tangerine-rgb)_/_0.1)] bg-gradient-to-b from-transparent via-white/[0.01] to-transparent">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--color-tangerine)] mb-6 block">// OUR MISSION</span>
@@ -95,7 +95,7 @@ export default function AboutPage() {
         </section>
 
         {/* How We Work */}
-        <section className="py-24 border-t border-[rgba(255,138,0,0.1)] bg-gradient-to-b from-transparent via-white/[0.01] to-transparent">
+        <section className="py-24 border-t border-[rgb(var(--tangerine-rgb)_/_0.1)] bg-gradient-to-b from-transparent via-white/[0.01] to-transparent">
           <div className="text-center mb-16">
              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--color-tangerine)] mb-4 block">// HOW WE WORK</span>
              <h2 className="text-white text-5xl font-black tracking-tighter">Our Process.</h2>
@@ -110,8 +110,8 @@ export default function AboutPage() {
               { icon: ShieldCheck, title: "Warranty Support", desc: "OEM warranty registration, claims assistance, and continued after-sales coordination." },
               { icon: Wrench, title: "Certified Installation Partner (Optional)", desc: "Connection with certified third-party professionals for commissioned system setup and configuration." },
             ].map((item, i) => (
-              <div key={i} className="glass p-8 rounded-[1.5rem] border border-white/5 hover:border-[rgba(255,138,0,0.3)] transition-all duration-300 flex flex-col items-center text-center">
-                <div className="h-16 w-16 rounded-2xl bg-[rgba(255,138,0,0.05)] border border-[rgba(255,138,0,0.15)] flex items-center justify-center text-[var(--color-tangerine)] mb-6">
+              <div key={i} className="glass p-8 rounded-[1.5rem] border border-white/5 hover:border-[rgb(var(--tangerine-rgb)_/_0.3)] transition-all duration-300 flex flex-col items-center text-center">
+                <div className="h-16 w-16 rounded-2xl bg-[rgb(var(--tangerine-rgb)_/_0.05)] border border-[rgb(var(--tangerine-rgb)_/_0.15)] flex items-center justify-center text-[var(--color-tangerine)] mb-6">
                   <item.icon size={28} />
                 </div>
                 <h3 className="text-xl text-white font-bold mb-3 leading-snug">{item.title}</h3>
@@ -122,7 +122,7 @@ export default function AboutPage() {
         </section>
 
         {/* Trust Statements */}
-        <section className="py-24 border-t border-[rgba(255,138,0,0.1)] mb-24 bg-gradient-to-b from-transparent via-white/[0.01] to-transparent">
+        <section className="py-24 border-t border-[rgb(var(--tangerine-rgb)_/_0.1)] mb-24 bg-gradient-to-b from-transparent via-white/[0.01] to-transparent">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 max-w-6xl mx-auto">
             {[
               { title: "OEM Warranty", icon: Shield },
@@ -134,7 +134,7 @@ export default function AboutPage() {
               { title: "Corporate Solutions", icon: Building2 },
             ].map((stat, i) => (
               <div key={i} className="glass border border-white/5 rounded-2xl p-6 flex items-center gap-5">
-                <div className="h-12 w-12 rounded-xl bg-[rgba(255,138,0,0.05)] border border-[rgba(255,138,0,0.15)] flex items-center justify-center text-[var(--color-tangerine)] shrink-0">
+                <div className="h-12 w-12 rounded-xl bg-[rgb(var(--tangerine-rgb)_/_0.05)] border border-[rgb(var(--tangerine-rgb)_/_0.15)] flex items-center justify-center text-[var(--color-tangerine)] shrink-0">
                   <stat.icon size={22} />
                 </div>
                 <h3 className="text-base text-white font-bold leading-snug">{stat.title}</h3>

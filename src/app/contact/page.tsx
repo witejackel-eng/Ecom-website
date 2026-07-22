@@ -41,7 +41,7 @@ export default function ContactPage() {
                     href="https://maps.google.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/10 text-white text-xs font-bold uppercase tracking-[0.2em] hover:border-[rgba(255,138,0,0.4)] hover:text-[var(--color-tangerine)] transition-all duration-200"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/10 text-white text-xs font-bold uppercase tracking-[0.2em] hover:border-[rgb(var(--tangerine-rgb)_/_0.4)] hover:text-[var(--color-tangerine)] transition-all duration-200"
                   >
                     View on Google Maps
                   </a>

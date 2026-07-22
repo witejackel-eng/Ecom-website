@@ -6,7 +6,7 @@ export default function Accordion({ items }: { items: { question: string; answer
       {items.map((item, index) => (
         <details
           key={index}
-          className="group rounded-[24px] border border-white/5 open:glass open:border-primary/30 open:shadow-[0_10px_30px_rgba(255,122,26,0.05)] hover:border-white/10 transition-colors duration-300 overflow-hidden"
+          className="group rounded-[24px] border border-white/5 open:glass open:border-primary/30 open:shadow-[0_10px_30px_rgb(var(--tangerine-rgb)_/_0.05)] hover:border-white/10 transition-colors duration-300 overflow-hidden"
         >
           <summary className="flex justify-between items-center gap-6 p-6 md:p-8 text-left cursor-pointer list-none marker:content-none [&::-webkit-details-marker]:hidden">
             <span className="text-lg font-bold transition-colors duration-300 text-white/80 group-open:text-primary group-hover:text-white">

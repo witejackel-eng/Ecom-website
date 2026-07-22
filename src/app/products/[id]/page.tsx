@@ -107,7 +107,7 @@ export default function ProductDetailPage() {
             {/* ── STQC Certification Badge (Camera categories only) ───── */}
             {product.category.toLowerCase().includes("camera") && (
               <FadeIn direction="up" delay={0.25}>
-                <div className="glass rounded-2xl border border-[rgba(255,138,0,0.15)] bg-white/[0.02] p-5 space-y-2.5">
+                <div className="glass rounded-2xl border border-[rgb(var(--tangerine-rgb)_/_0.15)] bg-white/[0.02] p-5 space-y-2.5">
                   <div className="flex items-center gap-2.5 flex-wrap">
                     <div className="flex items-center justify-center w-6 h-6 rounded-full bg-[var(--color-tangerine)]/10 shrink-0">
                       <Check size={14} className="text-[var(--color-tangerine)]" />
@@ -160,7 +160,7 @@ export default function ProductDetailPage() {
                     <a
                       href={`/api/download/${product.model}/datasheet`}
                       aria-label={`Download ${product.model} Datasheet`}
-                      className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-[rgba(255,138,0,0.4)] hover:text-[var(--color-tangerine)] hover:bg-white/[0.06]"
+                      className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-[rgb(var(--tangerine-rgb)_/_0.4)] hover:text-[var(--color-tangerine)] hover:bg-white/[0.06]"
                     >
                       <FileText size={16} className="text-[var(--color-tangerine)] shrink-0" />
                       Datasheet
@@ -168,7 +168,7 @@ export default function ProductDetailPage() {
                     <a
                       href={`/api/download/${product.model}/manual`}
                       aria-label={`Download ${product.model} User Manual`}
-                      className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-[rgba(255,138,0,0.4)] hover:text-[var(--color-tangerine)] hover:bg-white/[0.06]"
+                      className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-[rgb(var(--tangerine-rgb)_/_0.4)] hover:text-[var(--color-tangerine)] hover:bg-white/[0.06]"
                     >
                       <FileText size={16} className="text-[var(--color-tangerine)] shrink-0" />
                       User Manual
@@ -181,7 +181,7 @@ export default function ProductDetailPage() {
                       <a
                         href={`/api/download/${product.model}/datasheet`}
                         aria-label={`Download ${product.model} Datasheet`}
-                        className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-[rgba(255,138,0,0.4)] hover:text-[var(--color-tangerine)] hover:bg-white/[0.06] w-full sm:w-[360px] sm:max-w-[70%]"
+                        className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-[rgb(var(--tangerine-rgb)_/_0.4)] hover:text-[var(--color-tangerine)] hover:bg-white/[0.06] w-full sm:w-[360px] sm:max-w-[70%]"
                       >
                         <FileText size={16} className="text-[var(--color-tangerine)] shrink-0" />
                         Datasheet
@@ -191,7 +191,7 @@ export default function ProductDetailPage() {
                       <a
                         href={`/api/download/${product.model}/manual`}
                         aria-label={`Download ${product.model} User Manual`}
-                        className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-[rgba(255,138,0,0.4)] hover:text-[var(--color-tangerine)] hover:bg-white/[0.06] w-full sm:w-[360px] sm:max-w-[70%]"
+                        className="flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-[rgb(var(--tangerine-rgb)_/_0.4)] hover:text-[var(--color-tangerine)] hover:bg-white/[0.06] w-full sm:w-[360px] sm:max-w-[70%]"
                       >
                         <FileText size={16} className="text-[var(--color-tangerine)] shrink-0" />
                         User Manual

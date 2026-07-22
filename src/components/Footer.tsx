@@ -42,7 +42,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative py-20 border-t border-[rgba(255,138,0,0.18)] bg-[var(--color-navy-deep)]">
+    <footer className="relative py-20 border-t border-[rgb(var(--tangerine-rgb)_/_0.18)] bg-[var(--color-navy-deep)]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-10">
           {footerData.map((section) => (

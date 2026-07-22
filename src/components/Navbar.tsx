@@ -67,7 +67,7 @@ export default function Navbar() {
       <nav className="mx-auto max-w-7xl flex items-center justify-between px-6 lg:px-8">
         {/* LEFT: Logo */}
         <Link href="/" className="flex items-center gap-4 group shrink-0">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--color-tangerine)] text-white font-bold text-base shadow-lg shadow-tangerine/20 group-hover:scale-105 group-hover:shadow-tangerine/30 transition-all duration-200">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] font-bold text-base shadow-lg shadow-tangerine/20 group-hover:scale-105 group-hover:shadow-tangerine/30 transition-all duration-200">
             DD
           </div>
           <span className="text-xl text-white font-bold tracking-tight hidden sm:block">
@@ -113,7 +113,7 @@ export default function Navbar() {
                 </div>
                 <button
                   onClick={() => setShowMobileAccount(true)}
-                  className="lg:hidden flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 text-gray-300 hover:text-[var(--color-tangerine)] hover:border-[rgba(255,138,0,0.3)] transition-all duration-200"
+                  className="lg:hidden flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 text-gray-300 hover:text-[var(--color-tangerine)] hover:border-[rgb(var(--tangerine-rgb)_/_0.3)] transition-all duration-200"
                   aria-label="Account menu"
                 >
                   <User className="h-[18px] w-[18px]" />
@@ -129,7 +129,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="/signup"
-                  className="hidden lg:inline-flex px-4 py-[7px] rounded-full border border-white/10 text-white text-[12px] font-bold uppercase tracking-[0.12em] hover:border-[rgba(255,138,0,0.4)] hover:text-[var(--color-tangerine)] transition-all duration-200"
+                  className="hidden lg:inline-flex px-4 py-[7px] rounded-full border border-white/10 text-white text-[12px] font-bold uppercase tracking-[0.12em] hover:border-[rgb(var(--tangerine-rgb)_/_0.4)] hover:text-[var(--color-tangerine)] transition-all duration-200"
                 >
                   Create Account
                 </Link>
@@ -139,12 +139,12 @@ export default function Navbar() {
           {/* Cart */}
           <button
             onClick={() => openCart()}
-            className="relative flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-gray-300 hover:text-[var(--color-tangerine)] hover:border-[rgba(255,138,0,0.2)] hover:bg-white/[0.03] transition-all duration-200 active:scale-95"
+            className="relative flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-gray-300 hover:text-[var(--color-tangerine)] hover:border-[rgb(var(--tangerine-rgb)_/_0.2)] hover:bg-white/[0.03] transition-all duration-200 active:scale-95"
             aria-label={`Shopping cart${cartCount > 0 ? `, ${cartCount} items` : ""}`}
           >
             <ShoppingCart className="h-[18px] w-[18px]" />
             {cartCount > 0 && (
-              <span className="absolute -top-[3px] -right-[3px] flex h-[17px] min-w-[17px] items-center justify-center rounded-full bg-[var(--color-tangerine)] text-[9px] font-bold text-white px-[4px] shadow-sm shadow-tangerine/30">
+              <span className="absolute -top-[3px] -right-[3px] flex h-[17px] min-w-[17px] items-center justify-center rounded-full bg-[var(--color-tangerine)] text-[9px] font-bold text-[var(--color-navy-deep)] px-[4px] shadow-sm shadow-tangerine/30">
                 {cartCount > 9 ? "9+" : cartCount}
               </span>
             )}
@@ -153,14 +153,14 @@ export default function Navbar() {
           {/* Get a Quote CTA */}
           <Link
             href="/contact"
-            className="hidden lg:inline-flex items-center gap-2 px-5 py-[7px] rounded-full bg-[var(--color-tangerine)] text-white text-[12px] font-bold uppercase tracking-[0.12em] shadow-lg shadow-tangerine/20 hover:shadow-xl hover:shadow-tangerine/30 hover:-translate-y-[2px] active:translate-y-0 active:scale-[0.98] transition-all duration-200"
+            className="hidden lg:inline-flex items-center gap-2 px-5 py-[7px] rounded-full bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] text-[12px] font-bold uppercase tracking-[0.12em] shadow-lg shadow-tangerine/20 hover:shadow-xl hover:shadow-tangerine/30 hover:-translate-y-[2px] active:translate-y-0 active:scale-[0.98] transition-all duration-200"
           >
             Get a Quote
           </Link>
 
           {/* Mobile menu toggle */}
           <button
-            className="lg:hidden flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 text-gray-300 hover:text-[var(--color-tangerine)] hover:border-[rgba(255,138,0,0.3)] transition-all duration-200"
+            className="lg:hidden flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 text-gray-300 hover:text-[var(--color-tangerine)] hover:border-[rgb(var(--tangerine-rgb)_/_0.3)] transition-all duration-200"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -199,7 +199,7 @@ export default function Navbar() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`block px-4 py-3 rounded-xl text-[13px] font-bold uppercase tracking-widest transition-all duration-200 ${
                       active
-                        ? "text-white bg-[var(--color-tangerine)]/10 border border-[rgba(255,138,0,0.2)]"
+                        ? "text-[var(--color-navy-deep)] bg-[var(--color-tangerine)]/10 border border-[rgb(var(--tangerine-rgb)_/_0.2)]"
                         : "text-gray-300 hover:text-white hover:bg-white/[0.03]"
                     }`}
                   >
@@ -211,7 +211,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-center px-6 py-3 rounded-full bg-[var(--color-tangerine)] text-white text-[13px] font-bold uppercase tracking-widest shadow-lg shadow-tangerine/20 hover:shadow-tangerine/30 transition-all duration-200"
+                className="block w-full text-center px-6 py-3 rounded-full bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] text-[13px] font-bold uppercase tracking-widest shadow-lg shadow-tangerine/20 hover:shadow-tangerine/30 transition-all duration-200"
               >
                 Get a Quote
               </Link>

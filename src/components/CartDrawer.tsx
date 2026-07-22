@@ -29,7 +29,7 @@ export default function CartDrawer() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", ease: "easeInOut", duration: 0.3 }}
-            className="fixed top-0 right-0 h-full w-full max-w-[420px] bg-[#0A1F2E] border-l border-[rgba(255,138,0,0.15)] z-[60] flex flex-col shadow-2xl shadow-black/40"
+            className="fixed top-0 right-0 h-full w-full max-w-[420px] bg-[#0A1F2E] border-l border-[rgb(var(--tangerine-rgb)_/_0.15)] z-[60] flex flex-col shadow-2xl shadow-black/40"
           >
             {/* Header */}
             <div className="relative px-6 pt-6 pb-5 border-b border-white/10 shrink-0">
@@ -37,7 +37,7 @@ export default function CartDrawer() {
                 <ShoppingCart size={20} className="text-[var(--color-tangerine)]" />
                 <h2 className="text-lg font-bold text-white tracking-tight">Your Cart</h2>
                 {cartCount > 0 && (
-                  <span className="bg-[var(--color-tangerine)] text-white text-[11px] font-bold px-2 py-0.5 rounded-full leading-none">{cartCount}</span>
+                  <span className="bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] text-[11px] font-bold px-2 py-0.5 rounded-full leading-none">{cartCount}</span>
                 )}
               </div>
               <p className="text-xs text-gray-500 font-medium pr-14">Review your selected security products.</p>
@@ -114,7 +114,7 @@ export default function CartDrawer() {
                         </div>
                       </div>
                       <div className="text-right shrink-0 flex flex-col items-end justify-between">
-                        <p className="text-orange-400 text-sm font-bold tabular-nums">₹{(item.mrp * item.quantity).toLocaleString('en-IN')}</p>
+                        <p className="text-[var(--color-tangerine-light)] text-sm font-bold tabular-nums">₹{(item.mrp * item.quantity).toLocaleString('en-IN')}</p>
                         <button
                           onClick={() => removeFromCart(item.id)}
                           className="text-gray-500 text-[11px] font-medium hover:text-red-400 transition-colors duration-200"

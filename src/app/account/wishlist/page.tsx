@@ -39,7 +39,7 @@ export default function WishlistPage() {
 
         <FadeIn direction="up">
           <div className="flex items-center gap-4 mb-10">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgba(255,138,0,0.25)]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgb(var(--tangerine-rgb)_/_0.25)]">
               <Heart className="h-6 w-6 text-[var(--color-tangerine)]" />
             </div>
             <div>
@@ -57,7 +57,7 @@ export default function WishlistPage() {
               <p className="text-gray-400 text-sm mb-8">Save your favourite items here and come back to them anytime.</p>
               <Link
                 href="/products"
-                className="inline-flex bg-[var(--color-tangerine)] text-white py-3 px-8 rounded-full font-bold text-[14px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all"
+                className="inline-flex bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] py-3 px-8 rounded-full font-bold text-[14px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all"
               >
                 Browse Products
               </Link>
@@ -70,7 +70,7 @@ export default function WishlistPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.05 * index, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                  className="glass rounded-2xl p-5 flex gap-4 group hover:border-[rgba(255,138,0,0.45)] transition-all"
+                  className="glass rounded-2xl p-5 flex gap-4 group hover:border-[rgb(var(--tangerine-rgb)_/_0.45)] transition-all"
                 >
                   {/* Product Image */}
                   <div className="w-20 h-20 rounded-xl bg-white/5 overflow-hidden shrink-0 flex items-center justify-center">

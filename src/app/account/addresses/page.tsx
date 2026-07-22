@@ -50,7 +50,7 @@ export default function AddrPage() {
         </Link>
         <FadeIn direction="up">
           <div className="flex items-center gap-4 mb-10">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgba(255,138,0,0.25)]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgb(var(--tangerine-rgb)_/_0.25)]">
               <MapPin className="h-6 w-6 text-[var(--color-tangerine)]" />
             </div>
             <div>
@@ -66,7 +66,7 @@ export default function AddrPage() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">No saved addresses</h3>
                 <p className="text-gray-400 text-sm mb-8">Add an address to get started with faster checkout.</p>
-                <button onClick={oa} className="inline-flex items-center gap-2 bg-[var(--color-tangerine)] text-white py-3 px-8 rounded-full font-bold text-[14px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all">
+                <button onClick={oa} className="inline-flex items-center gap-2 bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] py-3 px-8 rounded-full font-bold text-[14px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all">
                   <Plus className="h-4 w-4" /> Add New Address
                 </button>
               </div>
@@ -134,7 +134,7 @@ export default function AddrPage() {
                     </div>
                   </div>
                   <div className="flex items-center gap-4 mt-8">
-                    <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onClick={hs} disabled={sv} className="inline-flex items-center gap-2 bg-[var(--color-tangerine)] text-white py-3 px-8 rounded-full font-bold text-[14px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all disabled:opacity-60 disabled:cursor-not-allowed">
+                    <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onClick={hs} disabled={sv} className="inline-flex items-center gap-2 bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] py-3 px-8 rounded-full font-bold text-[14px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all disabled:opacity-60 disabled:cursor-not-allowed">
                       {sv ? "Saving..." : ei ? "Update" : "Save"}
                     </motion.button>
                     <button onClick={() => { setSf(false); setEi(null); setPe(""); }} className="text-gray-400 hover:text-white text-sm font-medium transition-colors">Cancel</button>

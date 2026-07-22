@@ -1,0 +1,9 @@
+{
+  "name": "DeviceDestination",
+  "short_name": "DD",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#081C24",
+  "theme_color": "#FF8A00",
+  "icons": []
+}

@@ -43,10 +43,10 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
-            <Link href="/products" className="px-8 py-4 rounded-full bg-[var(--color-tangerine)] text-white font-bold flex items-center gap-2 hover:bg-[var(--color-tangerine-light)] transition-all">
+            <Link href="/products" className="px-8 py-4 rounded-full bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] font-bold flex items-center gap-2 hover:bg-[var(--color-tangerine-light)] transition-all">
               Browse Products <ArrowRight size={18} />
             </Link>
-            <Link href="/contact" className="px-8 py-4 rounded-full border border-[rgba(255,138,0,0.3)] text-white font-bold hover:bg-white/5 transition-all">
+            <Link href="/contact" className="px-8 py-4 rounded-full border border-[rgb(var(--tangerine-rgb)_/_0.3)] text-white font-bold hover:bg-white/5 transition-all">
               Request Quote
             </Link>
           </div>

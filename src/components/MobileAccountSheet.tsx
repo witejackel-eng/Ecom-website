@@ -100,7 +100,7 @@ export default function MobileAccountSheet({
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ type: "tween", ease: "easeInOut", duration: 0.3 }}
-            className="fixed bottom-0 left-0 right-0 z-[80] max-h-[85vh] overflow-y-auto rounded-t-[2rem] bg-[#0D2530] border-t border-[rgba(255,138,0,0.18)] shadow-2xl shadow-black/40"
+            className="fixed bottom-0 left-0 right-0 z-[80] max-h-[85vh] overflow-y-auto rounded-t-[2rem] bg-[#0D2530] border-t border-[rgb(var(--tangerine-rgb)_/_0.18)] shadow-2xl shadow-black/40"
           >
             {/* Swipe indicator */}
             <div className="sticky top-0 z-10 pt-2 pb-1 bg-[#0D2530] rounded-t-[2rem]">
@@ -120,7 +120,7 @@ export default function MobileAccountSheet({
               {/* Authenticated user section */}
               {isAuthenticated && user ? (
                 <div className="flex items-center gap-4 pt-4 pb-6 border-b border-white/10">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[var(--color-tangerine)] text-white font-bold text-lg shadow-lg shadow-tangerine/20">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] font-bold text-lg shadow-lg shadow-tangerine/20">
                     {initials}
                   </div>
                   <div className="min-w-0 flex-1">

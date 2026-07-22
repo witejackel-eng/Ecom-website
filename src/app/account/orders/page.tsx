@@ -50,7 +50,7 @@ export default function OrdersPage() {
 
         <FadeIn direction="up">
           <div className="flex items-center gap-4 mb-10">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgba(255,138,0,0.25)]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-tangerine)]/10 border border-[rgb(var(--tangerine-rgb)_/_0.25)]">
               <Package className="h-6 w-6 text-[var(--color-tangerine)]" />
             </div>
             <div>
@@ -68,7 +68,7 @@ export default function OrdersPage() {
               <p className="text-gray-400 text-sm mb-8">Looks like you haven&apos;t placed any orders. Browse our products to get started.</p>
               <Link
                 href="/products"
-                className="inline-flex bg-[var(--color-tangerine)] text-white py-3 px-8 rounded-full font-bold text-[14px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all"
+                className="inline-flex bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] py-3 px-8 rounded-full font-bold text-[14px] shadow-lg shadow-tangerine/20 hover:shadow-tangerine/40 transition-all"
               >
                 Browse Products
               </Link>
@@ -84,7 +84,7 @@ export default function OrdersPage() {
                 >
                   <Link
                     href={`/account/orders/${order.id}`}
-                    className="glass rounded-2xl p-6 flex items-center gap-4 group hover:border-[rgba(255,138,0,0.45)] transition-all block"
+                    className="glass rounded-2xl p-6 flex items-center gap-4 group hover:border-[rgb(var(--tangerine-rgb)_/_0.45)] transition-all block"
                   >
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">

@@ -60,7 +60,7 @@ export default function AccountPage() {
           {/* Welcome header */}
           <div className="glass rounded-[2rem] p-8 md:p-10 glow-tangerine mb-8">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-              <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-[var(--color-tangerine)] text-white font-bold text-3xl shadow-lg shadow-tangerine/20 shrink-0">
+              <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-[var(--color-tangerine)] text-[var(--color-navy-deep)] font-bold text-3xl shadow-lg shadow-tangerine/20 shrink-0">
                 {initials}
               </div>
               <div className="text-center md:text-left flex-1">
@@ -92,9 +92,9 @@ export default function AccountPage() {
               >
                 <Link
                   href={link.href}
-                  className="glass rounded-2xl p-6 flex items-center gap-4 group hover:border-[rgba(255,138,0,0.45)] transition-all duration-300 block"
+                  className="glass rounded-2xl p-6 flex items-center gap-4 group hover:border-[rgb(var(--tangerine-rgb)_/_0.45)] transition-all duration-300 block"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-tangerine)]/10 border border-[rgba(255,138,0,0.2)] group-hover:bg-[var(--color-tangerine)]/20 transition-all shrink-0">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-tangerine)]/10 border border-[rgb(var(--tangerine-rgb)_/_0.2)] group-hover:bg-[var(--color-tangerine)]/20 transition-all shrink-0">
                     <link.icon className="h-5 w-5 text-[var(--color-tangerine)]" />
                   </div>
                   <div className="flex-1 min-w-0">
