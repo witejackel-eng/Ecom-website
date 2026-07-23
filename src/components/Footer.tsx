@@ -83,9 +83,10 @@ export default function Footer() {
               ✦ Safe Shopping &nbsp;•&nbsp; OEM Warranty &nbsp;•&nbsp; Genuine Products &nbsp;•&nbsp; Secure Payments
             </p>
             <p className="text-white/50 text-xs leading-relaxed max-w-3xl mx-auto">
-              All products are sold with OEM warranty only. Installation and service are provided by certified third-party partners at the customer&apos;s discretion. By using this website, you agree to our 
-              <Link href="/terms" className="text-white/50 hover:text-white underline underline-offset-2 transition-colors mx-1">Terms & Conditions</Link>, 
-              <Link href="/refund-policy" className="text-white/50 hover:text-white underline underline-offset-2 transition-colors mx-1">Return/Refund Policy</Link>, and Privacy Policy. 
+              All products are sold with OEM warranty only. Installation and service are provided through independent third-party partners at the customer&apos;s discretion. By using this website, you agree to our{" "}
+              <Link href="/terms" className="text-white/50 hover:text-white underline underline-offset-2 transition-colors mx-1">Terms &amp; Conditions</Link>,{" "}
+              <Link href="/refund-policy" className="text-white/50 hover:text-white underline underline-offset-2 transition-colors mx-1">Return/Refund Policy</Link>, and{" "}
+              <Link href="/privacy" className="text-white/50 hover:text-white underline underline-offset-2 transition-colors mx-1">Privacy Policy</Link>.{" "}
               All disputes are subject to the jurisdiction of New Delhi, India.
             </p>
             <p className="text-white/30 text-[11px] italic">
